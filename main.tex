@@ -11,6 +11,7 @@
 
 \usepackage{dirtytalk} % Speech & Quote Marks.
 \usepackage{hyperref} % Hyperlinks.
+\usepackage{xcolor} % Coloured Text.
 
 \usepackage{amssymb} % Maths Symbols.
 \usepackage{amsmath} % Maths Tools.
@@ -21,12 +22,31 @@
 %%
 
 
-%% Setting up the Document.
+%% Creating Formats.
 
 \hypersetup{colorlinks=true, urlcolor=blue, linkcolor=black}
 
-\newdateformat{monthyeardate}{%
-\monthname[\THEMONTH] \THEYEAR}
+\newdateformat{monthyeardate}
+{%
+    \monthname[\THEMONTH] \THEYEAR
+}
+
+\newcommand{\definition}[1]
+{
+    \color{blue} #1 \color{black}
+}
+
+\newcommand{\important}[1]
+{
+    \color{blue} #1 \color{red}
+}
+
+\newcommand{\R}{\mathbf{R}}
+
+%%
+
+
+%% Setting up the Document.
 
 \title{New LaTeX Template}
 \author{MATTHEW EMERSON}
