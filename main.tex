@@ -2,6 +2,7 @@
 
 %% Downloading Packages for the Document.
 
+\usepackage{datetime} % Dates.
 \usepackage{fancyhdr} % Headers.
 \usepackage{lastpage} % Page References.
 
@@ -24,9 +25,12 @@
 
 \hypersetup{colorlinks=true, urlcolor=blue, linkcolor=black}
 
+\newdateformat{monthyeardate}{%
+\monthname[\THEMONTH] \THEYEAR}
+
 \title{New LaTeX Template}
 \author{MATTHEW EMERSON}
-\date{\today}
+\date{\monthyeardate\today}
 
 \begin{document}
 
