@@ -1,0 +1,31 @@
+\documentclass{article}
+
+\usepackage{graphicx} % Inserting Images.
+\usepackage{fancyhdr} % Headers.
+\usepackage{lastpage} % Page References
+
+\title{New LaTeX Template}
+\author{MATTHEW EMERSON}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\newpage
+\thispagestyle{empty}
+\tableofcontents
+
+\pagestyle{fancy}
+\fancyhead[L]{Durham University}
+\fancyfoot{}
+\fancyfoot[L]{Written by Matthew Emerson}
+\fancyfoot[R]{Page \thepage \, of\, \pageref{LastPage}}
+
+\newpage
+\setcounter{page}{1}
+
+\section{Introduction}
+
+\end{document}
