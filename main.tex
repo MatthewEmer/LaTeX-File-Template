@@ -1,8 +1,28 @@
 \documentclass{article}
 
-\usepackage{graphicx} % Inserting Images.
+%% Downloading Packages for the Document.
+
 \usepackage{fancyhdr} % Headers.
-\usepackage{lastpage} % Page References
+\usepackage{lastpage} % Page References.
+
+\usepackage{graphicx} % Inserting Images.
+\usepackage{float} % Postitioning Images.
+
+\usepackage{dirtytalk} % Speech & Quote Marks.
+\usepackage{hyperref} % Hyperlinks.
+
+\usepackage{amssymb} % Maths Symbols.
+\usepackage{amsmath} % Maths Tools.
+
+\usepackage{algpseudocode} % Pseudocode.
+\usepackage{algorithm} % Algorithms.
+
+%%
+
+
+%% Setting up the Document.
+
+\hypersetup{colorlinks=true, urlcolor=blue, linkcolor=black}
 
 \title{New LaTeX Template}
 \author{MATTHEW EMERSON}
@@ -10,12 +30,10 @@
 
 \begin{document}
 
-\maketitle
-\thispagestyle{empty}
+%%
 
-\newpage
-\thispagestyle{empty}
-\tableofcontents
+
+%% Setting the Default Header and Footer. 
 
 \pagestyle{fancy}
 \fancyhead[L]{Durham University}
@@ -23,9 +41,33 @@
 \fancyfoot[L]{Written by Matthew Emerson}
 \fancyfoot[R]{Page \thepage \, of\, \pageref{LastPage}}
 
+%%
+
+
+%% Creating the Title Page.
+
+\maketitle
+\thispagestyle{empty}
+
+%% 
+
+
+%% Creating the Table of Contents Page.
+
 \newpage
-\setcounter{page}{1}
+\thispagestyle{empty}
+\tableofcontents
+
+%% 
+
+
+%% The Main Document.
+
+\setcounter{page}{0}
+\newpage
 
 \section{Introduction}
 
 \end{document}
+
+%%
