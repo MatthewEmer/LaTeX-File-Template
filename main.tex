@@ -31,15 +31,14 @@
     \monthname[\THEMONTH] \THEYEAR
 }
 
-\newcommand{\colour}[2]
-{
-    \color{#1}#2\color{black}
-}
+\newcommand{\colour}[2] {\color{#1}#2\color{black}}
+\newcommand{\separate}[1] {\vspace{#1 pt}\noindent}
 
 \newcommand{\R}{\mathbf{R}}
 \newcommand{\N}{\mathbf{N}}
 \newcommand{\C}{\mathbf{C}}
 
+% JOINS
 \def\ojoin{\setbox0=\hbox{$\bowtie$}%
   \rule[-.02ex]{.25em}{.4pt}\llap{\rule[\ht0]{.25em}{.4pt}}}
 \def\leftouterjoin{\mathbin{\ojoin\mkern-5.8mu\bowtie}}
