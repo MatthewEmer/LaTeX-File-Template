@@ -10,7 +10,7 @@
 \usepackage{float} % Postitioning Images.
 
 \usepackage{dirtytalk} % Speech & Quote Marks.
-\usepackage{hyperref} % Hyperlinks.
+\usepackage{hyperref} % Hyperlinks and References.
 \usepackage{xcolor} % Coloured Text.
 \usepackage{enumitem} % Letter Bullets. 
 % \begin{enumerate}[label=\alph*.] 
@@ -33,14 +33,26 @@
     \monthname[\THEMONTH] \THEYEAR
 }
 
+\newdateformat{yeardate}
+{%
+    \THEYEAR
+}
+
+% Colouring and Spacing.
 \newcommand{\colour}[2] {\color{#1}#2\color{black}}
 \newcommand{\separate}[1] {\vspace{#1 pt}\noindent}
 
+% Maths Number Sets.
 \newcommand{\R}{\mathbf{R}}
 \newcommand{\N}{\mathbf{N}}
 \newcommand{\C}{\mathbf{C}}
 \newcommand{\Q}{\mathbf{Q}}
 \newcommand{\Z}{\mathbf{Z}}
+
+% Document Colour Scheme.
+\newcommand{\definition}[2]{\colour{blue}{\textbf{#1}: #2.}}
+\newcommand{\theorem}[2]{\colour{red}{\textbf{Theorem #1}: #2.}}
+\newcommand{\lemma}[2]{\colour{magenta}{\textbf{Lemma #1}: #2.}}
 
 %%
 
@@ -60,7 +72,7 @@
 
 \pagestyle{fancy}
 \fancyfoot{}
-\fancyfoot[L]{Written by [Author Name]}
+\fancyfoot[L]{Written by [Author Name] \\ \textit{Template: Copyright \date{\yeardate\today}, Matthew Emerson}}
 \fancyfoot[R]{Page \thepage \, of\, \pageref{LastPage}}
 
 %%
