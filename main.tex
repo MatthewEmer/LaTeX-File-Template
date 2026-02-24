@@ -13,7 +13,7 @@
 \usepackage{hyperref} % Hyperlinks.
 \usepackage{xcolor} % Coloured Text.
 \usepackage{enumitem} % Letter Bullets. 
-% \begin{enumerate}[label=\Alph*.] 
+% \begin{enumerate}[label=\alph*.] 
 
 \usepackage{amssymb} % Maths Symbols.
 \usepackage{amsmath} % Maths Tools.
@@ -42,21 +42,14 @@
 \newcommand{\Q}{\mathbf{Q}}
 \newcommand{\Z}{\mathbf{Z}}
 
-% JOINS
-\def\ojoin{\setbox0=\hbox{$\bowtie$}%
-  \rule[-.02ex]{.25em}{.4pt}\llap{\rule[\ht0]{.25em}{.4pt}}}
-\def\leftouterjoin{\mathbin{\ojoin\mkern-5.8mu\bowtie}}
-\def\rightouterjoin{\mathbin{\bowtie\mkern-5.8mu\ojoin}}
-\def\fullouterjoin{\mathbin{\ojoin\mkern-5.8mu\bowtie\mkern-5.8mu\ojoin}}
-
 %%
 
 
 %% Setting up the Document.
 
-\title{New LaTeX Template}
-\author{MATTHEW EMERSON}
-\date{\monthyeardate\today}
+\title{[Document Title]}
+\author{[AUTHOR NAME]}
+\date{\monthyeardate\today} % Edit this to get a static date.
 
 \begin{document}
 
@@ -67,7 +60,7 @@
 
 \pagestyle{fancy}
 \fancyfoot{}
-\fancyfoot[L]{Written by Matthew Emerson}
+\fancyfoot[L]{Written by [Author Name]}
 \fancyfoot[R]{Page \thepage \, of\, \pageref{LastPage}}
 
 %%
@@ -98,9 +91,13 @@
 \setcounter{page}{0}
 \newpage
 
-\part{Part 1}
+\part{Example Part 1}
 
-\newpage\part{Part 2}
+\section{Example Section 1}
+
+\newpage\section{Example Section 2}
+
+\newpage\part{Example Part 2}
 \setcounter{section}{0}
 
 \end{document}
