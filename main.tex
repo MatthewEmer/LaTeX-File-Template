@@ -52,9 +52,12 @@
 \newcommand{\Z}{\mathbb{Z}}
 
 % Document Colour Scheme.
-\newcommand{\definition}[2]{\colour{blue}{\textbf{#1}: #2 }}
-\newcommand{\theorem}[2]{\colour{red}{\textbf{Theorem #1}: #2 }}
-\newcommand{\lemma}[2]{\colour{magenta}{\textbf{Lemma #1}: #2 }}
+\newcommand{\definition}[2]{(#1) \textbf{Definition}: #2}
+\newcommand{\theorem}[2]{(#1) \textbf{Theorem}: #2}
+\newcommand{\lemma}[2]{(#1) \textbf{Lemma}: #2}
+\newcommand{\example}[2]{(#1) \textbf{Example}: #2}
+\newcommand{\conjecture}[2]{(#1) \textbf{Conjecture}: #2}
+\newcommand{\proof}[1]{\textbf{Proof}: #1 \begin{flushright}\(\square\)\end{flushright}}
 
 %%
 
@@ -94,8 +97,6 @@
 \thispagestyle{empty}
 
 \tableofcontents
-
-\separate{10}In this document, the following colour scheme will be used: \\ \colour{blue}{definitions}, \colour{red}{theorems}, and \colour{magenta}{lemmas}.
 
 %% 
 
