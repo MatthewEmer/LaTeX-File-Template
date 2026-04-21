@@ -81,6 +81,16 @@
     \label{fig:#1}
 \end{figure}}
 
+\newcommand{\algorithmBlock}[4]
+{\begin{algorithm}
+    \caption{#1}
+    \begin{algorithmic}
+        \State \textbf{Input}: #2
+        \State \textbf{Output}: #3
+        \separate{5}#4
+    \end{algorithmic}
+\end{algorithm}}
+
 %%%
 
 
@@ -145,9 +155,12 @@ You can easily use the basic maths number sets \(\N, \,\Z, \,\Q, \,\R, \,\I, \,\
     \item \lemma{0.0.1}{Lemma here.}{Proof here.}
 \end{itemize}
 
+\algorithmBlock{Algorithm Caption}{The algorithm's input}{The algorithm's output}
+{\State The algorithm's code}
+
 \image{dogs}{Images/Template Image.jpeg}{Some Dogs}{0.5}
 
-\separate{10}See the custom title page, header, and footer.
+See the custom title page, header, and footer.
 
 \end{document}
 
