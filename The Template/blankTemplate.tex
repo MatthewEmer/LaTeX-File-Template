@@ -1,0 +1,140 @@
+\documentclass{article}
+
+%%% Package List
+
+\usepackage{datetime} % Dates.
+\usepackage{fancyhdr} % Headers.
+\usepackage{lastpage} % Page References.
+
+\usepackage{graphicx} % Inserting Images.
+\usepackage{float} % Postitioning Images.
+
+\usepackage{dirtytalk} % Speech & Quote Marks.
+\usepackage{hyperref} % Hyperlinks and References.
+\usepackage{xcolor} % Coloured Text.
+\usepackage{enumitem} % Letter Bullets. 
+
+\usepackage{amssymb} % Maths Symbols.
+\usepackage{amsmath} % Maths Tools.
+
+\usepackage{algpseudocode} % Pseudocode.
+\usepackage{algorithm} % Algorithms.
+\usepackage{minted} % Code Snippets.
+
+\usepackage[margin=1in]{geometry} % Reduces the Page Margins.
+
+%%%
+
+
+
+%%% Page Variables
+\newcommand{\thetitle}{Document Title} % Insert the document title here.
+\newcommand{\theauthor}{Author Name} % Insert the name(s) of the author(s) here.
+\newcommand{\thesubtitle}{Document Subtitle} % Insert the document subtitle here.
+\newcommand{\thedate}{\monthyeardate\today} % Replace this if you want a static date.
+%%%
+
+
+
+%%% Custom Formats and Commands
+
+\hypersetup{colorlinks=true, urlcolor=black, linkcolor=black}
+
+
+% Date Formats.
+\newdateformat{monthyeardate}
+{%
+    \monthname[\THEMONTH] \THEYEAR
+}
+
+\newdateformat{yeardate}
+{%
+    \THEYEAR
+}
+
+
+% Colouring and Spacing.
+\newcommand{\colour}[2] {\color{#1}#2\color{black}}
+\newcommand{\separate}[1] {\vspace{#1 pt}\noindent}
+
+
+% Maths Number Sets.
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+
+
+% Custom Formats.
+\newcommand{\definition}[2]{\textbf{Definition #1}: #2\label{def:#1}}
+\newcommand{\example}[2]{\textbf{Example #1}: #2\label{ex:#1}}
+\newcommand{\conjecture}[2]{\textbf{Conjecture #1}: #2\label{cnj:#1}}
+\newcommand{\numberedentry}[3]{\textbf{#2 #1}: #3\label{entry:#1}}
+\newcommand{\proof}[2]{\textit{Proof}: #2 \begin{flushright}\(\square\)\end{flushright}\label{prf:#1}}
+\newcommand{\theorem}[3]{\textbf{Theorem #1}: #2 \par\separate{3}\proof{thm:#1}{#3}\label{thm:#1}}
+\newcommand{\lemma}[3]{\textbf{Lemma #1}: #2 \par\separate{3}\proof{lem:#1}{#3}\label{lem:#1}}
+
+
+% Advanced Formats.
+\newcommand{\image}[4]
+{\begin{figure}[H]
+    \centering
+    \includegraphics[width=#4\linewidth]{#2}
+    \caption{#3}
+    \label{fig:#1}
+\end{figure}}
+
+\newcommand{\algorithmBlock}[4]
+{\begin{algorithm}
+    \caption{#1}
+    \begin{algorithmic}
+        \State \textbf{Input}: #2
+        \State \textbf{Output}: #3
+        \separate{5}#4
+    \end{algorithmic}
+\end{algorithm}}
+
+%%%
+
+
+
+%%% Document Setup
+
+% Title Page.
+\title{\thetitle\\[0.5em]\large{\thesubtitle}}
+\author{\theauthor}
+\date{\thedate} 
+
+
+% Custom Page Header.
+\fancyhead{}
+\fancyhead[R]{\thetitle\text{ - }\thesubtitle}
+
+% Custom Page Footer.
+\fancyfoot{}
+\fancyfoot[L]{Written by \theauthor \\ 
+\textit{\LaTeX \,Template: Copyright \date{\yeardate\today}, Matthew Emerson}} % Do not edit.
+\fancyfoot[R]{Page \thepage \, of\, \pageref{LastPage}}
+
+
+% Setting Up Pages.
+\pagestyle{empty}\begin{document}
+\maketitle\thispagestyle{empty} % Title Page.
+\newpage\tableofcontents % Contents Page.
+
+\clearpage\setcounter{page}{1}\newpage % Excludes the title and contents page from page count.
+\pagestyle{fancy}
+
+%%%
+
+
+
+%%% Document Content
+
+
+
+\end{document}
+
+%%%
