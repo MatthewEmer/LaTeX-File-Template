@@ -29,8 +29,8 @@
 
 %%% Page Variables
 \newcommand{\thetitle}{Document Title} % Insert the document title here.
-\newcommand{\theauthor}{Author Name} % Insert the name(s) of the author(s) here.
 \newcommand{\thesubtitle}{Document Subtitle} % Insert the document subtitle here.
+\newcommand{\theauthor}{Author Name} % Insert the name(s) of the author(s) here.
 \newcommand{\thedate}{\monthyeardate\today} % Replace this if you want a static date.
 %%%
 
@@ -87,13 +87,14 @@
 \end{figure}}
 
 \newcommand{\algorithmBlock}[4]
-{\begin{algorithm}
+{\begin{algorithm}[H]
     \caption{#1}
     \begin{algorithmic}
         \State \textbf{Input}: #2
         \State \textbf{Output}: #3
         \separate{5}#4
     \end{algorithmic}
+    \label{alg:#1}
 \end{algorithm}}
 
 %%%
