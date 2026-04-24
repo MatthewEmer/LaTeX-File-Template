@@ -69,10 +69,9 @@ Sets out a theorem or lemma environment for an academic paper with corresponding
 Places an image on the page.
 
 *Parameters*
-- #1: Number - the number for the image.
-- #2: Image - the file path for the image.
-- #3: Caption - the image caption.
-- #4: Width - the width of the image, relative to the page width.
+- #1: Image - the file path for the image.
+- #2: Caption - the image caption.
+- #3: Width - the width of the image, relative to the page width.
 
 #### \algorithmblock
 Places a pseudocode algorithm on the page.

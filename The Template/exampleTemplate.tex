@@ -78,12 +78,12 @@
 
 
 % Advanced Formats.
-\newcommand{\image}[4]
+\newcommand{\image}[3]
 {\begin{figure}[H]
     \centering
-    \includegraphics[width=#4\linewidth]{#2}
-    \caption{#3}
-    \label{fig:#1}
+    \includegraphics[width=#3\linewidth]{#1}
+    \caption{#2}
+    \label{fig:#2}
 \end{figure}}
 
 \newcommand{\algorithmBlock}[4]
@@ -162,7 +162,7 @@ You can easily use the basic maths number sets \(\N, \,\Z, \,\Q, \,\R, \,\I, \,\
 \algorithmBlock{Algorithm Caption}{The algorithm's input}{The algorithm's output}
 {\State The algorithm's code}
 
-\image{dogs}{Images/Template Image.jpeg}{Some Dogs}{0.5}
+\image{Images/Template Image.jpeg}{Some Dogs}{0.5}
 
 See the custom title page, header, and footer.
 
