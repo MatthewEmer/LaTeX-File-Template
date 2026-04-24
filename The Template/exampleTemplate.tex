@@ -78,24 +78,40 @@
 
 
 % Advanced Formats.
-\newcommand{\image}[3]
-{\begin{figure}[H]
-    \centering
-    \includegraphics[width=#3\linewidth]{#1}
-    \caption{#2}
-    \label{fig:#2}
-\end{figure}}
+\newcommand{\insertimage}[3]
+{
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=#3\linewidth]{#1}
+        \caption{#2}
+        \label{fig:#2}
+    \end{figure}
+}
 
-\newcommand{\algorithmBlock}[4]
-{\begin{algorithm}[H]
-    \caption{#1}
-    \begin{algorithmic}
-        \State \textbf{Input}: #2
-        \State \textbf{Output}: #3
-        \separate{5}#4
-    \end{algorithmic}
-    \label{alg:#1}
-\end{algorithm}}
+\newcommand{\insertalgorithm}[4]
+{
+    \begin{algorithm}[H]
+        \caption{#1}
+        \begin{algorithmic}
+            \State \textbf{Input}: #2
+            \State \textbf{Output}: #3
+            \separate{5}#4
+        \end{algorithmic}
+        \label{alg:#1}
+    \end{algorithm}
+}
+
+\newcommand{\inserttable}[4]
+{
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|#1|}
+            \hline #3 \\ \hline #4 \hline
+        \end{tabular}
+        \caption{#2}
+        \label{tab:#2}
+    \end{table}
+}
 
 %%%
 
@@ -159,10 +175,20 @@ You can easily use the basic maths number sets \(\N, \,\Z, \,\Q, \,\R, \,\I, \,\
     \item \lemma{0.0.1}{Lemma here.}{Proof here.}
 \end{itemize}
 
-\algorithmBlock{Algorithm Caption}{The algorithm's input}{The algorithm's output}
-{\State The algorithm's code}
+\insertalgorithm{Algorithm Caption}{The algorithm's input}{The algorithm's output}
+{
+    \State The algorithm's code
+}
 
-\image{Images/Template Image.jpeg}{Some Dogs}{0.5}
+\insertimage{Images/Template Image.jpeg}{Some Dogs}{0.5}
+
+\inserttable{c|c|c}{The table's caption}
+{\textbf{Column 1} & \textbf{Column 2} & \textbf{Column 3}}
+{
+    Cell 1 & Cell 2 & Cell 3 \\ 
+    Cell 4 & Cell 5 & Cell 6 \\ 
+    Cell 7 & Cell 8 & Cell 9 \\
+}
 
 See the custom title page, header, and footer.
 

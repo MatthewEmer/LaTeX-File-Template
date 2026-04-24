@@ -65,7 +65,7 @@ Sets out a theorem or lemma environment for an academic paper with corresponding
 - #2: Theorem/Lemma - the actual theorem or lemma.
 - #3: Proof - the proof for the theorem or lemma.
 
-#### \image
+#### \insertimage
 Places an image on the page.
 
 *Parameters*
@@ -73,7 +73,7 @@ Places an image on the page.
 - #2: Caption - the image caption.
 - #3: Width - the width of the image, relative to the page width.
 
-#### \algorithmblock
+#### \insertalgorithm
 Places a pseudocode algorithm on the page.
 
 *Parameters*
@@ -81,3 +81,12 @@ Places a pseudocode algorithm on the page.
 - #2: Input - the input for the algorithm.
 - #3: Output - the output of the algorithm.
 - #4: Code - the code for the algorithm.
+
+#### \inserttable
+Places a table on the page.
+
+*Parameters*
+- #1: Formatting - how many columns, and their borders.
+- #2: Caption - the caption for the table.
+- #3: Headers - the labels for each column.
+- #4: Content - the main content of the table.

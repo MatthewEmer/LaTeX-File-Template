@@ -78,23 +78,40 @@
 
 
 % Advanced Formats.
-\newcommand{\image}[3]
-{\begin{figure}[H]
-    \centering
-    \includegraphics[width=#3\linewidth]{#1}
-    \caption{#2}
-    \label{fig:#2}
-\end{figure}}
+\newcommand{\insertimage}[3]
+{
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=#3\linewidth]{#1}
+        \caption{#2}
+        \label{fig:#2}
+    \end{figure}
+}
 
-\newcommand{\algorithmBlock}[4]
-{\begin{algorithm}
-    \caption{#1}
-    \begin{algorithmic}
-        \State \textbf{Input}: #2
-        \State \textbf{Output}: #3
-        \separate{5}#4
-    \end{algorithmic}
-\end{algorithm}}
+\newcommand{\insertalgorithm}[4]
+{
+    \begin{algorithm}[H]
+        \caption{#1}
+        \begin{algorithmic}
+            \State \textbf{Input}: #2
+            \State \textbf{Output}: #3
+            \separate{5}#4
+        \end{algorithmic}
+        \label{alg:#1}
+    \end{algorithm}
+}
+
+\newcommand{\inserttable}[4]
+{
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|#1|}
+            \hline #3 \\ \hline #4 \hline
+        \end{tabular}
+        \caption{#2}
+        \label{tab:#2}
+    \end{table}
+}
 
 %%%
 
