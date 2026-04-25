@@ -91,7 +91,7 @@ Places a table on the page.
 - #3: Headers - the labels for each column.
 - #4: Content - the main content of the table.
 
-#### \insertjoin, \insertleftouterjoin, \insertrightouterjoin, \insertfullouterjoin
+#### \insertinnerjoin, \insertleftouterjoin, \insertrightouterjoin, \insertfullouterjoin
 Outputs the corresponding join symbol onto the page.
 
 *Parameters*
