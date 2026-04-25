@@ -29,7 +29,7 @@
 
 %%% Custom Formats and Commands
 
-\newcommand{\templateversion}{1.5.0} % Do not edit this variable.
+\newcommand{\templateversion}{1.5.1} % Do not edit this variable.
 
 \hypersetup{colorlinks=true, urlcolor=black, linkcolor=black}
 
@@ -73,7 +73,7 @@
 % Join Symbols.
 \newcommand{\ojoin}{\setbox0=\hbox{$\bowtie$}%
     \rule[-.02ex]{.25em}{.4pt}\llap{\rule[\ht0]{.25em}{.4pt}}}
-\newcommand{\insertjoin}{\mathbin{\bowtie\mkern-5.8mu}}
+\newcommand{\insertinnerjoin}{\mathbin{\bowtie\mkern-5.8mu}\;}
 \newcommand{\insertleftouterjoin}{\mathbin{\ojoin\mkern-5.8mu\bowtie}}
 \newcommand{\insertrightouterjoin}{\mathbin{\bowtie\mkern-5.8mu\ojoin}}
 \newcommand{\insertfullouterjoin}{\mathbin{\ojoin\mkern-5.8mu\bowtie\mkern-5.8mu\ojoin}}
@@ -171,7 +171,7 @@
 
 \section{Section}
 
-You can easily use the basic maths number sets \(\N, \,\Z, \,\Q, \,\R, \,\I, \,\C\) by typing \(\backslash[letter]\) and the join symbols \(\insertjoin \; \insertleftouterjoin \; \insertrightouterjoin \; \insertfullouterjoin\) by typing \(\backslash[join type]\).
+You can easily use the basic maths number sets \(\N, \,\Z, \,\Q, \,\R, \,\I, \,\C\) by typing \(\backslash[letter]\) and the join symbols \(\insertinnerjoin \; \insertleftouterjoin \; \insertrightouterjoin \; \insertfullouterjoin\) by typing \(\backslash[join type]\).
 
 \separate{10}\(\backslash separate\{[space]\}\) adds space between paragraphs and removes indents.
 
