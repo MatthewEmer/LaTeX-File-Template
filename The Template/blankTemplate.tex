@@ -29,8 +29,6 @@
 
 %%% Custom Formats and Commands
 
-\newcommand{\templateversion}{1.5.0} % Do not edit this variable.
-
 \hypersetup{colorlinks=true, urlcolor=black, linkcolor=black}
 
 
@@ -108,9 +106,7 @@
     \begin{table}[H]
         \centering
         \begin{tabular}{|#1|}
-            \hline #3 \\ 
-            \hline #4\\
-            \hline 
+            \hline #3 \\ \hline #4 \hline
         \end{tabular}
         \caption{#2}
         \label{tab:#2}
@@ -139,23 +135,8 @@
 \textit{\LaTeX \,Template v.\templateversion: Copyright \date{\yeardate\today}, Matthew Emerson}} % Do not edit.
 \fancyfoot[R]{Page \thepage \, of\, \pageref{LastPage}}
 
-%%%
 
-
-
-%%% Page Variables
-
-\newcommand{\thetitle}{Document Title} % Insert the document title here.
-\newcommand{\thesubtitle}{Document Subtitle} % Insert the document subtitle here.
-\newcommand{\theauthor}{Author(s)} % Insert the name(s) of the author(s) here.
-\newcommand{\thedate}{\monthyeardate\today} % Replace this if you want a static date.
-
-%%%
-
-
-
-%%% Setting Up Pages.
-
+% Setting Up Pages.
 \pagestyle{empty}\begin{document}
 \maketitle\thispagestyle{empty} % Title Page.
 \newpage\tableofcontents % Contents Page.
