@@ -17,13 +17,9 @@ This LaTeX file template is a clean, easy to use template, with multiple custom 
 ### Setup
 
 1. Go to Releases and download the latest release from the repository.
-<<<<<<< HEAD
-2. Open *blanktemplate.tex* and find lines 148-151. 
-=======
-2. Open *blanktemplate.tex* and find lines 139-142. 
->>>>>>> 782d18de79bb973ec585a748a3ff7737b42b5dc4
+2. Open *blanktemplate.tex* and find lines 146-149. 
 3. Edit the values in the second set of curly brackets on each line to edit the title page, headers, and footers.
-4. Find line 172 and start adding the main content for the document.
+4. Find line 170 and start adding the main content for the document.
 
 ### Custom Functions
 
