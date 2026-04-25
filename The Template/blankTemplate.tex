@@ -27,18 +27,9 @@
 
 
 
-%%% Page Variables
-\newcommand{\thetitle}{Document Title} % Insert the document title here.
-\newcommand{\thesubtitle}{Document Subtitle} % Insert the document subtitle here.
-\newcommand{\theauthor}{Author Name} % Insert the name(s) of the author(s) here.
-\newcommand{\thedate}{\monthyeardate\today} % Replace this if you want a static date.
-
-\newcommand{\templateversion}{1.4.0} % Do not edit this variable.
-%%%
-
-
-
 %%% Custom Formats and Commands
+
+\newcommand{\templateversion}{1.5.0} % Do not edit this variable.
 
 \hypersetup{colorlinks=true, urlcolor=black, linkcolor=black}
 
@@ -79,6 +70,15 @@
 \newcommand{\lemma}[3]{\textbf{Lemma #1}: #2 \par\separate{3}\proof{lem:#1}{#3}\label{lem:#1}}
 
 
+% Join Symbols.
+\newcommand{\ojoin}{\setbox0=\hbox{$\bowtie$}%
+    \rule[-.02ex]{.25em}{.4pt}\llap{\rule[\ht0]{.25em}{.4pt}}}
+\newcommand{\insertjoin}{\mathbin{\bowtie\mkern-5.8mu}}
+\newcommand{\insertleftouterjoin}{\mathbin{\ojoin\mkern-5.8mu\bowtie}}
+\newcommand{\insertrightouterjoin}{\mathbin{\bowtie\mkern-5.8mu\ojoin}}
+\newcommand{\insertfullouterjoin}{\mathbin{\ojoin\mkern-5.8mu\bowtie\mkern-5.8mu\ojoin}}
+
+
 % Advanced Formats.
 \newcommand{\insertimage}[3]
 {
@@ -108,7 +108,9 @@
     \begin{table}[H]
         \centering
         \begin{tabular}{|#1|}
-            \hline #3 \\ \hline #4 \hline
+            \hline #3 \\ 
+            \hline #4\\
+            \hline 
         \end{tabular}
         \caption{#2}
         \label{tab:#2}
@@ -137,8 +139,23 @@
 \textit{\LaTeX \,Template v.\templateversion: Copyright \date{\yeardate\today}, Matthew Emerson}} % Do not edit.
 \fancyfoot[R]{Page \thepage \, of\, \pageref{LastPage}}
 
+%%%
 
-% Setting Up Pages.
+
+
+%%% Page Variables
+
+\newcommand{\thetitle}{Document Title} % Insert the document title here.
+\newcommand{\thesubtitle}{Document Subtitle} % Insert the document subtitle here.
+\newcommand{\theauthor}{Author(s)} % Insert the name(s) of the author(s) here.
+\newcommand{\thedate}{\monthyeardate\today} % Replace this if you want a static date.
+
+%%%
+
+
+
+%%% Setting Up Pages.
+
 \pagestyle{empty}\begin{document}
 \maketitle\thispagestyle{empty} % Title Page.
 \newpage\tableofcontents % Contents Page.
