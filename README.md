@@ -90,3 +90,9 @@ Places a table on the page.
 - #2: Caption - the caption for the table.
 - #3: Headers - the labels for each column.
 - #4: Content - the main content of the table.
+
+#### \insertjoin, \insertleftouterjoin, \insertrightouterjoin, \insertfullouterjoin
+Outputs the corresponding join symbol onto the page.
+
+*Parameters*
+- n/a
