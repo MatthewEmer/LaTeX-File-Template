@@ -29,7 +29,7 @@
 
 %%% Custom Formats and Commands
 
-\newcommand{\templateversion}{1.5.1} % Do not edit this variable.
+\newcommand{\templateversion}{1.6.1} % Do not edit this variable.
 
 \hypersetup{colorlinks=true, urlcolor=black, linkcolor=black}
 
@@ -51,13 +51,17 @@
 \newcommand{\separate}[1] {\vspace{#1 pt}\noindent}
 
 
-% Maths Number Sets.
+% Simplified Maths Notation.
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\I}{\mathbb{I}}
+
+\newcommand{\hessian}[1]{\mathbf{H}_{#1}}
+\newcommand{\jacobian}[1]{\mathbf{J}_{#1}}
+\newcommand{\lagrange}{\mathcal{L}}
 
 
 % Custom Formats.
@@ -171,7 +175,7 @@
 
 \section{Section}
 
-You can easily use the basic maths number sets \(\N, \,\Z, \,\Q, \,\R, \,\I, \,\C\) by typing \(\backslash[letter]\) and the join symbols \(\insertinnerjoin \; \insertleftouterjoin \; \insertrightouterjoin \; \insertfullouterjoin\) by typing \(\backslash[join type]\).
+You can easily use the basic maths number sets \(\N, \,\Z, \,\Q, \,\R, \,\I, \,\C\) by typing \(\backslash[letter]\) and the join symbols \(\insertinnerjoin \; \insertleftouterjoin \; \insertrightouterjoin \; \insertfullouterjoin\) by typing \(\backslash[join type]\) as well as calculus notation such as \(\hessian{f},\;\jacobian{f},\;\lagrange\) by typing \(\backslash[notation]\).
 
 \separate{10}\(\backslash separate\{[space]\}\) adds space between paragraphs and removes indents.
 

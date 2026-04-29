@@ -96,3 +96,14 @@ Outputs the corresponding join symbol onto the page.
 
 *Parameters*
 - n/a
+
+#### \hessian, \jacobian
+Outputs the corresponding matrix notation onto the page.
+
+*Parameters*
+- #1: Function - the function the matrix is formed from.
+
+#### \jacobian
+Outputs the jacobian function symbol onto the page.
+*Parameters*
+- n/a
