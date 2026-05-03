@@ -107,3 +107,11 @@ Outputs the corresponding matrix notation onto the page.
 Outputs the jacobian function symbol onto the page.
 *Parameters*
 - n/a
+
+#### \standardproblem
+Sets out a standard problem environment with a solution for an academic paper.
+
+*Parameters*
+- #1: Number - the number of the problem.
+- #2: Problem - the actual problem.
+- #3: Proof - the solution to the problem.
