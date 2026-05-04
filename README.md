@@ -57,13 +57,13 @@ Sets out a custom entry environment for an academic paper.
 - #2: Entry Type - the type of the numbered entry.
 - #3: Content - the content for the entry.
 
-#### \theorem and \lemma
-Sets out a theorem or lemma environment for an academic paper with corresponding proof.
+#### \theorem, \proposition, and \lemma
+Sets out a theorem, proposition, or lemma environment for an academic paper with corresponding proof.
 
 *Parameters*
-- #1: Number - the number of the theorem or lemma.
-- #2: Theorem/Lemma - the actual theorem or lemma.
-- #3: Proof - the proof for the theorem or lemma.
+- #1: Number - the number of the theorem, proposition, or lemma.
+- #2: Theorem/Lemma/Proposition - the actual theorem, proposition, or lemma.
+- #3: Proof - the proof for the theorem, proposition, or lemma.
 
 #### \insertimage
 Places an image on the page.
@@ -97,7 +97,7 @@ Outputs the corresponding join symbol onto the page.
 *Parameters*
 - n/a
 
-#### \hessian, \jacobian
+#### \hessian and \jacobian
 Outputs the corresponding matrix notation onto the page.
 
 *Parameters*

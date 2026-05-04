@@ -29,7 +29,7 @@
 
 %%% Custom Formats and Commands
 
-\newcommand{\templateversion}{1.7.0} % Do not edit this variable.
+\newcommand{\templateversion}{1.8.0} % Do not edit this variable.
 
 \hypersetup{colorlinks=true, urlcolor=black, linkcolor=black}
 
@@ -72,6 +72,7 @@
 \newcommand{\proof}[2]{\textit{Proof}: #2 \begin{flushright}\(\square\)\end{flushright}\label{prf:#1}}
 \newcommand{\theorem}[3]{\textbf{Theorem #1}: #2 \par\separate{3}\proof{thm:#1}{#3}\label{thm:#1}}
 \newcommand{\lemma}[3]{\textbf{Lemma #1}: #2 \par\separate{3}\proof{lem:#1}{#3}\label{lem:#1}}
+\newcommand{\proposition}[3]{\textbf{Proposition #1}: #2 \par\separate{3}\proof{prop:#1}{#3}\label{prop:#1}}
 \newcommand{\standardproblem}[3]{\textbf{Standard Problem #1}: #2 \par\separate{3}\textit{Solution}: #3\label{prob:#1}}
 
 
@@ -102,7 +103,7 @@
         \begin{algorithmic}
             \State \textbf{Input}: #2
             \State \textbf{Output}: #3
-            \separate{5}#4
+            \separate{7}#4
         \end{algorithmic}
         \label{alg:#1}
     \end{algorithm}
