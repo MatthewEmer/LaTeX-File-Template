@@ -29,7 +29,7 @@
 
 %%% Custom Formats and Commands
 
-\newcommand{\templateversion}{1.8.0} % Do not edit this variable.
+\newcommand{\templateversion}{1.9.0} % Do not edit this variable.
 
 \hypersetup{colorlinks=true, urlcolor=black, linkcolor=black}
 
@@ -62,6 +62,7 @@
 \newcommand{\hessian}[1]{\mathbf{H}_{#1}}
 \newcommand{\jacobian}[1]{\mathbf{J}_{#1}}
 \newcommand{\lagrange}{\mathcal{L}}
+\newcommand{\dotproduct}[2]{\langle\mathbf{#1},\mathbf{#2}\rangle}
 
 
 % Custom Formats.
@@ -177,7 +178,7 @@
 
 \section{Section}
 
-You can easily use the basic maths number sets \(\N, \,\Z, \,\Q, \,\R, \,\I, \,\C\) by typing \(\backslash[letter]\) and the join symbols \(\insertinnerjoin \; \insertleftouterjoin \; \insertrightouterjoin \; \insertfullouterjoin\) by typing \(\backslash[join type]\) as well as calculus notation such as \(\hessian{f},\;\jacobian{f},\;\lagrange\) by typing \(\backslash[notation]\).
+You can easily use the basic maths number sets \(\N, \,\Z, \,\Q, \,\R, \,\I, \,\C\) by typing \(\backslash[letter]\) and the join symbols \(\insertinnerjoin \; \insertleftouterjoin \; \insertrightouterjoin \; \insertfullouterjoin\) by typing \(\backslash[join type]\) as well as calculus notation such as \(\hessian{f},\;\jacobian{f},\;\lagrange\) by typing \(\backslash[notation]\). You can also use \(\dotproduct{u+v}{w}\) by typing \(\backslash dotproduct\{[vector1]\}\{[vector2]\}\).
 
 \separate{10}\(\backslash separate\{[space]\}\) adds space between paragraphs and removes indents.
 

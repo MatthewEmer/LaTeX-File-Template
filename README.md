@@ -115,3 +115,10 @@ Sets out a standard problem environment with a solution for an academic paper.
 - #1: Number - the number of the problem.
 - #2: Problem - the actual problem.
 - #3: Proof - the solution to the problem.
+
+#### \dotproduct
+Outputs the dot product notation between the two given vectors.
+
+*Parameters*
+- #1: Vector 1 - the vector(s) on the left-hand side of the dot product (do not make bold).
+- #2: Vector 2 - the vector(s) on the right-hand side of the dot product (do not make bold).
