@@ -46,14 +46,14 @@ Outputs the corresponding number set symbol.
 Sets out a definition, example, conjecture, or proof environment for an academic paper.
 
 *Parameters*
-- #1: Number - the number of the definition, example, conjecture, or proof.
+- #1: Label - the label for the definition, example, conjecture, or proof.
 - #2: Content - the content for the definition, example, conjecture, or proof.
 
 #### \numberedentry
 Sets out a custom entry environment for an academic paper.
 
 *Parameters*
-- #1: Number - the number of the entry.
+- #1: Label - the label for the entry.
 - #2: Entry Type - the type of the numbered entry.
 - #3: Content - the content for the entry.
 
@@ -61,7 +61,7 @@ Sets out a custom entry environment for an academic paper.
 Sets out a theorem, proposition, or lemma environment for an academic paper with corresponding proof.
 
 *Parameters*
-- #1: Number - the number of the theorem, proposition, or lemma.
+- #1: Label - the label for the theorem, proposition, or lemma.
 - #2: Theorem/Lemma/Proposition - the actual theorem, proposition, or lemma.
 - #3: Proof - the proof for the theorem, proposition, or lemma.
 
@@ -112,7 +112,7 @@ Outputs the jacobian function symbol onto the page.
 Sets out a standard problem environment with a solution for an academic paper.
 
 *Parameters*
-- #1: Number - the number of the problem.
+- #1:Label - the label for the problem.
 - #2: Problem - the actual problem.
 - #3: Proof - the solution to the problem.
 
