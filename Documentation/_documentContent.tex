@@ -1,3 +1,37 @@
+\section{Introduction}
+
+Thank you for choosing to use \LaTeX\ File Template. If you find any bugs or want some feature not currently included, then my contact information can be found on my GitHub: https://github.com/MatthewEmer.
+
+\separate{7}This document is intended for academics (with special focus on those in the fields of computer science or mathematics) who want to write papers or other related documents in a consistent format which ties in with standard practises from other published papers. This guide consists of setup instructions to download the files and create your first document, before moving onto the custom commands/environments designed to speed up academic writing. Before using this guide, I would suggest that you have some practise with some basic \LaTeX\ commands using a guide such as https://www.overleaf.com/learn.
+
 \section{Document Setup}
+
+\subsection{The Files}
+
+The actual \LaTeX\ file template is contained in the folder \textit{The Template} and consists of four files: \textit{template.tex}, \textit{\_documentContent.tex}, \textit{\_appendix.tex}, and \textit{template.pdf}. To use the template, all four files must be downloaded and placed in the same folder.
+
+\subsubsection{template.tex}
+
+This file sets up the structure of the document, as well as acting as a compiler for the other two \textit{.tex} files, ensuring they get inserted into the right sections of the document. When creating your document, you need to edit lines 12-15 of this file to create the title page, alongside the document header and footer, as described in \hyperref[tab:Lines to edit.]{Table 1}.
+
+\inserttable{c|c|c}{Lines to edit.}
+{\textbf{Line} & \textbf{Variable Name} & \textbf{Description}}
+{12 & thetitle & The document's title. This will be placed in the header. \\
+13 & thesubtitle & The document's (optional) subtitle. This will be placed in the header. \\
+14 & theauthor & The list of authors. This will be placed in the footer. \\
+15 & thedate & Replace the code if you want a static date (rather than date of last compile).
+}
+
+\subsubsection{\_documentContent.tex}
+
+\subsubsection{\_appendix.tex}
+
+\subsubsection{template.pdf}
+
+\subsubsection{Additional Notes}
+
+To add images to the document, create a subfolder called \textit{Images} within the same folder as the template and store any images you wish to use in there.
+
+\separate{9}If placing the document within a GitHub repository, you may want to copy over the \textit{.gitignore} from this repository as it is set up to ignore any \LaTeX\ build files.
 
 \section{Custom Commands}
