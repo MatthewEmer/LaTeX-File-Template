@@ -24,9 +24,15 @@ This file sets up the structure of the document, as well as acting as a compiler
 
 \subsubsection{\_documentContent.tex}
 
+This file allows you to add all the main content of the document you are trying to write. It will be inserted after the table of contents, but before the appendix (if you choose to add one). By default it contains an example section and definition. Only pages in this file are counted towards the page count of the document.
+
 \subsubsection{\_appendix.tex}
 
+This file allows you to add an optional appendix to the end of your document which is not counted towards your page count. By default it contains a unnumbered part title which has been inserted into the table of contents.  
+
 \subsubsection{template.pdf}
+
+This file contains the output of the \LaTeX compiler. If you want to rename this document while still working on it, then delete this version, alongside any build files your compiler has created and change the name of \textit{template.tex}. 
 
 \subsection{Additional Notes}
 
