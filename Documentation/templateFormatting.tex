@@ -1,0 +1,160 @@
+%%% Importing Packages
+
+\usepackage{datetime} % Formatting dates.
+\usepackage{fancyhdr} % Formatting headers.
+\usepackage{lastpage} % Adding page numbers.
+
+\usepackage{graphicx} % Inserting images.
+\usepackage{float} % Postitioning images.
+
+\usepackage{dirtytalk} % Speech and quote marks.
+\usepackage{hyperref} % Hyperlinks and references.
+\usepackage{xcolor} % Colouring text.
+\usepackage{enumitem} % Formatting ordered lists. 
+
+\usepackage{amssymb} % Additional maths symbols.
+\usepackage{amsmath} % Additional maths tools.
+
+\usepackage{algpseudocode} % Adding pseudocode.
+\usepackage{algorithm} % Adding algorithms.
+\usepackage{minted} % Adding code snippets.
+
+\usepackage[margin=1in]{geometry} % Reduces the page margins.
+
+%%% 
+
+
+
+%%% Custom Formatting
+
+\newcommand{\templateversion}{3.0.0}
+
+\hypersetup{colorlinks=true, urlcolor=black, linkcolor=black} % Formatting URLs and links.
+
+\newdateformat{monthyeardate} % The date format for the title page.
+{%
+    \monthname[\THEMONTH] \THEYEAR
+}
+\newdateformat{yeardate} % The date format for the copyright statement.
+{%
+    \THEYEAR
+}
+
+%%%
+
+
+
+%%% Custom Commands
+
+\newcommand{\colouredText}[2]{\color{#1}#2\color{black}}
+\newcommand{\separate}[1]{\vspace{#1 pt}\noindent}
+
+\newcommand{\comment}[1]{\colouredText{red}{#1}} % Allows you to leave yourself comments.
+
+% Set notation.
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+
+% Maths notation.
+\newcommand{\hessian}[1]{\mathbf{H}_{#1}}
+\newcommand{\jacobian}[1]{\mathbf{J}_{#1}}
+\newcommand{\lagrange}{\mathcal{L}}
+\newcommand{\dotproduct}[2]{\langle\mathbf{#1},\mathbf{#2}\rangle}
+
+% Join symbols.
+\newcommand{\ojoin}{\setbox0=\hbox{$\bowtie$}%
+    \rule[-.02ex]{.25em}{.4pt}\llap{\rule[\ht0]{.25em}{.4pt}}}
+\newcommand{\insertinnerjoin}{\mathbin{\bowtie\mkern-5.8mu}\;}
+\newcommand{\insertleftouterjoin}{\mathbin{\ojoin\mkern-5.8mu\bowtie}}
+\newcommand{\insertrightouterjoin}{\mathbin{\bowtie\mkern-5.8mu\ojoin}}
+\newcommand{\insertfullouterjoin}{\mathbin{\ojoin\mkern-5.8mu\bowtie\mkern-5.8mu\ojoin}}
+
+\newcommand{\insertimage}[3]
+{
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=#3\linewidth]{#1}
+        \caption{#2}
+        \label{fig:#2}
+    \end{figure}
+}
+
+\newcommand{\insertalgorithm}[4]
+{
+    \begin{algorithm}[H]
+        \caption{#1}
+        \begin{algorithmic}
+            \State \textbf{Input}: #2
+            \State \textbf{Output}: #3
+            \separate{7}#4
+        \end{algorithmic}
+        \label{alg:#1}
+    \end{algorithm}
+}
+
+\newcommand{\inserttable}[4]
+{
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|#1|}
+            \hline #3 \\ \hline #4 \\ \hline
+        \end{tabular}
+        \caption{#2}
+        \label{tab:#2}
+    \end{table}
+}
+
+%%%
+
+
+
+%%% Academic Environments
+
+% Counters for automatic numbering.
+\newcounter{definitionnumber}[subsubsection]
+\newcounter{examplenumber}[subsubsection]
+\newcounter{conjecturenumber}[subsubsection]
+\newcounter{entrynumber}[subsubsection]
+\newcounter{proofnumber}[subsubsection]
+\newcounter{theoremnumber}[subsubsection]
+\newcounter{lemmanumber}[subsubsection]
+\newcounter{propositionnumber}[subsubsection]
+
+% Custom enviroments.
+\newcommand{\definition}[2]{\textbf{Definition \thesubsubsection.\number\numexpr\value{definitionnumber}+1\relax}: #2\stepcounter{definitionnumber}\label{def:#1}}
+\newcommand{\example}[2]{\textbf{Example \thesubsubsection.\number\numexpr\value{examplenumber}+1\relax}: #2\label{ex:#1}}
+\newcommand{\conjecture}[2]{\textbf{Conjecture \thesubsubsection.\number\numexpr\value{conjecturenumber}+1\relax}: #2\label{cnj:#1}}
+\newcommand{\numberedentry}[3]{\textbf{#2 \thesubsubsection.\number\numexpr\value{entrynumber}+1\relax}: #3\label{entry:#1}}
+\newcommand{\proof}[2]{\par\separate{3}\textit{Proof}: #2 \begin{flushright}\(\square\)\end{flushright}\label{prf:#1}}
+\newcommand{\solution}[2]{\par\separate{3}\textit{Solution}: #2 \begin{flushright}\(\square\)\end{flushright}\label{sol:#1}}
+\newcommand{\theorem}[3]{\textbf{Theorem \thesubsubsection.\number\numexpr\value{theoremnumber}+1\relax}: #2 \proof{thm:#1}{#3}\label{thm:#1}}
+\newcommand{\lemma}[3]{\textbf{Lemma \thesubsubsection.\number\numexpr\value{lemmanumber}+1\relax}: #2 \proof{lem:#1}{#3}\label{lem:#1}}
+\newcommand{\proposition}[3]{\textbf{Proposition \thesubsubsection.\number\numexpr\value{propositionnumber}+1\relax}: #2 \proof{prop:#1}{#3}\label{prop:#1}}
+\newcommand{\standardproblem}[3]{\textbf{Standard Problem \(\#\)#1}: #2 \solution{#1}{#3}\label{stpr:#1}}
+
+%%%
+
+
+
+%%% Document Setup
+
+% Title Page.
+\title{\thetitle\\[0.5em]\large{\thesubtitle}}
+\author{\theauthor}
+\date{\thedate} 
+
+% Custom Page Header.
+\fancyhead{}
+\fancyhead[R]{\thetitle\text{ - }\thesubtitle}
+
+% Custom Page Footer.
+\fancyfoot{}
+\fancyfoot[L]{Written by \theauthor \\ 
+\textit{\LaTeX \,Template v.\templateversion: Copyright \date{\yeardate\today}, Matthew Emerson}} % Do not edit.
+\fancyfoot[R]{Page \thepage \, of\, \pageref{mainDocumentEnd}\relax}
+
+%%%
