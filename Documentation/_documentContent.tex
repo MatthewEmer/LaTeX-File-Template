@@ -52,7 +52,7 @@ adding some nonsense
 
 \subsubsection{Set Notation}
 
-\textbf{Command}: \textit{\(\backslash [R, N, C, Q, Z, I]\)} 
+\textbf{Command}: \textit{\(\backslash R\), \(\backslash N\), \(\backslash C\), \(\backslash Q\), \(\backslash Z\), \(\backslash I\)} 
 
 \separate{5}Inserts the symbol for the given number set.
 
@@ -106,6 +106,40 @@ adding some nonsense
 \noindent Example Call: \(\quad\backslash lagrange \quad\rightarrow\quad \lagrange\)
 
 \subsection{Computer Science}
+
+\subsubsection{Join Operations}
+
+\textbf{Command}: \textit{\(\backslash insertinnerjoin\), \(\backslash insertleftouterjoin\), \(\backslash insertrightouterjoin\), \(\backslash insertfullouterjoin\)} 
+
+\separate{5}Inserts the relevant notation for the chosen join operation.
+
+\inserttable{c|c|c|c}{Join notation parameters}
+{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
+{n/a & & &}
+
+\noindent Example Call: \(\quad\backslash insertleftouterjoin \quad\rightarrow\quad \insertleftouterjoin\)
+
+\subsubsection{Algorithms}
+
+\textbf{Command}: \textit{\(\backslash insertalgorithm\)}
+
+\separate{5}Inserts an algorithm block for pseudocode.
+
+\inserttable{c|c|c|c}{Insert algorithm parameters}
+{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
+{1 & Algorithm name & The name of the algorithm being inserted. & Printing Hello World. \\
+2 & Input(s) & The input(s) required by the algorithm. & n/a \\
+3 & Output(s) & The output(s) returned by the algorithm. & n/a \\
+4 & Pseduocode & The actual pseudocode for the algorithm. & See below}
+
+\noindent Example Call: \(\quad\backslash insertalgorithm\{\text{Printing Hello World.}\}\{n\slash a\}\{n\slash a\}\{code\}\):
+\insertalgorithm{Printing Hello World.}{n/a}{n/a}
+{
+    \State FUNCTION printHelloWorld()
+    \State \hskip 1em PRINT "Hello World"
+    \State ENDFUNCTION
+}
+
 
 \subsection{Additional Commands}
 
