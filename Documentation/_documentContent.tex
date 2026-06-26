@@ -14,7 +14,7 @@ The actual \LaTeX\ file template is contained in the folder \textit{The Template
 
 \subsubsection{template.tex}
 
-This file sets up the structure of the document, as well as acting as a compiler for the other two \textit{.tex} files, ensuring they get inserted into the right sections of the document. When creating your document, you need to edit lines 12-15 of this file to create the title page, alongside the document header and footer, as described in \hyperref[tab:Lines to edit.]{Table 1}.
+This file sets up the structure of the document, as well as acting as a compiler for the other two \textit{.tex} files, ensuring they get inserted into the right sections of the document. When creating your document, you need to edit lines 12-15 of this file to create the title page, alongside the document header and footer, as described in \hyperref[tab:Lines to edit.]{Table \ref{tab:Lines to edit.}}.
 
 \inserttable{c|c|c}{Lines to edit.}
 {\textbf{Line} & \textbf{Variable Name} & \textbf{Description}}
@@ -46,7 +46,64 @@ To add images to the document, create a subfolder called \textit{Images} within 
 
 \subsection{Academic Environments}
 
+adding some nonsense
+
 \subsection{Mathematics}
+
+\subsubsection{Set Notation}
+
+\textbf{Command}: \textit{\(\backslash [R, N, C, Q, Z, I]\)} 
+
+\separate{5}Inserts the symbol for the given number set.
+
+\inserttable{c|c|c|c}{Set notation parameters}
+{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
+{n/a & & &}
+
+\noindent Example Call: \(\quad\backslash R \quad\rightarrow\quad \R\)
+
+\subsubsection{Matrix/Vector Operations}
+
+\textbf{Command}: \textit{\(\backslash dotproduct\)} 
+
+\separate{5}Inserts the notation for a dot product operation between two given vectors.
+
+\inserttable{c|c|c|c}{Dot product parameters}
+{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
+{1 & Vector 1 & The vector on the left of the dot product. & \(u\) \\
+2 & Vector 2 & The vector on the right of the dot product. & \(v\)}
+
+\noindent Example Call: \(\quad\backslash dotproduct\{u\}\{v\}  \quad\rightarrow\quad \dotproduct{u}{v}\)
+
+\separate{10}\textbf{Command}: \textit{\(\backslash hessian\)} 
+
+\separate{5}Inserts the notation for the Hessian of a given vector.
+
+\inserttable{c|c|c|c}{Hessian parameters}
+{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
+{1 & Vector & The vector that the Hessian is calculated from. & \(v\)}
+
+\noindent Example Call: \(\quad\backslash hessian\{v\} \quad\rightarrow\quad \hessian{v}\)
+
+\separate{10}\textbf{Command}: \textit{\(\backslash jacobian\)} 
+
+\separate{5}Inserts the notation for the Jacobian of a given vector.
+
+\inserttable{c|c|c|c}{Jacobian parameters}
+{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
+{1 & Vector & The vector that the Jacobian is calculated from. & \(v\)}
+
+\noindent Example Call: \(\quad\backslash jacobian\{v\} \quad\rightarrow\quad \jacobian{v}\)
+
+\separate{10}\textbf{Command}: \textit{\(\backslash lagrange\)} 
+
+\separate{5}Inserts the notation for a Lagrangian.
+
+\inserttable{c|c|c|c}{Lagrangian parameters}
+{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
+{n/a & & &}
+
+\noindent Example Call: \(\quad\backslash lagrange \quad\rightarrow\quad \lagrange\)
 
 \subsection{Computer Science}
 
