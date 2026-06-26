@@ -171,6 +171,35 @@ adding some nonsense
 
 \subsubsection{Tables and Figures}
 
+\textbf{Command}: \(\backslash inserttable\)
+
+\inserttable{c|c|c|c}{Parameters for inserting tables.}
+{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
+{
+    1 & Columns & The required columns, separated by \(|\)s. & \(c|c|c|c\) \\
+    2 & Table caption & The caption to appear under the table. & Parameters for inserting tables. \\
+    3 & Headers & The headers, separated by ampersands. & No. \& Name \& ... \\
+    4 & Content & The content to be placed in the table. & 
+}
+
+\noindent Example Call: \(\quad\backslash inserttable\{c|c|c|c\}\{\text{Parameters...}\}\{\text{No. \& Name \& ...}\}\{\text{1 \& Columns \& ...}\}\): see above.
+
+\separate{10}\textbf{Command}: \(\backslash insertimage\)
+
+\inserttable{c|c|c|c}{Parameters for inserting images.}
+{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
+{
+    1 & File name & The file name of the image (must be in \textit{Images}.) & durham.jpg \\
+    2 & Figure caption & The caption to appear under the figure. & Durham Cathedral. \\
+    3 & Width & The amount of the page width the image should occupy. & 0.3
+}
+
+\noindent Example Call: \(\quad\backslash insertimage\{durham.jpg\}\{\text{Durham Cathedral}\}\{0.3\}\): 
+
+\insertimage{durham.jpg}{Durham Cathedral}{0.3}
+
+\noindent Example image taken by Maximilian Stoll, see it on \href{https://unsplash.com/photos/a-large-building-sitting-on-top-of-a-lush-green-hillside-jATW0-hO4-I?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink}{unsplash.com}.
+
 \subsubsection{Date Formats}
 
 \textbf{Command}: \textit{\(\backslash monthyeardate\)} 
