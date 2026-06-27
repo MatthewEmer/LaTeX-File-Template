@@ -46,7 +46,44 @@ To add images to the document, create a subfolder called \textit{Images} within 
 
 \subsection{Academic Environments}
 
-adding some nonsense
+\textbf{Command}: \(\backslash definition\)
+
+\separate{5}Creates a definition environment with automatic numbering which resets every subsubsection.
+
+\inserttable{c|c|c|c}{Parameters for definitions.}
+{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
+{
+    1 & Label & The word being defined so it can be easily linked to. & Definition \\
+    2 & Definition & The definition of the word. & A \underline{definition} is...
+}
+
+\noindent Example Call: \(\backslash definition\{\text{definition}\}\{\text{A \(\backslash underline\)\{definition\} is}\}\):
+\\\definition{definition}{A \underline{definition} is...}
+
+\separate{10}\textbf{Command}: \(\backslash example\), \(\backslash conjecture\)
+
+\separate{5}Creates an example/conjectures environment with automatic numbering which resets every subsubsection.
+
+\inserttable{c|c|c|c}{Parameters for examples/conjectures.}
+{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
+{
+    1 & Label & A recognisable label. & Scientist's Conjecture \\
+    2 & Content & The content to be displayed. & Scientist's Conjecture states that...
+}
+
+\noindent Example Call: \(\backslash conjecture\{\text{Scientist's conjecture}\}\{\text{Scientist's Conjecture states that...}\}\):
+\\\conjecture{Scientist's conjecture}{Scientist's Conjecture states that...}
+
+\comment
+{
+    \separate{5}Need to add:
+    \begin{itemize}
+        \item proof, solution
+        \item numbered entry
+        \item theorem, lemma, proposition
+        \item standard problem
+    \end{itemize}
+}
 
 \subsection{Mathematics}
 
