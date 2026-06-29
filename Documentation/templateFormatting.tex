@@ -119,22 +119,25 @@
 \newcounter{examplenumber}[subsubsection]
 \newcounter{conjecturenumber}[subsubsection]
 \newcounter{entrynumber}[subsubsection]
-\newcounter{proofnumber}[subsubsection]
 \newcounter{theoremnumber}[subsubsection]
 \newcounter{lemmanumber}[subsubsection]
 \newcounter{propositionnumber}[subsubsection]
 
 % Custom enviroments.
 \newcommand{\definition}[2]{\textbf{Definition \thesubsubsection.\number\numexpr\value{definitionnumber}+1\relax}: #2\stepcounter{definitionnumber}\label{def:#1}}
-\newcommand{\example}[2]{\textbf{Example \thesubsubsection.\number\numexpr\value{examplenumber}+1\relax}: #2\label{ex:#1}}
-\newcommand{\conjecture}[2]{\textbf{Conjecture \thesubsubsection.\number\numexpr\value{conjecturenumber}+1\relax}: #2\label{cnj:#1}}
-\newcommand{\numberedentry}[3]{\textbf{#2 \thesubsubsection.\number\numexpr\value{entrynumber}+1\relax}: #3\label{entry:#1}}
+\newcommand{\example}[2]{\textbf{Example \thesubsubsection.\number\numexpr\value{examplenumber}+1\relax}: #2\stepcounter{examplenumber}\label{ex:#1}}
+\newcommand{\conjecture}[2]{\textbf{Conjecture \thesubsubsection.\number\numexpr\value{conjecturenumber}+1\relax}: #2\stepcounter{conjecturenumber}\label{cnj:#1}}
+\newcommand{\numberedentry}[3]{\textbf{#2 \thesubsubsection.\number\numexpr\value{entrynumber}+1\relax}: #3\stepcounter{entrynumber}\label{entry:#1}}
 \newcommand{\proof}[2]{\par\separate{3}\textit{Proof}: #2 \begin{flushright}\(\square\)\end{flushright}\label{prf:#1}}
 \newcommand{\solution}[2]{\par\separate{3}\textit{Solution}: #2 \begin{flushright}\(\square\)\end{flushright}\label{sol:#1}}
-\newcommand{\theorem}[3]{\textbf{Theorem \thesubsubsection.\number\numexpr\value{theoremnumber}+1\relax}: #2 \proof{thm:#1}{#3}\label{thm:#1}}
-\newcommand{\lemma}[3]{\textbf{Lemma \thesubsubsection.\number\numexpr\value{lemmanumber}+1\relax}: #2 \proof{lem:#1}{#3}\label{lem:#1}}
-\newcommand{\proposition}[3]{\textbf{Proposition \thesubsubsection.\number\numexpr\value{propositionnumber}+1\relax}: #2 \proof{prop:#1}{#3}\label{prop:#1}}
+\newcommand{\theorem}[3]{\textbf{Theorem \thesubsubsection.\number\numexpr\value{theoremnumber}+1\relax}: #2 \proof{thm:#1}{#3}\stepcounter{theoremnumber}\label{thm:#1}}
+\newcommand{\lemma}[3]{\textbf{Lemma \thesubsubsection.\number\numexpr\value{lemmanumber}+1\relax}: #2 \proof{lem:#1}{#3}\stepcounter{lemmanumber}\label{lem:#1}}
+\newcommand{\proposition}[3]{\textbf{Proposition \thesubsubsection.\number\numexpr\value{propositionnumber}+1\relax}: #2 \proof{prop:#1}{#3}\stepcounter{propositionnumber}\label{prop:#1}}
 \newcommand{\standardproblem}[3]{\textbf{Standard Problem \(\#\)#1}: #2 \solution{#1}{#3}\label{stpr:#1}}
+
+\newcommand{\elemRef}[2]{\hyperref[#1]{#2 \ref*{#1}}}
+\newcommand{\preEnvRef}[3]{\hyperref[#1]{#2 \ref*{#1}.\number\numexpr\value{#3}+1\relax}}
+\newcommand{\postEnvRef}[3]{\hyperref[#1]{#2 \ref*{#1}.\number\numexpr\value{#3}\relax}}
 
 %%%
 
@@ -154,7 +157,7 @@
 % Custom Page Footer.
 \fancyfoot{}
 \fancyfoot[L]{Written by \theauthor \\ 
-\textit{\LaTeX \,Template v.\templateversion: Copyright \date{\yeardate\today}, Matthew Emerson}} % Do not edit.
+\textit{\LaTeX\ File Template v.\templateversion: Copyright \date{\yeardate\today}, Matthew Emerson}} % Do not edit.
 \fancyfoot[R]{Page \thepage \, of\, \pageref{mainDocumentEnd}\relax}
 
 %%%

@@ -4,253 +4,132 @@ Thank you for choosing to use \LaTeX\ File Template. If you find any bugs or wan
 
 \separate{7}This document is intended for academics (with special focus on those in the fields of computer science or mathematics) who want to write papers or other related documents in a consistent format which ties in with standard practises from other published papers. This guide consists of setup instructions to download the files and create your first document, before moving onto the custom commands/environments designed to speed up academic writing. Before using this guide, I would suggest that you have some practise with some basic \LaTeX\ commands using a guide such as https://www.overleaf.com/learn.
 
-\separate{7}Accurate as of Version \templateversion.
+\separate{7}This guide is accurate as of Version \templateversion.
 
 \section{Document Setup}
 
-\subsection{The Files}
+\subsection{Project Files}
 
-The actual \LaTeX\ file template is contained in the folder \textit{The Template} and consists of four files: \textit{template.tex}, \textit{\_documentContent.tex}, \textit{\_appendix.tex}, and \textit{template.pdf}. To use the template, all four files must be downloaded and placed in the same folder.
-
-\subsubsection{template.tex}
-
-This file sets up the structure of the document, as well as acting as a compiler for the other two \textit{.tex} files, ensuring they get inserted into the right sections of the document. When creating your document, you need to edit lines 12-15 of this file to create the title page, alongside the document header and footer, as described in \hyperref[tab:Lines to edit.]{Table \ref{tab:Lines to edit.}}.
-
-\inserttable{c|c|c}{Lines to edit.}
-{\textbf{Line} & \textbf{Variable Name} & \textbf{Description}}
-{12 & thetitle & The document's title. This will be placed in the header. \\
-13 & thesubtitle & The document's (optional) subtitle. This will be placed in the header. \\
-14 & theauthor & The list of authors. This will be placed in the footer. \\
-15 & thedate & Replace the code if you want a static date rather than date of last compile.
-}
-
-\subsubsection{\_documentContent.tex}
-
-This file allows you to add all the main content of the document you are trying to write. It will be inserted after the table of contents, but before the appendix (if you choose to add one). By default it contains an example section and definition. Only pages in this file are counted towards the page count of the document.
+The actual \LaTeX\ file template is contained in the folder \textit{The Template} and consists of four files: \textit{template.tex}, \textit{\_documentContent.tex}, \textit{\_appendix.tex}, and \textit{template.pdf}. To use the template, all four files must be downloaded and placed in the same folder. 
 
 \subsubsection{\_appendix.tex}
 
 This file allows you to add an optional appendix to the end of your document which is not counted towards your page count. By default it contains a unnumbered part title which has been inserted into the table of contents.  
 
+\subsubsection{\_documentContent.tex}
+
+This file allows you to add all the main content of the document you are trying to write. It will be inserted after the table of contents, but before the appendix (if you choose to add one). By default it contains an example section and definition. Only pages in this file are counted towards the page count of the document.
+
 \subsubsection{template.pdf}
 
 This file contains the output of the \LaTeX\ compiler. If you want to rename this document while still working on it, then delete this version, alongside any build files your compiler has created and change the name of \textit{template.tex}. 
 
-\subsection{Additional Notes}
+\subsubsection{template.tex}
 
-To add images to the document, create a subfolder called \textit{Images} within the same folder as the template and store any images you wish to use in there.
+This file sets up the structure of the document, as well as acting as a compiler for the other two \textit{.tex} files, ensuring they get inserted into the right sections of the document. When creating your document, you need to edit lines 12-15 of this file to create the title page, alongside the document header and footer, as described in \elemRef{tab:Lines to edit.}{Table}.
 
-\separate{9}If placing the document within a GitHub repository, you may want to copy over the \textit{.gitignore} from this repository as it is set up to ignore any \LaTeX\ build files.
+\inserttable{c|c|c}{Lines to edit.}{\textbf{Line} & \textbf{Variable Name} & \textbf{Description}}
+{
+    12 & thetitle & The document's title. This will be placed in the header. \\
+    13 & thesubtitle & The document's (optional) subtitle. This will be placed in the header. \\
+    14 & theauthor & The list of authors. This will be placed in the footer. \\
+    15 & thedate & Replace the code if you want a static date rather than date of last compile.
+}
+
+\newpage\subsection{Optional Files}
+
+\subsubsection{Storing Images}
+
+If you choose to include figures in your project, then you will need to create a subfolder labelled \textit{Images} where you can place the image files for the project.
+
+\subsubsection{GitHub Repositories}
+
+If you are placing the document within a GitHub repository, you may want to copy over the \textit{.gitignore} from this repository as it is set up to ignore any \LaTeX\ build files.
 
 \section{Custom Commands}
 
-\subsection{Academic Environments}
+\subsection{General Tools}
 
-\textbf{Command}: \(\backslash definition\)
+\subsubsection{Element Spacing}
 
-\separate{5}Creates a definition environment with automatic numbering which resets every subsubsection.
+\numberedentry{cmd:separate}{Command}{\(\backslash separate\)
 
-\inserttable{c|c|c|c}{Parameters for definitions.}
+\separate{3}The separate command inserts vertical spacing between two elements whilst simultaneously removing the new paragraph indent from the following element. You can specify the amount of spacing as described in \elemRef{tab:Parameters for separate.}{Table} and as seen in \preEnvRef{ex:cmd:separate}{Example}{entrynumber}.
+
+\inserttable{c|c|c|c}{Parameters for separate.}
 {\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
 {
-    1 & Label & The word being defined so it can be easily linked to. & Definition \\
-    2 & Definition & The definition of the word. & A \underline{definition} is...
+    1 & Spacing & The number of points of vertical spacing. & 5
 }
 
-\noindent Example Call: \(\backslash definition\{\text{definition}\}\{\text{A \(\backslash underline\)\{definition\} is}\}\):
-\\\definition{definition}{A \underline{definition} is...}
-
-\separate{10}\textbf{Command}: \(\backslash example\), \(\backslash conjecture\)
-
-\separate{5}Creates an example/conjectures environment with automatic numbering which resets every subsubsection.
-
-\inserttable{c|c|c|c}{Parameters for examples/conjectures.}
-{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
-{
-    1 & Label & A recognisable label. & Scientist's Conjecture \\
-    2 & Content & The content to be displayed. & Scientist's Conjecture states that...
-}
-
-\noindent Example Call: \(\backslash conjecture\{\text{Scientist's conjecture}\}\{\text{Scientist's Conjecture states that...}\}\):
-\\\conjecture{Scientist's conjecture}{Scientist's Conjecture states that...}
-
-\comment
-{
-    \separate{5}Need to add:
-    \begin{itemize}
-        \item proof, solution
-        \item numbered entry
-        \item theorem, lemma, proposition
-        \item standard problem
-    \end{itemize}
-}
-
-\subsection{Mathematics}
-
-\subsubsection{Set Notation}
-
-\textbf{Command}: \textit{\(\backslash R\), \(\backslash N\), \(\backslash C\), \(\backslash Q\), \(\backslash Z\), \(\backslash I\)} 
-
-\separate{5}Inserts the symbol for the given number set.
-
-\inserttable{c|c|c|c}{Parameters for set notation.}
-{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
-{n/a & & &}
-
-\noindent Example Call: \(\quad\backslash R \quad\rightarrow\quad \R\)
-
-\subsubsection{Matrix/Vector Operations}
-
-\textbf{Command}: \textit{\(\backslash dotproduct\)} 
-
-\separate{5}Inserts the notation for a dot product operation between two given vectors.
-
-\inserttable{c|c|c|c}{Parameters for dot product.}
-{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
-{1 & Vector 1 & The vector on the left of the dot product. & \(u\) \\
-2 & Vector 2 & The vector on the right of the dot product. & \(v\)}
-
-\noindent Example Call: \(\quad\backslash dotproduct\{u\}\{v\}  \quad\rightarrow\quad \dotproduct{u}{v}\)
-
-\separate{10}\textbf{Command}: \textit{\(\backslash hessian\)} 
-
-\separate{5}Inserts the notation for the Hessian of a given vector.
-
-\inserttable{c|c|c|c}{Parameters for Hessian.}
-{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
-{1 & Vector & The vector that the Hessian is calculated from. & \(v\)}
-
-\noindent Example Call: \(\quad\backslash hessian\{v\} \quad\rightarrow\quad \hessian{v}\)
-
-\separate{10}\textbf{Command}: \textit{\(\backslash jacobian\)} 
-
-\separate{5}Inserts the notation for the Jacobian of a given vector.
-
-\inserttable{c|c|c|c}{Parameters for Jacobian.}
-{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
-{1 & Vector & The vector that the Jacobian is calculated from. & \(v\)}
-
-\noindent Example Call: \(\quad\backslash jacobian\{v\} \quad\rightarrow\quad \jacobian{v}\)
-
-\separate{10}\textbf{Command}: \textit{\(\backslash lagrange\)} 
-
-\separate{5}Inserts the notation for a Lagrangian.
-
-\inserttable{c|c|c|c}{Parameters for Lagrangian.}
-{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
-{n/a & & &}
-
-\noindent Example Call: \(\quad\backslash lagrange \quad\rightarrow\quad \lagrange\)
-
-\subsection{Computer Science}
-
-\subsubsection{Join Operations}
-
-\textbf{Command}: \textit{\(\backslash insertinnerjoin\), \(\backslash insertleftouterjoin\), \(\backslash insertrightouterjoin\), \(\backslash insertfullouterjoin\)} 
-
-\separate{5}Inserts the relevant notation for the chosen join operation.
-
-\inserttable{c|c|c|c}{Parameters for join notation.}
-{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
-{n/a & & &}
-
-\noindent Example Call: \(\quad\backslash insertleftouterjoin \quad\rightarrow\quad \insertleftouterjoin\)
-
-\subsubsection{Algorithms}
-
-\textbf{Command}: \textit{\(\backslash insertalgorithm\)}
-
-\separate{5}Inserts an algorithm block for pseudocode.
-
-\inserttable{c|c|c|c}{Parameters for inserting algorithms.}
-{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
-{1 & Algorithm name & The name of the algorithm being inserted. & Printing Hello World. \\
-2 & Input(s) & The input(s) required by the algorithm. & n/a \\
-3 & Output(s) & The output(s) returned by the algorithm. & n/a \\
-4 & Pseduocode & The actual pseudocode for the algorithm. & See below}
-
-\noindent Example Call: \(\quad\backslash insertalgorithm\{\text{Printing Hello World.}\}\{n\slash a\}\{n\slash a\}\{code\}\):
-\insertalgorithm{Printing Hello World.}{n/a}{n/a}
-{
-    \State FUNCTION printHelloWorld()
-    \State \hskip 1em PRINT "Hello World"
-    \State ENDFUNCTION
-}
-
-\subsection{Additional Commands}
+\noindent\example{cmd:separate}{\(\backslash separate\{3\}\) produces the separation as seen between the Command line and the description of separate.}}
 
 \subsubsection{Text Formatting}
 
-\textbf{Command}: \textit{\(\backslash colouredText\)} 
+\numberedentry{cmd:colouredText}{Command}{\(\backslash colouredText\)
 
-\separate{5}Changes the colour of a group of text to a given colour.
+\separate{3}The colouredText command takes the given text and outputs it in a different colour, as chosen by the writer. This can be seen in \preEnvRef{ex:cmd:colouredText}{Example}{examplenumber} and as described in \elemRef{tab:Parameters for colouredText.}{Table}.
 
-\inserttable{c|c|c|c}{Parameters for coloured text.}
-{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
-{1 & Colour & The colour to change the text to. & red \\
-2 & Text & The text you want outputted in colour. & Hello World}
-
-\separate{10}\textbf{Command}: \textit{\(\backslash separate\)} 
-
-\separate{5}Adds additional vertical spacing after the last element and removes the new paragraph indent before the next element.
-
-\inserttable{c|c|c|c}{Parameters for separating.}
-{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
-{1 & Spacing & The number of points of vertical spacing. & 5}
-
-\separate{10}\textbf{Command}: \textit{\(\backslash comment\)} 
-
-\separate{5}Colours the given text red so its obvious that there is a comment in the document.
-
-\inserttable{c|c|c|c}{Parameters for comments.}
-{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
-{1 & Text & The text to be written as a comment. & Hello World}
-
-\subsubsection{Tables and Figures}
-
-\textbf{Command}: \(\backslash inserttable\)
-
-\inserttable{c|c|c|c}{Parameters for inserting tables.}
+\inserttable{c|c|c|c}{Parameters for colouredText.}
 {\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
 {
-    1 & Columns & The required columns, separated by \(|\)s. & \(c|c|c|c\) \\
-    2 & Table caption & The caption to appear under the table. & Parameters for inserting tables. \\
-    3 & Headers & The headers, separated by ampersands. & No. \& Name \& ... \\
-    4 & Content & The content to be placed in the table. & 
+    1 & Colour & The colour to change the text to. & blue \\
+    2 & Text & The text you want outputted in colour. & Hello World
 }
 
-\noindent Example Call: \(\quad\backslash inserttable\{c|c|c|c\}\{\text{Parameters...}\}\{\text{No. \& Name \& ...}\}\{\text{1 \& Columns \& ...}\}\): see above.
+\noindent\example{cmd:colouredText}{\(\backslash colouredText\{blue\}\{\text{Hello World}\}\) produces \colouredText{blue}{Hello World}.}}
 
-\separate{10}\textbf{Command}: \(\backslash insertimage\)
+\separate{15}\numberedentry{cmd:comment}{Command}{\(\backslash comment\)
 
-\inserttable{c|c|c|c}{Parameters for inserting images.}
+\separate{3}The comment command inserts notes into the document in red so they can be found more easily. This can be seen in \preEnvRef{ex:cmd:comment}{Example}{examplenumber} and as described in \elemRef{tab:Parameters for comment.}{Table}.
+
+\inserttable{c|c|c|c}{Parameters for comment.}
 {\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
 {
-    1 & File name & The file name of the image (must be in \textit{Images}.) & durham.jpg \\
-    2 & Figure caption & The caption to appear under the figure. & Durham Cathedral. \\
-    3 & Width & The amount of the page width the image should occupy. & 0.3
+    1 & Text & The text you want outputted in colour. & Hello World
 }
 
-\noindent Example Call: \(\quad\backslash insertimage\{durham.jpg\}\{\text{Durham Cathedral}\}\{0.3\}\): 
+\noindent\example{cmd:comment}{\(\backslash comment\{\text{Hello World}\}\) produces \comment{Hello World}.}}
 
-\insertimage{durham.jpg}{Durham Cathedral}{0.3}
+\subsubsection{Referencing Tables and Figures}
 
-\noindent Example image taken by Maximilian Stoll, see it on \href{https://unsplash.com/photos/a-large-building-sitting-on-top-of-a-lush-green-hillside-jATW0-hO4-I?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink}{unsplash.com}.
+\numberedentry{cmd:elemRef}{Command}{\(\backslash elemRef\)
 
-\subsubsection{Date Formats}
+\separate{3}The elemRef command allows you to easily reference tables and figures with clickable links. This is described in \elemRef{tab:Parameters for elemRef.}{Table} and as seen in \preEnvRef{ex:cmd:elemRef}{Example}{examplenumber}.
 
-\textbf{Command}: \textit{\(\backslash monthyeardate\)} 
-
-\separate{5}When placed alongside a date, this command reformats it and outputs the full name of the month, followed by the four-digit year, as seen in the document title page.
-
-\inserttable{c|c|c|c}{Parameters for MMMM/YYYY dates.}
+\inserttable{c|c|c|c}{Parameters for elemRef.}
 {\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
-{n/a & & & }
+{
+    1 & Label & The label of the element being linked to. & tab:Parameters for elemRef. \\
+    2 & Type & The type of element being linked to. & Table
+}
 
-\separate{10}\textbf{Command}: \textit{\(\backslash yeardate\)} 
+\noindent\example{cmd:elemRef}{\(\backslash elemRef\{\text{tab:Parameters for elemRef.}\}\{\text{Table}\}\) produces the reference \elemRef{tab:Parameters for elemRef.}{Table}.}}
 
-\separate{5}When placed alongside a date, this command reformats it and outputs only the four-digit year.
+\subsection{Academic Environments}
 
-\inserttable{c|c|c|c}{Parameters for YYYY dates.}
+\subsubsection{Referencing Environments}
+
+\numberedentry{cmd:preEnvRef}{Command}{\(\backslash preEnvRef\)
+
+\separate{3}The preEnvRef command allows you to easily reference academic environments with clickable links before they are defined in the document. This is described in \elemRef{tab:Parameters for preEnvRef and postEnvRef.}{Table} and as seen in \preEnvRef{ex:cmd:preEnvRef}{Example}{examplenumber}.
+
+\inserttable{c|c|c|c}{Parameters for preEnvRef and postEnvRef.}
 {\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
-{n/a & & & }
+{
+    1 & Label & The label of the environment being linked to. & ex:cmd:postEnvRef \\
+    2 & Type & The type of environment being linked to. & Example \\
+    3 & Counter & The name of the counter for that environment. & examplenumber
+}
+
+\noindent\example{cmd:preEnvRef}{\(\backslash preEnvRef\{\text{ex:cmd:preEnvRef}\}\{\text{Example}\}\{\text{examplenumber}\}\) produces the reference \preEnvRef{ex:cmd:preEnvRef}{Example}{examplenumber}.}}
+
+\separate{15}\numberedentry{cmd:postEnvRef}{Command}{\(\backslash postEnvRef\)
+
+\separate{3}The postEnvRef command allows you to easily reference academic environments with clickable links after they are defined in the document. This is described in \elemRef{tab:Parameters for preEnvRef and postEnvRef.}{Table} and as seen in \preEnvRef{ex:cmd:postEnvRef}{Example}{examplenumber}.
+
+\separate{5}\example{cmd:postEnvRef}{\(\backslash postEnvRef\{\text{ex:cmd:preEnvRef}\}\{\text{Example}\}\{\text{examplenumber}\}\) produces the reference \postEnvRef{ex:cmd:preEnvRef}{Example}{examplenumber}.}}
+
+\subsection{Mathematics}
+
+\subsection{Computer Science}
