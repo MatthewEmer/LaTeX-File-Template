@@ -1,124 +1,43 @@
 # LaTeX File Template
 
-This LaTeX file template is a clean, easy to use template, with multiple custom commands and formatting that makes creating LaTeX documents quicker and easier than other templates. Specifically, this is the template I have designed for creating lecture notes and assignment submissions for my work as a BSc Computer Science student at Durham University. As a result, there are plenty of functions/packages aimed at making STEM-centered documents.
+## 1 Introduction
 
-## Features
+Thank you for choosing to use LaTeX File Template. If you find any bugs or want some feature not currently included, then my contact information can be found on my GitHub: https://github.com/MatthewEmer.
 
-- **Title Page Customisation**: Easily set the title and author(s) for the document, set the publication date automatically, and add an optional subtitle.
-- **Custom Headers & Footers**: Headers containing the paper's title and subtitle, footers containing the author(s) names' and the page number for easy document navigation.
-- **Content Separators**: Custom tool for separating content on the page.
-- **Coloured Text**: Improved text colour tools automatically return to black after the coloured text.
-- **Formatted Number Sets**: Simplified commands for adding number sets into your equations.
-- **Custom Academic Formats**: Custom formats for common academic environments such as definitions, theorems, or lemmas. 
-- **Simplified Commands**: Custom commands set up to make inserting images and pseudocode easier, being able to insert them in one line.
+This document is intended for academics (with special focus on those in the fields of computer science or mathematics) who want to write papers or other related documents in a consistent format which ties in with standard practises from other published papers. This guide consists of setup instructions to download the files and create your first document, before moving onto the custom commands/environments designed to speed up academic writing. Before using this guide, I would suggest that you have some practise with some basic LaTeX commands using a guide such as https://www.overleaf.com/learn.
 
-## Documentation
+This guide is accurate as of Version 3.0.0.
 
-### Setup
+## 2 Document Setup
 
-1. Go to Releases and download the latest release from the repository.
-2. Open *blanktemplate.tex* and find lines 146-149. 
-3. Edit the values in the second set of curly brackets on each line to edit the title page, headers, and footers.
-4. Find line 170 and start adding the main content for the document.
+The actual LaTeX file template is contained in the folder The Template and consists of four files: template.tex, _documentContent.tex, _appendix.tex, and template.pdf. To use the template, all four files must be downloaded and placed in the same folder
 
-### Custom Functions
-
-#### \colour
-Changes the text colour of the given text to a specified colour before returning to black.
-
-*Parameters*
-- #1: Text Colour - the colour to change the text to (See LaTeX's website for colour options).
-- #2: Text - the text to be coloured.
-
-#### \separate
-Adds a horizontal gap between two bits of content, then removes the indent on the new content (especially useful for separating text).
-
-*Parameters*
-- #1: Distance - the distance in points to separate the content by.
-
-#### \R, \N, \C, \Q, \Z, and \I
-Outputs the corresponding number set symbol.
-
-*Parameters*
-- n/a
-
-#### \definition, \example, \conjecture, and \proof
-Sets out a definition, example, conjecture, or proof environment for an academic paper.
-
-*Parameters*
-- #1: Label - the label for the definition, example, conjecture, or proof.
-- #2: Content - the content for the definition, example, conjecture, or proof.
-
-#### \numberedentry
-Sets out a custom entry environment for an academic paper.
-
-*Parameters*
-- #1: Label - the label for the entry.
-- #2: Entry Type - the type of the numbered entry.
-- #3: Content - the content for the entry.
-
-#### \theorem, \proposition, and \lemma
-Sets out a theorem, proposition, or lemma environment for an academic paper with corresponding proof.
-
-*Parameters*
-- #1: Label - the label for the theorem, proposition, or lemma.
-- #2: Theorem/Lemma/Proposition - the actual theorem, proposition, or lemma.
-- #3: Proof - the proof for the theorem, proposition, or lemma.
-
-#### \insertimage
-Places an image on the page.
-
-*Parameters*
-- #1: Image - the file path for the image.
-- #2: Caption - the image caption.
-- #3: Width - the width of the image, relative to the page width.
-
-#### \insertalgorithm
-Places a pseudocode algorithm on the page.
-
-*Parameters*
-- #1: Name - the name of the algorithm.
-- #2: Input - the input for the algorithm.
-- #3: Output - the output of the algorithm.
-- #4: Code - the code for the algorithm.
-
-#### \inserttable
-Places a table on the page.
-
-*Parameters*
-- #1: Formatting - how many columns, and their borders.
-- #2: Caption - the caption for the table.
-- #3: Headers - the labels for each column.
-- #4: Content - the main content of the table.
-
-#### \insertinnerjoin, \insertleftouterjoin, \insertrightouterjoin, \insertfullouterjoin
-Outputs the corresponding join symbol onto the page.
-
-*Parameters*
-- n/a
-
-#### \hessian and \jacobian
-Outputs the corresponding matrix notation onto the page.
-
-*Parameters*
-- #1: Function - the function the matrix is formed from.
-
-#### \jacobian
-Outputs the jacobian function symbol onto the page.
-*Parameters*
-- n/a
-
-#### \standardproblem
-Sets out a standard problem environment with a solution for an academic paper.
-
-*Parameters*
-- #1:Label - the label for the problem.
-- #2: Problem - the actual problem.
-- #3: Proof - the solution to the problem.
-
-#### \dotproduct
-Outputs the dot product notation between the two given vectors.
-
-*Parameters*
-- #1: Vector 1 - the vector(s) on the left-hand side of the dot product (do not make bold).
-- #2: Vector 2 - the vector(s) on the right-hand side of the dot product (do not make bold).
+### 2.1 Project Files
+#### 2.1.1 _appendix.tex
+#### 2.1.2 _documentContent.tex
+#### 2.1.3 template.pdf
+#### 2.1.4 template.tex
+### 2.2 Optional Files
+#### 2.2.1 Storing Images
+#### 2.2.2 GitHub Repositories
+## 3 Custom Commands
+### 3.1 General Tools
+#### 3.1.1 Element Spacing
+#### 3.1.2 Text Formatting
+#### 3.1.3 Date Formatting
+### 3.2 Tables and Figures
+#### 3.2.1 Inserting Tables
+#### 3.2.2 Inserting Figures
+#### 3.2.3 Referencing Tables and Figures
+### 3.3 Academic Environments
+#### 3.3.1 Basic Environments
+#### 3.3.2 Environments with Proofs or Solutions
+#### 3.3.3 Sub-Environments
+#### 3.3.4 Customisable Environments
+#### 3.3.5 Referencing Environments
+### 3.4 Mathematics
+#### 3.4.1 Basic Mathematics Notation
+#### 3.4.2 Vectors and Matrices
+### 3.5 Computer Science
+#### 3.5.1 Set Notation
+#### 3.5.2 Algorithms
