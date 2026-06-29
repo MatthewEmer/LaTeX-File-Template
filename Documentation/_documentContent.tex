@@ -26,7 +26,7 @@ This file contains the output of the \LaTeX\ compiler. If you want to rename thi
 
 \subsubsection{template.tex}
 
-This file sets up the structure of the document, as well as acting as a compiler for the other two \textit{.tex} files, ensuring they get inserted into the right sections of the document. When creating your document, you need to edit lines 12-15 of this file to create the title page, alongside the document header and footer, as described in \elemRef{tab:Lines to edit.}{Table}.
+This file sets up the structure of the document, as well as acting as a compiler for the other two \textit{.tex} files, ensuring they get inserted into the right sections of the document. When creating your document, you need to edit lines 12-15 of this file to create the title page, alongside the document header and footer, as described in \elemref{tab:Lines to edit.}{Table}.
 
 \inserttable{c|c|c}{Lines to edit.}{\textbf{Line} & \textbf{Variable Name} & \textbf{Description}}
 {
@@ -54,7 +54,7 @@ If you are placing the document within a GitHub repository, you may want to copy
 
 \numberedentry{cmd:separate}{Command}{\(\backslash separate\)
 
-\separate{3}The separate command inserts vertical spacing between two elements whilst simultaneously removing the new paragraph indent from the following element. You can specify the amount of spacing as described in \elemRef{tab:Parameters for separate.}{Table} and as seen in \preEnvRef{ex:cmd:separate}{Example}{entrynumber}.
+\separate{3}The separate command inserts vertical spacing between two elements whilst simultaneously removing the new paragraph indent from the following element. You can specify the amount of spacing as described in \elemref{tab:Parameters for separate.}{Table} and as seen in \preenvref{ex:cmd:separate}{Example}{entrynumber}.
 
 \inserttable{c|c|c|c}{Parameters for separate.}
 {\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
@@ -68,7 +68,7 @@ If you are placing the document within a GitHub repository, you may want to copy
 
 \numberedentry{cmd:colouredText}{Command}{\(\backslash colouredText\)
 
-\separate{3}The colouredText command takes the given text and outputs it in a different colour, as chosen by the writer. This can be seen in \preEnvRef{ex:cmd:colouredText}{Example}{examplenumber} and as described in \elemRef{tab:Parameters for colouredText.}{Table}.
+\separate{3}The colouredText command takes the given text and outputs it in a different colour, as chosen by the writer. This can be seen in \preenvref{ex:cmd:colouredText}{Example}{examplenumber} and as described in \elemref{tab:Parameters for colouredText.}{Table}.
 
 \inserttable{c|c|c|c}{Parameters for colouredText.}
 {\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
@@ -81,7 +81,7 @@ If you are placing the document within a GitHub repository, you may want to copy
 
 \separate{15}\numberedentry{cmd:comment}{Command}{\(\backslash comment\)
 
-\separate{3}The comment command inserts notes into the document in red so they can be found more easily. This can be seen in \preEnvRef{ex:cmd:comment}{Example}{examplenumber} and as described in \elemRef{tab:Parameters for comment.}{Table}.
+\separate{3}The comment command inserts notes into the document in red so they can be found more easily. This can be seen in \preenvref{ex:cmd:comment}{Example}{examplenumber} and as described in \elemref{tab:Parameters for comment.}{Table}.
 
 \inserttable{c|c|c|c}{Parameters for comment.}
 {\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
@@ -91,44 +91,81 @@ If you are placing the document within a GitHub repository, you may want to copy
 
 \noindent\example{cmd:comment}{\(\backslash comment\{\text{Hello World}\}\) produces \comment{Hello World}.}}
 
-\subsubsection{Referencing Tables and Figures}
+\subsection{Tables and Figures}
 
-\numberedentry{cmd:elemRef}{Command}{\(\backslash elemRef\)
+\subsubsection{Inserting Tables}
 
-\separate{3}The elemRef command allows you to easily reference tables and figures with clickable links. This is described in \elemRef{tab:Parameters for elemRef.}{Table} and as seen in \preEnvRef{ex:cmd:elemRef}{Example}{examplenumber}.
+\numberedentry{cmd:inserttable}{Command}{\(\backslash inserttable\)
 
-\inserttable{c|c|c|c}{Parameters for elemRef.}
+\separate{3}The inserttable command simplifies the process of inserting tables into your document as described in \elemref{tab:Parameters for inserttable.}{Table} and seen in \preenvref{ex:cmd:inserttable}{Example}{examplenumber}.
+
+\inserttable{c|c|c|c}{Parameters for inserttable.}
 {\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
 {
-    1 & Label & The label of the element being linked to. & tab:Parameters for elemRef. \\
+    1 & Columns & The required columns, separated by \(|\)s. & \(c|c|c|c\) \\
+    2 & Caption & The caption to appear under the table. & Parameters for inserting tables. \\
+    3 & Headers & The headers, separated by ampersands. & No. \& Name \& ... \\
+    4 & Content & The content to be placed in the table. & 
+}
+
+\noindent\example{cmd:inserttable}{\(\backslash inserttable\{c|c|c|c\}\{\text{Parameters...}\}\{\text{No. \& Name \& ...}\}\{\text{1 \& Columns \& ...}\}\) produces \elemref{tab:Parameters for inserttable.}{Table}.}}
+
+\subsubsection{Inserting Figures}
+
+\numberedentry{cmd:insertimage}{Command}{\(\backslash insertimage\)
+
+\separate{3}The insertimage command simplifies the process of inserting figures into your document as described in \elemref{tab:Parameters for insertimage.}{Table} and seen in \preenvref{ex:cmd:insertimage}{Example}{examplenumber}.
+
+\inserttable{c|c|c|c}{Parameters for insertimage.}
+{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
+{
+    1 & File name & The file name of the image (must be in \textit{Images}.) & durham.jpg \\
+    2 & Figure caption & The caption to appear under the figure. & Durham Cathedral. \\
+    3 & Width & The amount of the page width the image should occupy. & 0.3
+}
+
+\noindent\example{cmd:insertimage}{\(\backslash insertimage\{durham.jpg\}\{\text{Durham Cathedral}\}\{0.3\}\) produces \elemref{fig:Durham Cathedral}{Figure}.}
+
+\insertimage{durham.jpg}{Durham Cathedral}{0.3}}
+
+\subsubsection{Referencing Tables and Figures}
+
+\numberedentry{cmd:elemref}{Command}{\(\backslash elemref\)
+
+\separate{3}The elemref command allows you to easily reference tables and figures with clickable links. This is described in \elemref{tab:Parameters for elemref.}{Table} and as seen in \preenvref{ex:cmd:elemref}{Example}{examplenumber}.
+
+\inserttable{c|c|c|c}{Parameters for elemref.}
+{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
+{
+    1 & Label & The label of the element being linked to. & tab:Parameters for elemref. \\
     2 & Type & The type of element being linked to. & Table
 }
 
-\noindent\example{cmd:elemRef}{\(\backslash elemRef\{\text{tab:Parameters for elemRef.}\}\{\text{Table}\}\) produces the reference \elemRef{tab:Parameters for elemRef.}{Table}.}}
+\noindent\example{cmd:elemref}{\(\backslash elemref\{\text{tab:Parameters for elemref.}\}\{\text{Table}\}\) produces the reference \elemref{tab:Parameters for elemref.}{Table}.}}
 
 \subsection{Academic Environments}
 
 \subsubsection{Referencing Environments}
 
-\numberedentry{cmd:preEnvRef}{Command}{\(\backslash preEnvRef\)
+\numberedentry{cmd:preenvref}{Command}{\(\backslash preenvref\)
 
-\separate{3}The preEnvRef command allows you to easily reference academic environments with clickable links before they are defined in the document. This is described in \elemRef{tab:Parameters for preEnvRef and postEnvRef.}{Table} and as seen in \preEnvRef{ex:cmd:preEnvRef}{Example}{examplenumber}.
+\separate{3}The preenvref command allows you to easily reference academic environments with clickable links before they are defined in the document. This is described in \elemref{tab:Parameters for preenvref and postenvref.}{Table} and as seen in \preenvref{ex:cmd:preenvref}{Example}{examplenumber}.
 
-\inserttable{c|c|c|c}{Parameters for preEnvRef and postEnvRef.}
+\inserttable{c|c|c|c}{Parameters for preenvref and postenvref.}
 {\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
 {
-    1 & Label & The label of the environment being linked to. & ex:cmd:postEnvRef \\
+    1 & Label & The label of the environment being linked to. & ex:cmd:postenvref \\
     2 & Type & The type of environment being linked to. & Example \\
     3 & Counter & The name of the counter for that environment. & examplenumber
 }
 
-\noindent\example{cmd:preEnvRef}{\(\backslash preEnvRef\{\text{ex:cmd:preEnvRef}\}\{\text{Example}\}\{\text{examplenumber}\}\) produces the reference \preEnvRef{ex:cmd:preEnvRef}{Example}{examplenumber}.}}
+\noindent\example{cmd:preenvref}{\(\backslash preenvref\{\text{ex:cmd:preenvref}\}\{\text{Example}\}\{\text{examplenumber}\}\) produces the reference \preenvref{ex:cmd:preenvref}{Example}{examplenumber}.}}
 
-\separate{15}\numberedentry{cmd:postEnvRef}{Command}{\(\backslash postEnvRef\)
+\separate{15}\numberedentry{cmd:postenvref}{Command}{\(\backslash postenvref\)
 
-\separate{3}The postEnvRef command allows you to easily reference academic environments with clickable links after they are defined in the document. This is described in \elemRef{tab:Parameters for preEnvRef and postEnvRef.}{Table} and as seen in \preEnvRef{ex:cmd:postEnvRef}{Example}{examplenumber}.
+\separate{3}The postenvref command allows you to easily reference academic environments with clickable links after they are defined in the document. This is described in \elemref{tab:Parameters for preenvref and postenvref.}{Table} and as seen in \preenvref{ex:cmd:postenvref}{Example}{examplenumber}.
 
-\separate{5}\example{cmd:postEnvRef}{\(\backslash postEnvRef\{\text{ex:cmd:preEnvRef}\}\{\text{Example}\}\{\text{examplenumber}\}\) produces the reference \postEnvRef{ex:cmd:preEnvRef}{Example}{examplenumber}.}}
+\separate{5}\example{cmd:postenvref}{\(\backslash postenvref\{\text{ex:cmd:preenvref}\}\{\text{Example}\}\{\text{examplenumber}\}\) produces the reference \postenvref{ex:cmd:preenvref}{Example}{examplenumber}.}}
 
 \subsection{Mathematics}
 
