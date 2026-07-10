@@ -93,7 +93,25 @@ If you are placing the document within a GitHub repository, you may want to copy
 
 \subsubsection{Date Formatting}
 
-\comment{Add the two date formats here.}
+\numberedentry{cmd:yeardate}{Command}{\(\backslash yeardate\)
+
+\separate{3}The yeardate command takes an adjacent date variable and reformats it into the four-digit year before outputting to the page as seen in \preenvref{ex:cmd:yeardate}{Example}{examplenumber}.
+
+\inserttable{c|c|c|c}{Parameters for yeardate.}
+{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
+{ & n/a & & }
+
+\noindent\example{cmd:yeardate}{\(\backslash date\{\backslash yeardate \backslash today\}\) produces \date{\yeardate\today}.}}
+
+\separate{15}\numberedentry{cmd:monthyeardate}{Command}{\(\backslash monthyeardate\)
+
+\separate{3}The monthyeardate command takes an adjacent date variable and reformats it into the full month and four-digit year before outputting to the page as seen in \preenvref{ex:cmd:monthyeardate}{Example}{examplenumber}.
+
+\inserttable{c|c|c|c}{Parameters for monthyeardate.}
+{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
+{ & n/a & & }
+
+\noindent\example{cmd:monthyeardate}{\(\backslash date\{\backslash monthyeardate \backslash today\}\) produces \date{\monthyeardate\today}.}}
 
 \subsection{Tables and Figures}
 
@@ -151,7 +169,35 @@ If you are placing the document within a GitHub repository, you may want to copy
 
 \subsubsection{Basic Environments}
 
-\comment{Add definition and conjecture here.}
+\numberedentry{cmd:definition}{Command}{\(\backslash definition\)
+
+\separate{3}The definition command creates an environment for setting out a definition with automatic numbering with inbuilt labels so that you can reference the definition later in the document. Its parameters can be seen in \elemref{tab:Parameters for definition.}{Table} and an example of its use can be seen in \preenvref{ex:cmd:definition}{Example}{examplenumber}.
+
+\inserttable{c|c|c|c}{Parameters for definition.}
+{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
+{
+    1 & Label & The word being defined so it can be easily referenced. & example \\
+    2 & Definition & The actual definition of the word (with the word underlined). & An \underline{example} is...
+}
+
+\noindent\example{cmd:definition}{\(\backslash definition \{\text{example}\}\{\text{An } \backslash underline\{\text{example}\} \text{ is what this is.}\}\) produces \preenvref{def:example}{Definition}{definitionnumber}}
+
+\separate{7}\definition{example}{An \underline{example} is what this is.}}
+
+\newpage\noindent\numberedentry{cmd:conjecture}{Command}{\(\backslash conjecture\)
+
+\separate{3}The conjecture command creates an environment for setting out a conjecture with automatic numbering with inbuilt labels so that you can reference the conjecture later in the document. Its parameters can be seen in \elemref{tab:Parameters for conjecture.}{Table} and an example of its use can be seen in \preenvref{ex:cmd:conjecture}{Example}{examplenumber}.
+
+\inserttable{c|c|c|c}{Parameters for conjecture.}
+{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
+{
+    1 & Label & The conjecture's name. & Someone's Conjecture \\
+    2 & Definition & The content for the conjecture. & Someone's Conjecture states...
+}
+
+\noindent\example{cmd:conjecture}{\(\backslash conjecture \{\text{Someone's Conjecture}\}\{\text{Someone's Conjecture states something or other.}\}\) produces \preenvref{cnj:Someone's Conjecture}{Conjecture}{conjecturenumber}}
+
+\separate{7}\conjecture{Someone's Conjecture}{Someone's Conjecture states something or other.}}
 
 \subsubsection{Environments with Proofs or Solutions}
 
