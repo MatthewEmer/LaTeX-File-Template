@@ -36,9 +36,16 @@ This file sets up the structure of the document, as well as acting as a compiler
 | 14 | theauthor | The list of authors. This will be placed in the footer. |
 | 15 | thedate | Replace the code if you want a static date rather than date of last compile. |
 
-
 ### 2.2 Optional Files
+
+If you choose to include figures in your project, then you will need to create a subfolder labelled *Images*
+where you can place the image files for the project.
+
 #### 2.2.1 Storing Images
+
+If you are placing the document within a GitHub repository, you may want to copy over the *.gitignore* from
+this repository as it is set up to ignore any LaTeX build files.
+
 #### 2.2.2 GitHub Repositories
 ## 3 Custom Commands
 ### 3.1 General Tools
