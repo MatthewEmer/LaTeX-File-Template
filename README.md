@@ -38,15 +38,16 @@ This file sets up the structure of the document, as well as acting as a compiler
 
 ### 2.2 Optional Files
 
+#### 2.2.1 Storing Images
+
 If you choose to include figures in your project, then you will need to create a subfolder labelled *Images*
 where you can place the image files for the project.
 
-#### 2.2.1 Storing Images
+#### 2.2.2 GitHub Repositories
 
 If you are placing the document within a GitHub repository, you may want to copy over the *.gitignore* from
 this repository as it is set up to ignore any LaTeX build files.
 
-#### 2.2.2 GitHub Repositories
 ## 3 Custom Commands
 ### 3.1 General Tools
 #### 3.1.1 Element Spacing
