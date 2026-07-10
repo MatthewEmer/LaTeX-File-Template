@@ -306,7 +306,19 @@ If you are placing the document within a GitHub repository, you may want to copy
 
 \subsubsection{Customisable Environments}
 
-\comment{Add numberedentry here.}
+\numberedentry{cmd:numberedentry}{Command}{\(\backslash numberedentry\)
+
+\separate{3}The numberedentry command creates an environment for setting out a custom environment with automatic numbering with inbuilt labels so that you can reference it later in the document. Its parameters can be seen in \elemref{tab:Parameters for numberedentry.}{Table} and an example of its use can be seen in \preenvref{ex:cmd:numberedentry}{Example}{examplenumber}.
+
+\inserttable{c|c|c|c}{Parameters for numberedentry.}
+{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
+{
+    1 & Label & The entry's name. & cmd:numberedentry \\
+    2 & Entry Type & The type of entry. & Command \\
+    3 & Content & The content of the entry. & The numberedentry command...
+}
+
+\noindent\example{cmd:numberedentry}{\(\backslash numberedentry\) produces \preenvref{entry:cmd:numberedentry}{Command}{entrynumber}.}}
 
 \subsubsection{Referencing Environments}
 
