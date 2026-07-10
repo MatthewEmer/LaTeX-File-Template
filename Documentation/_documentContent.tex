@@ -192,7 +192,7 @@ If you are placing the document within a GitHub repository, you may want to copy
 {\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
 {
     1 & Label & The conjecture's name. & Someone's Conjecture \\
-    2 & Definition & The content for the conjecture. & Someone's Conjecture states...
+    2 & Conjecture & The content for the conjecture. & Someone's Conjecture states...
 }
 
 \noindent\example{cmd:conjecture}{\(\backslash conjecture \{\text{Someone's Conjecture}\}\{\text{Someone's Conjecture states something or other.}\}\) produces \preenvref{cnj:Someone's Conjecture}{Conjecture}{conjecturenumber}}
@@ -201,11 +201,108 @@ If you are placing the document within a GitHub repository, you may want to copy
 
 \subsubsection{Environments with Proofs or Solutions}
 
-\comment{Add theorem, lemma, proposition, and standard problem here.}
+\numberedentry{cmd:theorem}{Command}{\(\backslash theorem\)
 
-\subsubsection{Sub-Environments}
+\separate{3}The theorem command creates an environment for setting out a theorem with automatic numbering with inbuilt labels so that you can reference the theorem later in the document. Its parameters can be seen in \elemref{tab:Parameters for theorem.}{Table} and an example of its use can be seen in \preenvref{ex:cmd:theorem}{Example}{examplenumber}.
 
-\comment{Add proof and solution here.}
+\inserttable{c|c|c|c}{Parameters for theorem.}
+{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
+{
+    1 & Label & The theorem's name. & Example Theorem \\
+    2 & Definition & The theorem definition. & If \(2x=y\) then \(8x=4y\). \\
+    3 & Proof & The proof of the theorem. & If \(2x=y\)...
+}
+
+\noindent\example{cmd:theorem}{\(\backslash theorem \{\text{Example Theorem}\}\{\text{If } 2x=y \text{ then...}\}\{\text{If } 2x=y \text{, we...}\}\) produces \preenvref{thm:Example Theorem}{Theorem}{theoremnumber}}
+
+\separate{7}\theorem{Example Theorem}{If \(2x=y\) then \(8x=4y\) holds for all \((x,y) \in \N^2\).}
+{
+    If \(2x=y\), we can factor \(8x=4y\) by taking out a common multiplier of 4 to get \(4(2x=y)\). Therefore, the theorem must hold for all \((x,y) \in \N^2\).
+}}
+
+\separate{15}\numberedentry{cmd:lemma}{Command}{\(\backslash lemma\)
+
+\separate{3}The lemma command creates an environment for setting out a lemma with automatic numbering with inbuilt labels so that you can reference the lemma later in the document. Its parameters can be seen in \elemref{tab:Parameters for lemma.}{Table} and an example of its use can be seen in \preenvref{ex:cmd:lemma}{Example}{examplenumber}.
+
+\inserttable{c|c|c|c}{Parameters for lemma.}
+{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
+{
+    1 & Label & The lemma's name. & Example Lemma \\
+    2 & Definition & The lemma definition. & If \(2x=y\) then \(8x=4y\). \\
+    3 & Proof & The proof of the lemma. & If \(2x=y\)...
+}
+
+\noindent\example{cmd:lemma}{\(\backslash lemma \{\text{Example Lemma}\}\{\text{If } 2x=y \text{ then...}\}\{\text{If } 2x=y \text{, we...}\}\) produces \preenvref{lem:Example Lemma}{Lemma}{lemmanumber}}
+
+\newpage\noindent\lemma{Example Lemma}{If \(2x=y\) then \(8x=4y\) holds for all \((x,y) \in \N^2\).}
+{
+    If \(2x=y\), we can factor \(8x=4y\) by taking out a common multiplier of 4 to get \(4(2x=y)\). Therefore, the lemma must hold for all \((x,y) \in \N^2\).
+}}
+
+\separate{15}\numberedentry{cmd:proposition}{Command}{\(\backslash proposition\)
+
+\separate{3}The proposition command creates an environment for setting out a proposition with automatic numbering with inbuilt labels so that you can reference the proposition later in the document. Its parameters can be seen in \elemref{tab:Parameters for proposition.}{Table} and an example of its use can be seen in \preenvref{ex:cmd:proposition}{Example}{examplenumber}.
+
+\inserttable{c|c|c|c}{Parameters for proposition.}
+{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
+{
+    1 & Label & The proposition's name. & Example Proposition \\
+    2 & Definition & The proposition definition. & If \(2x=y\) then \(8x=4y\). \\
+    3 & Proof & The proof of the proposition. & If \(2x=y\)...
+}
+
+\noindent\example{cmd:proposition}{\(\backslash proposition \{\text{Example Proposition}\}\{\text{If } 2x=y \text{ then...}\}\{\text{If } 2x=y \text{, we...}\}\) creates \preenvref{prop:Example Proposition}{Proposition}{propositionnumber}}
+
+\separate{7}\proposition{Example Proposition}{If \(2x=y\) then \(8x=4y\) holds for all \((x,y) \in \N^2\).}
+{
+    If \(2x=y\), we can factor \(8x=4y\) by taking out a common multiplier of 4 to get \(4(2x=y)\). Therefore, the lemma must hold for all \((x,y) \in \N^2\).
+}}
+
+\separate{15}\numberedentry{cmd:standardproblem}{Command}{\(\backslash standardproblem\)
+
+\separate{3}The standardproblem command creates an environment for setting out a standard problem with inbuilt labels so that you can reference the standard problem later in the document. Its parameters can be seen in \elemref{tab:Parameters for standardproblem.}{Table} and an example of its use can be seen in \preenvref{ex:cmd:standardproblem}{Example}{examplenumber}. When referencing a standard problem, the native \(\backslash hyperref\) command should be used.
+
+\inserttable{c|c|c|c}{Parameters for standardproblem.}
+{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
+{
+    1 & Number & The problem number. & 1 \\
+    2 & Problem & The problem statement. & If \(2x=4\), what is \(x\)? \\
+    3 & Solution & The problem's solution. & \(2x=4\), divide...
+}
+
+\noindent\example{cmd:standardproblem}{\(\backslash standardproblem \{1\}\{\text{If } 2x=4 \text{ what is } x\}\{2x=4...\}\) creates \hyperref[stpr:1]{Standard Problem \#1}.
+
+\separate{7}\standardproblem{1}{If \(2x=4\), what is \(x\)?}{\(2x=4\), divide both sides by 2, \(x=2\).}}}
+
+\newpage\subsubsection{Sub-Environments}
+
+\textbf{Important Note}: Both of the following commands can only be referenced using \(\backslash elemref\) as opposed to the environment references used by the rest of this section. 
+
+\separate{15}\numberedentry{cmd:proof}{Command}{\(\backslash proof\)
+
+\separate{3}The proof command creates an environment for setting out a proof with inbuilt labels so that you can reference the proof later in the document. Its parameters can be seen in \elemref{tab:Parameters for proof.}{Table} and an example of its use can be seen in \preenvref{ex:cmd:proof}{Example}{examplenumber}.
+
+\inserttable{c|c|c|c}{Parameters for proof.}
+{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
+{
+    1 & Label & The proof's name. & Example Proof \\
+    2 & Proof & The content for the proof. & Let \(x=...\)
+}
+
+\noindent\example{cmd:proof}{\(\backslash proof \{\text{prop:Example Proposition}\}\{\text{If } 2x=y...\}\) produces \elemref{prf:prop:Example Proposition}{Proof}.}}
+
+\separate{15}\numberedentry{cmd:solution}{Command}{\(\backslash solution\)
+
+\separate{3}The solution command creates an environment for setting out a solution with inbuilt labels so that you can reference the solution later in the document. Its parameters can be seen in \elemref{tab:Parameters for solution.}{Table} and an example of its use can be seen in \preenvref{ex:cmd:solution}{Example}{examplenumber}.
+
+\inserttable{c|c|c|c}{Parameters for solution.}
+{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
+{
+    1 & Label & The solution's name. & Example Solution \\
+    2 & Solution & The content for the solution. & Let \(x=...\)
+}
+
+\noindent\example{cmd:solution}{\(\backslash solution \{1\}\{2x=4\text{, divide...}\}\) produces \elemref{sol:1}{Solution}.}}
 
 \subsubsection{Customisable Environments}
 
