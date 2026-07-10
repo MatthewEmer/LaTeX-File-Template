@@ -40,19 +40,75 @@ This file sets up the structure of the document, as well as acting as a compiler
 
 #### 2.2.1 Storing Images
 
-If you choose to include figures in your project, then you will need to create a subfolder labelled *Images*
-where you can place the image files for the project.
+If you choose to include figures in your project, then you will need to create a subfolder labelled *Images* where you can place the image files for the project.
 
 #### 2.2.2 GitHub Repositories
 
-If you are placing the document within a GitHub repository, you may want to copy over the *.gitignore* from
-this repository as it is set up to ignore any LaTeX build files.
+If you are placing the document within a GitHub repository, you may want to copy over the *.gitignore* from this repository as it is set up to ignore any LaTeX build files.
 
 ## 3 Custom Commands
 ### 3.1 General Tools
 #### 3.1.1 Element Spacing
+
+**Command 3.1.1.1**: *\separate*
+
+The separate command inserts vertical spacing between two elements whilst simultaneously removing the new paragraph indent from the following element. You can specify the amount of spacing as described in the below table and as seen in Example 3.1.1.1.
+
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | Spacing | The number of points of vertical spacing. | 5 |
+
+**Example 3.1.1.1**: *\separate{3}* produces the separation as seen between the Command line and the description of separate (as seen in the PDF).
+
 #### 3.1.2 Text Formatting
+
+**Command 3.1.2.1**: *\colouredText*
+
+The colouredText command takes the given text and outputs it in a different colour, as chosen by the writer. This can be seen in Example 3.1.2.1 and as described in the table below.
+
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | Colour | The colour to change the text to. | blue |
+| 2 | Text | The text you want outputted in colour. | Hello World |
+
+**Example 3.1.2.1**: *\colouredText{blue}{Hello World}* produces Hello World (appears blue on the PDF).
+
+
+
+**Command 3.1.2.2**: *\comment*
+
+The comment command inserts notes into the document in red so they can be found more easily. This can be seen in Example 3.1.2.2 and as described in the below table.
+
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 2 | Text | The text you want outputted in colour. | Hello World |
+
+**Example 3.1.2.2**: *\comment{Hello World}* produces Hello World (appears red on the PDF).
+
 #### 3.1.3 Date Formatting
+
+**Command 3.1.3.1**: *\yeardate*
+
+The yeardate command takes an adjacent date variable and reformats it into the four-digit year before outputting to the page as seen in Example 3.1.3.1.
+
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| | n/a | | |
+
+**Example 3.1.3.1**: *\date{\yeardate\today}* produces 2026.
+
+
+
+**Command 3.1.3.2**: *\monthyeardate*
+
+The monthyeardate command takes an adjacent date variable and reformats it into the full month and four-digit year before outputting to the page as seen in Example 3.1.3.2.
+
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| | n/a | | |
+
+**Example 3.1.3.2**: *\date{\monthyeardate\today}* produces July 2026.
+
 ### 3.2 Tables and Figures
 #### 3.2.1 Inserting Tables
 #### 3.2.2 Inserting Figures
