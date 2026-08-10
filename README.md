@@ -2,11 +2,21 @@
 
 ## 1 Introduction
 
+### Abstract
+
 Thank you for choosing to use LaTeX File Template. If you find any bugs or want some feature not currently included, then my contact information can be found on my GitHub: https://github.com/MatthewEmer.
 
-This document is intended for academics (with special focus on those in the fields of computer science or mathematics) who want to write papers or other related documents in a consistent format which ties in with standard practises from other published papers. This guide consists of setup instructions to download the files and create your first document, before moving onto the custom commands/environments designed to speed up academic writing. Before using this guide, I would suggest that you have some practise with some basic LaTeX commands using a guide such as https://www.overleaf.com/learn.
+This document is intended for academics (with special focus on those in the fields of computer science or mathematics) who want to write papers or other related documents in a consistent format which ties in with standard practises from other published papers. 
 
-This guide is accurate as of Version 3.0.0.
+This guide consists of setup instructions to download the files and create your first document, before moving onto the custom commands/environments designed to speed up academic writing. Before using this guide, I would suggest that you have some practise with some basic LaTeX commands using a guide such as https://www.overleaf.com/learn.
+
+This documentation is accurate as of Version 4.0.0.
+
+### Acknowledgements
+
+I would like to thank Dr Jamie Mason for his support and expertise in leading my discrete mathematics tutorials and seminars this past year, without which this project would probably not exist. His continuous feedback throughout has allowed me to hone the project from the messy original versions into a useable tool.
+
+Thanks also to Joseph Eddon for supporting the development of this template through the creation of his own LATEX template, and for the feedback and suggestions he provided on multiple versions of the template throughout last year.
 
 ## 2 Document Setup
 
