@@ -1,5 +1,7 @@
 # LaTeX File Template
 
+This document is also available as a pdf created using LaTex, and as such will better demonstrate the template's formatting and custom commands.
+
 ## 1 Introduction
 
 ### Abstract
@@ -20,7 +22,7 @@ Thanks also to Joseph Eddon for supporting the development of this template thro
 
 ## 2 Document Setup
 
-The actual LaTeX file template is contained in the folder The Template and consists of four files: *template.tex*, *_documentContent.tex*, *_appendix.tex*, and *template.pdf*. To use the template, all four files must be downloaded and placed in the same folder.
+The actual LaTeX file template is contained in the folder *The-Template* and consists of four files: *template.tex*, *_documentContent.tex*, *_appendix.tex*, and *template.pdf*. To use the template, all four files must be downloaded and placed in the same folder.
 
 ### 2.1 Project Files
 
@@ -163,7 +165,7 @@ The insertimage command simplifies the process of inserting figures into your do
 
 **Example 3.2.2.1**: *\insertimage{durham.jpg}{A large building sitting on top of a lush green hillside. (Stoll, 2022)}{0.3}* produces Figure 1.
 
-![An image of Durham cathedral.](./Documentation/Images/durham.jpg)
+![An image of Durham cathedral.](./Documentation-Build-Files/Images/durham.jpg)
 *Figure 1: A large building sitting on top of a lush green hillside. (Stoll, 2022)* 
 
 #### 3.2.3 Referencing Tables and Figures
