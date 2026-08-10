@@ -1,0 +1,40 @@
+%%% Document Setup
+
+\documentclass{article}
+\input{./_templateFormatting.tex} % Handles the document formatting.
+
+%%%
+
+
+
+%%% Page Variables
+
+\newcommand{\thetitle}{Document Title} % Insert the document title here.
+\newcommand{\thesubtitle}{Document Subtitle} % Insert the document subtitle here.
+\newcommand{\theauthor}{Author(s)} % Insert the name(s) of the author(s) here.
+\newcommand{\thedate}{\monthyeardate\today} % Replace this if you want a static date.
+\graphicspath{./Images} % The location of all the document's images.
+
+%%%
+
+
+
+%%% The Main Document
+
+\begin{document}
+
+\maketitle\thispagestyle{empty} % Adding in the title page.
+\newpage\tableofcontents\thispagestyle{empty} % Adding in the contents page.
+
+\newpage\setcounter{page}{1} % Excludes the title and contents page from page count.
+\pagestyle{fancy}
+
+\input{./_documentContent.tex}
+
+\label{mainDocumentEnd}
+
+\newpage\pagestyle{empty}\input{./_appendix.tex}
+
+\end{document}
+
+%%%

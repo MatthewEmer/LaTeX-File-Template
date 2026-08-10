@@ -1,124 +1,451 @@
 # LaTeX File Template
 
-This LaTeX file template is a clean, easy to use template, with multiple custom commands and formatting that makes creating LaTeX documents quicker and easier than other templates. Specifically, this is the template I have designed for creating lecture notes and assignment submissions for my work as a BSc Computer Science student at Durham University. As a result, there are plenty of functions/packages aimed at making STEM-centered documents.
+This document is also available as a pdf created using LaTex, and as such will better demonstrate the template's formatting and custom commands (see *documentation.pdf*).
 
-## Features
+## 1 Introduction
 
-- **Title Page Customisation**: Easily set the title and author(s) for the document, set the publication date automatically, and add an optional subtitle.
-- **Custom Headers & Footers**: Headers containing the paper's title and subtitle, footers containing the author(s) names' and the page number for easy document navigation.
-- **Content Separators**: Custom tool for separating content on the page.
-- **Coloured Text**: Improved text colour tools automatically return to black after the coloured text.
-- **Formatted Number Sets**: Simplified commands for adding number sets into your equations.
-- **Custom Academic Formats**: Custom formats for common academic environments such as definitions, theorems, or lemmas. 
-- **Simplified Commands**: Custom commands set up to make inserting images and pseudocode easier, being able to insert them in one line.
+### Abstract
 
-## Documentation
+Thank you for choosing to use LaTeX File Template. If you find any bugs or want some feature not currently included, then my contact information can be found on my GitHub: https://github.com/MatthewEmer.
 
-### Setup
+This document is intended for academics (with special focus on those in the fields of computer science or mathematics) who want to write papers or other related documents in a consistent format which ties in with standard practises from other published papers. 
 
-1. Go to Releases and download the latest release from the repository.
-2. Open *blanktemplate.tex* and find lines 146-149. 
-3. Edit the values in the second set of curly brackets on each line to edit the title page, headers, and footers.
-4. Find line 170 and start adding the main content for the document.
+This guide consists of setup instructions to download the files and create your first document, before moving onto the custom commands/environments designed to speed up academic writing. Before using this guide, I would suggest that you have some practise with some basic LaTeX commands using a guide such as https://www.overleaf.com/learn.
 
-### Custom Functions
+This documentation is accurate as of Version 4.0.0.
 
-#### \colour
-Changes the text colour of the given text to a specified colour before returning to black.
+### Acknowledgements
 
-*Parameters*
-- #1: Text Colour - the colour to change the text to (See LaTeX's website for colour options).
-- #2: Text - the text to be coloured.
+I would like to thank Dr Jamie Mason for his support and expertise in leading my discrete mathematics tutorials and seminars this past year, without which this project would probably not exist. His continuous feedback throughout has allowed me to hone the project from the messy original versions into a useable tool.
 
-#### \separate
-Adds a horizontal gap between two bits of content, then removes the indent on the new content (especially useful for separating text).
+Thanks also to Joseph Eddon for supporting the development of this template through the creation of his own LaTeX template, and for the feedback and suggestions he provided on multiple versions of the template throughout last year.
 
-*Parameters*
-- #1: Distance - the distance in points to separate the content by.
+## 2 Document Setup
 
-#### \R, \N, \C, \Q, \Z, and \I
-Outputs the corresponding number set symbol.
+The actual LaTeX file template is contained in the folder *The-Template* and consists of four files: *template.tex*, *_documentContent.tex*, *_appendix.tex*, and *template.pdf*. To use the template, all four files must be downloaded and placed in the same folder.
 
-*Parameters*
-- n/a
+### 2.1 Project Files
 
-#### \definition, \example, \conjecture, and \proof
-Sets out a definition, example, conjecture, or proof environment for an academic paper.
+#### 2.1.1 _templateformatting.tex
 
-*Parameters*
-- #1: Label - the label for the definition, example, conjecture, or proof.
-- #2: Content - the content for the definition, example, conjecture, or proof.
+This file contains the code required to create the template and the custom commands described in this document. It should not be edited.
 
-#### \numberedentry
-Sets out a custom entry environment for an academic paper.
+#### 2.1.2 _documentContent.tex
 
-*Parameters*
-- #1: Label - the label for the entry.
-- #2: Entry Type - the type of the numbered entry.
-- #3: Content - the content for the entry.
+This file allows you to add all the main content of the document you are trying to write. It will be inserted after the table of contents, but before the appendix (if you choose to add one). By default it contains an example section and definition. Only pages in this file are counted towards the page count of the document.
 
-#### \theorem, \proposition, and \lemma
-Sets out a theorem, proposition, or lemma environment for an academic paper with corresponding proof.
+#### 2.1.3 _appendix.tex
 
-*Parameters*
-- #1: Label - the label for the theorem, proposition, or lemma.
-- #2: Theorem/Lemma/Proposition - the actual theorem, proposition, or lemma.
-- #3: Proof - the proof for the theorem, proposition, or lemma.
+This file allows you to add an optional appendix to the end of your document which is not counted towards your page count. By default it contains a unnumbered part title which has been inserted into the table of contents.
 
-#### \insertimage
-Places an image on the page.
+#### 2.1.4 template.tex
 
-*Parameters*
-- #1: Image - the file path for the image.
-- #2: Caption - the image caption.
-- #3: Width - the width of the image, relative to the page width.
+This file sets up the structure of the document, as well as acting as a compiler for the other .tex files, ensuring they get inserted into the right sections of the document.
 
-#### \insertalgorithm
-Places a pseudocode algorithm on the page.
+When creating your document, you need to edit lines 12-15 of this file to create the title page, alongside the document header and footer, as described in the below table.
 
-*Parameters*
-- #1: Name - the name of the algorithm.
-- #2: Input - the input for the algorithm.
-- #3: Output - the output of the algorithm.
-- #4: Code - the code for the algorithm.
+If you want to change the generated pdf’s name while still writing the document, this is the file name which needs to be changed.
 
-#### \inserttable
-Places a table on the page.
+| Line | Variable Name | Description |
+|---|---|---|
+| 12 | thetitle | The document’s title. This will be placed in the header. |
+| 13 | thesubtitle | The document’s (optional) subtitle. This will be placed in the header. |
+| 14 | theauthor | The list of authors. This will be placed in the footer. |
+| 15 | thedate | Replace the code if you want a static date rather than date of last compile. |
 
-*Parameters*
-- #1: Formatting - how many columns, and their borders.
-- #2: Caption - the caption for the table.
-- #3: Headers - the labels for each column.
-- #4: Content - the main content of the table.
+#### 2.1.5 template.pdf
 
-#### \insertinnerjoin, \insertleftouterjoin, \insertrightouterjoin, \insertfullouterjoin
-Outputs the corresponding join symbol onto the page.
+This file contains the output of the LaTeX compiler. If you want to rename this document while still working on it, then delete this version, alongside any build files your compiler has created and change the name of *template.tex*. 
 
-*Parameters*
-- n/a
+### 2.2 Optional Files
 
-#### \hessian and \jacobian
-Outputs the corresponding matrix notation onto the page.
+#### 2.2.1 Storing Images
 
-*Parameters*
-- #1: Function - the function the matrix is formed from.
+If you choose to include figures in your project, then you will need to create a subfolder labelled *Images* where you can place the image files for the project.
 
-#### \jacobian
-Outputs the jacobian function symbol onto the page.
-*Parameters*
-- n/a
+#### 2.2.2 GitHub Repositories
 
-#### \standardproblem
-Sets out a standard problem environment with a solution for an academic paper.
+If you are placing the document within a GitHub repository, you may want to copy over the *.gitignore* from this repository as it is set up to ignore any LaTeX build files generated by LaTeX Workshop on Visual Studio Code. These are: ∗.aux, ∗.fdb_latexmk, ∗.fls, ∗.log, ∗.out, ∗.gx, ∗.toc, and ∗.gz.
 
-*Parameters*
-- #1:Label - the label for the problem.
-- #2: Problem - the actual problem.
-- #3: Proof - the solution to the problem.
+### 2.3 Updating the Template
 
-#### \dotproduct
-Outputs the dot product notation between the two given vectors.
+If you have downloaded the template and a new version is released, then you can easily update your document to the new version by taking the templateformatting.tex file currently in your project and replacing it the one from the new release. This is generally not advised for large releases (where the first digit of the version number changes) as other files may have been changed.
 
-*Parameters*
-- #1: Vector 1 - the vector(s) on the left-hand side of the dot product (do not make bold).
-- #2: Vector 2 - the vector(s) on the right-hand side of the dot product (do not make bold).
+## 3 Custom Commands
+### 3.1 General Tools
+#### 3.1.1 Element Spacing
+
+**Command 3.1.1.1**: *\separate*
+
+The separate command inserts vertical spacing between two elements whilst simultaneously removing the new paragraph indent from the following element. You can specify the amount of spacing as described in the below table and as seen in Example 3.1.1.1.
+
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | Spacing | The number of points of vertical spacing. | 5 |
+
+**Example 3.1.1.1**: *\separate{3}* produces the separation as seen between *\separate* and the description of separate (as seen in the PDF).
+
+#### 3.1.2 Text Formatting
+
+**Command 3.1.2.1**: *\colouredText*
+
+The colouredText command takes the given text and outputs it in a different colour, as chosen by the writer. This can be seen in Example 3.1.2.1 and as described in the table below.
+
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | Colour | The colour to change the text to. | blue |
+| 2 | Text | The text you want outputted in colour. | Hello World |
+
+**Example 3.1.2.1**: *\colouredText{blue}{Hello World}* produces Hello World (appears blue on the PDF).
+
+
+
+**Command 3.1.2.2**: *\comment*
+
+The comment command inserts notes into the document in red so they can be found more easily. This can be seen in Example 3.1.2.2 and as described in the below table.
+
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 2 | Text | The text you want outputted in colour. | Hello World |
+
+**Example 3.1.2.2**: *\comment{Hello World}* produces Hello World (appears red on the PDF).
+
+#### 3.1.3 Date Formatting
+
+**Command 3.1.3.1**: *\yeardate*
+
+The yeardate command takes an adjacent date variable and reformats it into the four-digit year before outputting to the page as seen in Example 3.1.3.1.
+
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| | n/a | | |
+
+**Example 3.1.3.1**: *\date{\yeardate\today}* produces 2026 (at time of writing).
+
+
+
+**Command 3.1.3.2**: *\monthyeardate*
+
+The monthyeardate command takes an adjacent date variable and reformats it into the full month and four-digit year before outputting to the page as seen in Example 3.1.3.2.
+
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| | n/a | | |
+
+**Example 3.1.3.2**: *\date{\monthyeardate\today}* produces August 2026 (at time of writing).
+
+### 3.2 Tables and Figures
+
+#### 3.2.1 Inserting Tables
+
+**Command 3.2.1.1**: *\inserttable*
+
+The inserttable command simplifies the process of inserting tables into your document as described in the table below, and as seen in Example 3.2.1.1.
+
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | Columns | The required columns, separated by *\|s. | c\|c\|c\|c
+| 2 | Caption | The caption to appear under the table. | Parameters for inserting tables.
+| 3 | Headers | The headers, separated by ampersands. | No. & Name & ...
+| 4 | Content | The content to be placed in the table. | 
+
+**Example 3.2.1.1**: *\inserttable{c\|c\|c\|c}{Parameters...}{No. & Name & ...}{1 & Columns & ...}* produces the above table.
+
+#### 3.2.2 Inserting Figures
+
+**Command 3.2.2.1**: *\insertimage*
+
+The insertimage command simplifies the process of inserting figures into your document as described in the below table and seen in Example 3.2.2.1.
+
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | File name | The file name of the image (must be in Images.) | durham.jpg
+| 2 | Figure caption | The caption to appear under the figure. | Durham Cathedral.
+| 3 | Width | The amount of the page width the image should occupy. | 0.3
+
+**Example 3.2.2.1**: *\insertimage{durham.jpg}{A large building sitting on top of a lush green hillside. (Stoll, 2022)}{0.3}* produces Figure 1.
+
+![An image of Durham cathedral.](./Documentation-Build-Files/Images/durham.jpg)
+*Figure 1: A large building sitting on top of a lush green hillside. (Stoll, 2022)* 
+
+#### 3.2.3 Referencing Tables and Figures
+
+**Command 3.2.3.1**: *\elemref*
+
+The elemref command allows you to easily reference tables and figures with clickable links. This is described in the table below, and as seen in Example 3.2.3.1.
+
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | Label | The label of the element being linked to. | tab:Parameters for elemref. | 
+| 2 | Type | The type of element being linked to. | Table | 
+
+**Example 3.2.3.1**: *\elemref {tab:Parameters for elemref.}{Table}* produces the reference for the above table.
+
+### 3.3 Academic Environments
+
+#### 3.3.1 Basic Environments
+
+**Command 3.3.1.1**: *\definition*
+
+The definition command creates an environment for setting out a definition with automatic numbering with inbuilt labels so that you can reference the definition later in the document. Its parameters can be seen in the below table, and an example of its use can be seen in Example 3.3.1.1.
+
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | Label | The word being defined so it can be easily referenced. | example
+| 2 | Definition | The actual definition of the word (with the word underlined). | An example is...
+
+**Example 3.3.1.1**: *\definition{example}{An \underline{example} is what this is.}* produces Definition 3.3.1.1.
+
+**Definition 3.3.1.1**: An example is what this is.
+
+**Command 3.3.1.2:** *\conjecture*
+
+The conjecture command creates an environment for setting out a conjecture with automatic numbering with inbuilt labels so that you can reference the conjecture later in the document. Its parameters can be seen in the table below, and an example of its use can be seen in Example 3.3.1.2.
+
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | Label | The conjecture’s name. | Someone’s Conjecture
+| 2 | Conjecture | The content for the conjecture. | Someone’s Conjecture states...
+
+**Example 3.3.1.2**: *\conjecture{Someone’s Conjecture}{Someone’s Conjecture states something or other}* produces Conjecture 3.3.1.1.
+
+**Conjecture 3.3.1.1**: Someone’s Conjecture states something or other.
+
+#### 3.3.2 Environments with Proofs or Solutions
+
+**Command 3.3.2.1**: *\theorem*
+
+The theorem command creates an environment for setting out a theorem with automatic numbering with inbuilt labels so that you can reference the theorem later in the document. Its parameters can be seen in the table below, and an example of its use can be seen in Example 3.3.2.1.
+
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | Label | The theorem’s name. | Example Theorem
+| 2 | Definition | The theorem definition. | If 2x = y then 8x = 4y.
+| 3 | Proof | The proof of the theorem. | If 2x = y...
+
+**Example 3.3.2.1**: *\theorem{Example Theorem}{If 2x = y then...}{If 2x = y, we...}* produces Theorem 3.3.2.1.
+
+**Theorem 3.3.2.1**: If $2x = y$ then $8x = 4y$ holds for all $(x, y) ∈ N^2$.
+*Proof*: We can factor $8x = 4y$ by taking out a common multiplier of 4 to get $4(2x = y)$. Therefore, the theorem must hold for all $(x, y) ∈ N^2$.
+□
+
+**Command 3.3.2.2**: *\lemma*
+
+The lemma command creates an environment for setting out a lemma with automatic numbering with inbuilt labels so that you can reference the lemma later in the document. Its parameters can be seen in the below table, and an example of its use can be seen in Example 3.3.2.2.
+
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | Label | The lemma’s name. | Example Lemma
+| 2 | Definition | The lemma definition. | If 2x = y then 8x = 4y.
+| 3 | Proof | The proof of the lemma. | If 2x = y...
+
+**Example 3.3.2.2**: *\lemma{Example Lemma}{If 2x = y then...}{If 2x = y, we...}* produces Lemma 3.3.2.1.
+
+**Lemma 3.3.2.1**: If $2x = y$ then $8x = 4y$ holds for all $(x, y) ∈ N^2$.
+*Proof*: We can factor $8x = 4y$ by taking out a common multiplier of 4 to get $4(2x = y)$. Therefore, the lemma must hold for all $(x, y) ∈ N^2$.
+□
+
+**Command 3.3.2.3**: *\proposition*
+
+The proposition command creates an environment for setting out a proposition with automatic numbering with inbuilt labels so that you can reference the proposition later in the document. Its parameters can be seen in the below table, and an example of its use can be seen in Example 3.3.2.3.
+
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | Label | The proposition’s name. | Example Proposition
+| 2 | Definition | The proposition definition. | If 2x = y then 8x = 4y.
+| 3 | Proof | The proof of the proposition. | If 2x = y...
+
+**Example 3.3.2.3**: *\proposition{Example Proposition}{If 2x = y then...}{If 2x = y, we...}* creates Proposition 3.3.2.1.
+
+**Proposition 3.3.2.1**: If $2x = y$ then $8x = 4y$ holds for all $(x, y) ∈ N^2$.
+*Proof*: We can factor $8x = 4y$ by taking out a common multiplier of 4 to get $4(2x = y)$. Therefore, the lemma must hold for all $(x, y) ∈ N^2$.
+□
+
+**Command 3.3.2.4**: *\standardproblem*
+
+The standardproblem command creates an environment for setting out a standard problem with inbuilt labels so that you can reference the standard problem later in the document. Its parameters can be seen in the table below, and an example of its use can be seen in Example 3.3.2.4. When referencing a standard problem, the native *\hyperref* command should be used.
+
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | Number | The problem number. | 1
+| 2 | Problem | The problem statement. | If 2x = 4, what is x?
+| 3 | Solution | The problem’s solution. | 2x = 4, divide...
+
+**Example 3.3.2.4**: *\standardproblem{1}{If 2x = 4 what is x}{2x = 4...}* creates Standard Problem #1.
+
+**Standard Problem #1**: If $2x = 4$, what is $x$?
+*Solution*: $2x = 4$, divide both sides by 2, $x = 2$.
+□
+
+#### 3.3.3 Sub-Environments
+
+Important Note: Both of the following commands can only be referenced using *\elemref* as opposed to the environment references used by the rest of this section.
+
+**Command 3.3.3.1**: *\proof*
+
+The proof command creates an environment for setting out a proof with inbuilt labels so that you can reference the proof later in the document. Its parameters can be seen in the table below, and an example of its use can be seen in Example 3.3.3.1.
+
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | Label | The proof’s name. | Example Proof
+| 2 | Proof | The content for the proof. | Let x = ...
+
+**Example 3.3.3.1**: *\proof{prop:Example Proposition}{If 2x = y...}* produces Proof 3.3.2.
+
+**Command 3.3.3.2**: *\solution*
+
+The solution command creates an environment for setting out a solution with inbuilt labels so that you can reference the solution later in the document. Its parameters can be seen in the table below, and an example of its use can be seen in Example 3.3.3.2.
+
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | Label | The solution’s name. | Example Solution
+| 2 | Solution | The content for the solution. | Let x = ...
+
+**Example 3.3.3.2**: *\solution{1}{2x = 4, divide...}* produces Solution 3.3.2.
+
+#### 3.3.4 Customisable Environments
+
+**Command 3.3.4.1**: *\numberedentry*
+
+The numberedentry command creates an environment for setting out a custom environment with automatic numbering with inbuilt labels so that you can reference it later in the document. Its parameters can be seen in the below table, and an example of its use can be seen in Example 3.3.4.1.
+
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | Label | The entry’s name. | cmd:numberedentry
+| 2 | Entry type | The type of entry. | Command
+| 3 | Content | The content of the entry. | The numberedentry command...
+
+**Example 3.3.4.1**: *\numberedentry{cmd:numberedentry}{Command}{ \ ( \backslash numberedentry \ ) }* produces Command 3.3.4.1.
+
+#### 3.3.5 Referencing Environments
+
+**Command 3.3.5.1**: *\preenvref*
+
+The preenvref command allows you to easily reference academic environments with clickable links before they are defined in the document. This is described in the below table, and as seen in Example 3.3.5.1.
+
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | Label | The label of the environment being linked to. | ex:cmd:postenvref
+| 2 | Type | The type of environment being linked to. | Example
+| 3 | Counter | The name of the counter for that environment. | examplenumber
+
+**Example 3.3.5.1**: *\preenvref{ex:cmd:preenvref}{Example}{examplenumber}* produces the reference Example 3.3.5.1.
+
+**Command 3.3.5.2**: *\postenvref*
+
+The postenvref command allows you to easily reference academic environments with clickable links after they are defined in the document. This is described in the above table, and as seen in Example 3.3.5.2.
+
+**Example 3.3.5.2**: *\postenvref{ex:cmd:preenvref}{Example}{examplenumber}* produces the reference Example 3.3.5.1.
+
+### 3.4 Mathematics
+
+#### 3.4.1 Basic Mathematics Notation
+
+**Command 3.4.1.1**: Insert standard number set symbols.
+
+This set of commands allows you to quickly insert the set symbols for all of the common number sets used in mathematics. The supported sets, and their associated commands, can be seen in the table below.
+
+| Number Set | Command | Output | 
+|---|---|---| 
+| Natural | *\N* | N
+| Integers | *\Z* | Z
+| Rational | *\Q* | Q
+| Real | *\R* | R
+| Imaginary | *\I* | I
+| Complex | *\C* | C
+
+#### 3.4.2 Vectors and Matrices
+
+**Command 3.4.2.1**: *\dotproduct*
+
+The dotproduct command allows you to easily use the dot product vector operation within equations. The parameters for the function are described in the table below, and an example can be seen Example 3.4.2.1.
+
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | Vector A | The vector on the left of the operation. | u
+| 2 | Vector B | The vector on the right of the operation | v
+
+**Example 3.4.2.1**: *\dotproduct{u}{v}* produces ⟨u, v⟩.
+
+**Command 3.4.2.2**: *\jacobian*
+
+The Jacobian command inserts the notation for the Jacobian matrix of a given function. This is described in the table below, and can be seen in Example 3.4.2.2.
+
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | Function | The function the Jacobian is generated from. | f
+
+**Example 3.4.2.2**: *\jacobian{f}* produces $J_f$.
+
+**Command 3.4.2.3**: *\hessian*
+
+The Hessian command inserts the notation for the Hessian matrix of a given function. This is described in the below table, and can be seen in Example 3.4.2.3.
+
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | Function | The function the Hessian is generated from. | f
+
+**Example 3.4.2.3**: *\hessian{f}* produces $H_f$.
+
+**Command 3.4.2.4**: *\lagrangian*
+
+The Lagrangian command inserts the notation for a Lagrangian function. This is described in the below table, and can be seen in Example 3.4.2.4.
+
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| | n/a | 
+
+**Example 3.4.2.4**: *\lagrangian* produces L.
+
+### 3.5 Computer Science
+
+#### 3.5.1 Relational Algebra
+
+**Command 3.5.1.1**: Insert row join symbols.
+
+This set of commands allows you to quickly insert the symbols for all of the common join types used in relational algebra. The supported joins, and their associated commands, can be seen in the table below.
+
+| Join | Command | Output |
+| --- |  ---- |  --- |  
+| Inner join | *\innerjoin* | ▷◁
+| Left outer join | *\leftouterjoin* | =▷◁
+| Right outer join | *\rightouterjoin* | ▷◁=
+| Full outer join | *\fullouterjoin* | =▷◁=
+
+#### 3.5.2 Algorithms
+
+**Command 3.5.2.1**: *\insertalgorithm*
+
+The insertalgorithm command inserts a box suited for a pseudocode algorithm to be inserted into the document. This is described in the below table, and can be seen in Example 3.5.2.1.
+
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | Algorithm name | The name of the algorithm. | Hello or goodbye
+| 2 | Inputs | The required inputs. | n/a
+| 3 | Outputs | Any returned values. | n/a
+| 4 | Pseudocode | The pseudocode of the algorithm. | \Procedure{helloOrGoodbye}{}...
+
+**Example 3.5.2.1**: *\insertalgorithm{Hello or goodbye}{n/a}{n/a}{\Procedure{helloOrGoodbye}{}...}* produces Algorithm 1.
+
+**Algorithm 1** Hello or goodbye
+
+```
+INPUT: x ∈ {1, 2}
+OUTPUT: A string message.
+
+procedure HelloOrGoodbye(x)
+    if (x == 1) then return “Hello World”
+    else if (x == 2) then return “Goodbye”
+    else return “418 I am a teapot.”
+    end if
+end procedure
+```
+
+## 4 Appendix
+
+### 4.1 List of Figures
+
+**Figure 1**
+Stoll, M. (2022). A large building sitting on top of a lush green hillside. [Online] unsplash.com. 
+Available at: https://unsplash.com/photos/a-large-building-sitting-on-top-of-a-lush-green-hillside-jATW0-hO4-I 
+[Accessed 10 Aug. 2026].
