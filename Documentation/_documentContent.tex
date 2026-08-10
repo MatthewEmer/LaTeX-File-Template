@@ -232,9 +232,9 @@ If you are placing the document within a GitHub repository, you may want to copy
     3 & Proof & The proof of the lemma. & If \(2x=y\)...
 }
 
-\noindent\example{cmd:lemma}{\(\backslash lemma \{\text{Example Lemma}\}\{\text{If } 2x=y \text{ then...}\}\{\text{If } 2x=y \text{, we...}\}\) produces \preenvref{lem:Example Lemma}{Lemma}{lemmanumber}}
+\newpage\noindent\example{cmd:lemma}{\(\backslash lemma \{\text{Example Lemma}\}\{\text{If } 2x=y \text{ then...}\}\{\text{If } 2x=y \text{, we...}\}\) produces \preenvref{lem:Example Lemma}{Lemma}{lemmanumber}}
 
-\newpage\noindent\lemma{Example Lemma}{If \(2x=y\) then \(8x=4y\) holds for all \((x,y) \in \N^2\).}
+\separate{7}\lemma{Example Lemma}{If \(2x=y\) then \(8x=4y\) holds for all \((x,y) \in \N^2\).}
 {
     If \(2x=y\), we can factor \(8x=4y\) by taking out a common multiplier of 4 to get \(4(2x=y)\). Therefore, the lemma must hold for all \((x,y) \in \N^2\).
 }}
@@ -320,7 +320,7 @@ If you are placing the document within a GitHub repository, you may want to copy
 
 \noindent\example{cmd:numberedentry}{\(\backslash numberedentry\) produces \preenvref{entry:cmd:numberedentry}{Command}{entrynumber}.}}
 
-\subsubsection{Referencing Environments}
+\newpage\subsubsection{Referencing Environments}
 
 \numberedentry{cmd:preenvref}{Command}{\(\backslash preenvref\)
 
@@ -346,7 +346,20 @@ If you are placing the document within a GitHub repository, you may want to copy
 
 \subsubsection{Basic Mathematics Notation}
 
-\comment{Add set notation here.}
+\numberedentry{cmd:setnotation}{Command}{Insert standard number set symbols.}
+
+\separate{3}This set of commands allows you to quickly insert the set symbols for all of the common number sets used in mathematics. The supported sets, and their associated commands, can be seen in \elemref{tab:Supported number sets.}{Table} below. 
+
+\inserttable{c|c|c}{Supported number sets.}
+{\textbf{Number Set} & \textbf{Command} & \textbf{Output}}
+{
+    Natural & \(\backslash N\) & \(\N\) \\
+    Integers & \(\backslash Z\) & \(\Z\) \\
+    Rational & \(\backslash Q\) & \(\Q\) \\
+    Real & \(\backslash R\) & \(\R\) \\
+    Imaginary & \(\backslash I\) & \(\I\) \\
+    Complex & \(\backslash C\) & \(\C\) 
+}
 
 \subsubsection{Vectors and Matrices}
 
