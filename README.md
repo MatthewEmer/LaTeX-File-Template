@@ -69,7 +69,7 @@ If you are placing the document within a GitHub repository, you may want to copy
 
 If you have downloaded the template and a new version is released, then you can easily update your document to the new version by taking the templateformatting.tex file currently in your project and replacing it the one from the new release. This is generally not advised for large releases (where the first digit of the version number changes) as other files may have been changed.
 
-## 3 Custom **Commands
+## 3 Custom Commands
 ### 3.1 General Tools
 #### 3.1.1 Element Spacing
 
@@ -157,9 +157,9 @@ The insertimage command simplifies the process of inserting figures into your do
 
 | No. | Name | Description | Example Value |
 |---|---|---|---|
-| 1 File name | The file name of the image (must be in Images.) | durham.jpg
-| 2 Figure caption | The caption to appear under the figure. | Durham Cathedral.
-| 3 Width | The amount of the page width the image should occupy. | 0.3
+| 1 | File name | The file name of the image (must be in Images.) | durham.jpg
+| 2 | Figure caption | The caption to appear under the figure. | Durham Cathedral.
+| 3 | Width | The amount of the page width the image should occupy. | 0.3
 
 **Example 3.2.2.1**: *\insertimage{durham.jpg}{A large building sitting on top of a lush green hillside. (Stoll, 2022)}{0.3}* produces Figure 1.
 
@@ -187,9 +187,10 @@ The elemref command allows you to easily reference tables and figures with click
 
 The definition command creates an environment for setting out a definition with automatic numbering with inbuilt labels so that you can reference the definition later in the document. Its parameters can be seen in the below table, and an example of its use can be seen in Example 3.3.1.1.
 
-No. Name Description Example Value
-1 Label The word being defined so it can be easily referenced. example
-2 Definition The actual definition of the word (with the word underlined). An example is...
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | Label | The word being defined so it can be easily referenced. | example
+| 2 | Definition | The actual definition of the word (with the word underlined). | An example is...
 
 **Example 3.3.1.1**: *\definition{example}{An *\underline{example} is what this is.}* produces Definition 3.3.1.1.
 
@@ -199,9 +200,10 @@ No. Name Description Example Value
 
 The conjecture command creates an environment for setting out a conjecture with automatic numbering with inbuilt labels so that you can reference the conjecture later in the document. Its parameters can be seen in the table below, and an example of its use can be seen in Example 3.3.1.2.
 
-No. Name Description Example Value
-1 Label The conjecture’s name. Someone’s Conjecture
-2 Conjecture The content for the conjecture. Someone’s Conjecture states...
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | Label | The conjecture’s name. | Someone’s Conjecture
+| 2 | Conjecture | The content for the conjecture. | Someone’s Conjecture states...
 
 **Example 3.3.1.2**: *\conjecture{Someone’s Conjecture}{Someone’s Conjecture states something or other}* produces Conjecture 3.3.1.1.
 
@@ -213,10 +215,11 @@ No. Name Description Example Value
 
 The theorem command creates an environment for setting out a theorem with automatic numbering with inbuilt labels so that you can reference the theorem later in the document. Its parameters can be seen in the table below, and an example of its use can be seen in Example 3.3.2.1.
 
-No. Name Description Example Value
-1 Label The theorem’s name. Example Theorem
-2 Definition The theorem definition. If 2x = y then 8x = 4y.
-3 Proof The proof of the theorem. If 2x = y...
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | Label | The theorem’s name. | Example Theorem
+| 2 | Definition | The theorem definition. | If 2x = y then 8x = 4y.
+| 3 | Proof | The proof of the theorem. | If 2x = y...
 
 **Example 3.3.2.1**: *\theorem{Example Theorem}{If 2x = y then...}{If 2x = y, we...}* produces Theorem 3.3.2.1.
 
@@ -228,14 +231,15 @@ No. Name Description Example Value
 
 The lemma command creates an environment for setting out a lemma with automatic numbering with inbuilt labels so that you can reference the lemma later in the document. Its parameters can be seen in the below table, and an example of its use can be seen in Example 3.3.2.2.
 
-No. Name Description Example Value
-1 Label The lemma’s name. Example Lemma
-2 Definition The lemma definition. If 2x = y then 8x = 4y.
-3 Proof The proof of the lemma. If 2x = y...
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | Label | The lemma’s name. | Example Lemma
+| 2 | Definition | The lemma definition. | If 2x = y then 8x = 4y.
+| 3 | Proof | The proof of the lemma. | If 2x = y...
 
 **Example 3.3.2.2**: *\lemma{Example Lemma}{If 2x = y then...}{If 2x = y, we...}* produces Lemma 3.3.2.1.
 
-**Lemma 3.3.2.1**: $If 2x = y$ then $8x = 4y$ holds for all $(x, y) ∈ N^2$.
+**Lemma 3.3.2.1**: If $2x = y$ then $8x = 4y$ holds for all $(x, y) ∈ N^2$.
 *Proof*: We can factor $8x = 4y$ by taking out a common multiplier of 4 to get $4(2x = y)$. Therefore, the lemma must hold for all $(x, y) ∈ N^2$.
 □
 
@@ -243,14 +247,15 @@ No. Name Description Example Value
 
 The proposition command creates an environment for setting out a proposition with automatic numbering with inbuilt labels so that you can reference the proposition later in the document. Its parameters can be seen in the below table, and an example of its use can be seen in Example 3.3.2.3.
 
-No. Name Description Example Value
-1 Label The proposition’s name. Example Proposition
-2 Definition The proposition definition. If 2x = y then 8x = 4y.
-3 Proof The proof of the proposition. If 2x = y...
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | Label | The proposition’s name. | Example Proposition
+| 2 | Definition | The proposition definition. | If 2x = y then 8x = 4y.
+| 3 | Proof | The proof of the proposition. | If 2x = y...
 
 **Example 3.3.2.3**: *\proposition{Example Proposition}{If 2x = y then...}{If 2x = y, we...}* creates Proposition 3.3.2.1.
 
-**Proposition 3.3.2.1**: $If 2x = y$ then $8x = 4y$ holds for all $(x, y) ∈ N^2$.
+**Proposition 3.3.2.1**: If $2x = y$ then $8x = 4y$ holds for all $(x, y) ∈ N^2$.
 *Proof*: We can factor $8x = 4y$ by taking out a common multiplier of 4 to get $4(2x = y)$. Therefore, the lemma must hold for all $(x, y) ∈ N^2$.
 □
 
@@ -258,10 +263,11 @@ No. Name Description Example Value
 
 The standardproblem command creates an environment for setting out a standard problem with inbuilt labels so that you can reference the standard problem later in the document. Its parameters can be seen in the table below, and an example of its use can be seen in Example 3.3.2.4. When referencing a standard problem, the native *\hyperref* command should be used.
 
-No. Name Description Example Value
-1 Number The problem number. 1
-2 Problem The problem statement. If 2x = 4, what is x?
-3 Solution The problem’s solution. 2x = 4, divide...
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | Number | The problem number. | 1
+| 2 | Problem | The problem statement. | If 2x = 4, what is x?
+| 3 | Solution | The problem’s solution. | 2x = 4, divide...
 
 **Example 3.3.2.4**: *\standardproblem{1}{If 2x = 4 what is x}{2x = 4...}* creates Standard Problem #1.
 
@@ -277,9 +283,10 @@ Important Note: Both of the following commands can only be referenced using *\el
 
 The proof command creates an environment for setting out a proof with inbuilt labels so that you can reference the proof later in the document. Its parameters can be seen in the table below, and an example of its use can be seen in Example 3.3.3.1.
 
-No. Name Description Example Value
-1 Label The proof’s name. Example Proof
-2 Proof The content for the proof. Let x = ...
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | Label | The proof’s name. | Example Proof
+| 2 | Proof | The content for the proof. | Let x = ...
 
 **Example 3.3.3.1**: *\proof{prop:Example Proposition}{If 2x = y...}* produces Proof 3.3.2.
 
@@ -287,9 +294,10 @@ No. Name Description Example Value
 
 The solution command creates an environment for setting out a solution with inbuilt labels so that you can reference the solution later in the document. Its parameters can be seen in the table below, and an example of its use can be seen in Example 3.3.3.2.
 
-No. Name Description Example Value
-1 Label The solution’s name. Example Solution
-2 Solution The content for the solution. Let x = ...
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | Label | The solution’s name. | Example Solution
+| 2 | Solution | The content for the solution. | Let x = ...
 
 **Example 3.3.3.2**: *\solution{1}{2x = 4, divide...}* produces Solution 3.3.2.
 
@@ -299,10 +307,11 @@ No. Name Description Example Value
 
 The numberedentry command creates an environment for setting out a custom environment with automatic numbering with inbuilt labels so that you can reference it later in the document. Its parameters can be seen in the below table, and an example of its use can be seen in Example 3.3.4.1.
 
-No. Name Description Example Value
-1 Label The entry’s name. cmd:numberedentry
-2 Entry Type The type of entry. **Command
-3 Content The content of the entry. The numberedentry command...
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | Label | The entry’s name. | cmd:numberedentry
+| 2 | Entry type | The type of entry. | Command
+| 3 | Content | The content of the entry. | The numberedentry command...
 
 **Example 3.3.4.1**: *\numberedentry{cmd:numberedentry}{Command}{\ (\backslash numberedentry\ )}* produces Command 3.3.4.1.
 
@@ -312,10 +321,11 @@ No. Name Description Example Value
 
 The preenvref command allows you to easily reference academic environments with clickable links before they are defined in the document. This is described in the below table, and as seen in Example 3.3.5.1.
 
-No. Name Description Example Value
-1 Label The label of the environment being linked to. ex:cmd:postenvref
-2 Type The type of environment being linked to. Example
-3 Counter The name of the counter for that environment. examplenumber
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | Label | The label of the environment being linked to. | ex:cmd:postenvref
+| 2 | Type | The type of environment being linked to. | Example
+| 3 | Counter | The name of the counter for that environment. | examplenumber
 
 **Example 3.3.5.1**: *\preenvref{ex:cmd:preenvref}{Example}{examplenumber}* produces the reference Example 3.3.5.1.
 
@@ -333,13 +343,14 @@ The postenvref command allows you to easily reference academic environments with
 
 This set of commands allows you to quickly insert the set symbols for all of the common number sets used in mathematics. The supported sets, and their associated commands, can be seen in the table below.
 
-Number Set Command Output
-Natural *\N* N
-Integers *\Z* Z
-Rational *\Q* Q
-Real *\R* R
-Imaginary *\I* I
-Complex *\C* C
+| Number Set | Command | Output | 
+|---|---|---| 
+| Natural | *\N* | N
+| Integers | *\Z* | Z
+| Rational | *\Q* | Q
+| Real | *\R* | R
+| Imaginary | *\I* | I
+| Complex | *\C* | C
 
 #### 3.4.2 Vectors and Matrices
 
@@ -347,9 +358,10 @@ Complex *\C* C
 
 The dotproduct command allows you to easily use the dot product vector operation within equations. The parameters for the function are described in the table below, and an example can be seen Example 3.4.2.1.
 
-No. Name Description Example Value
-1 Vector A The vector on the left of the operation. u
-2 Vector B The vector on the right of the operation v
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | Vector A | The vector on the left of the operation. | u
+| 2 | Vector B | The vector on the right of the operation | v
 
 **Example 3.4.2.1**: *\dotproduct{u}{v}* produces ⟨u, v⟩.
 
@@ -357,8 +369,9 @@ No. Name Description Example Value
 
 The Jacobian command inserts the notation for the Jacobian matrix of a given function. This is described in the table below, and can be seen in Example 3.4.2.2.
 
-No. Name Description Example Value
-1 Function The function the Jacobian is generated from. f
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | Function | The function the Jacobian is generated from. | f
 
 **Example 3.4.2.2**: *\jacobian{f}* produces $J_f$.
 
@@ -366,8 +379,9 @@ No. Name Description Example Value
 
 The Hessian command inserts the notation for the Hessian matrix of a given function. This is described in the below table, and can be seen in Example 3.4.2.3.
 
-No. Name Description Example Value
-1 Function The function the Hessian is generated from. f
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | Function | The function the Hessian is generated from. | f
 
 **Example 3.4.2.3**: *\hessian{f}* produces $H_f$.
 
@@ -375,8 +389,9 @@ No. Name Description Example Value
 
 The Lagrangian command inserts the notation for a Lagrangian function. This is described in the below table, and can be seen in Example 3.4.2.4.
 
-No. Name Description Example Value
-n/a
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| | n/a | 
 
 **Example 3.4.2.4**: *\lagrangian* produces L.
 
@@ -388,11 +403,12 @@ n/a
 
 This set of commands allows you to quickly insert the symbols for all of the common join types used in relational algebra. The supported joins, and their associated commands, can be seen in the table below.
 
-Number Set Command Output
-Inner Join *\innerjoin* ▷◁
-Left Outer Join *\leftouterjoin* ▷◁
-Right Outer Join *\rightouterjoin* ▷◁
-Full Outer Join *\fullouterjoin* ▷◁
+| Join | Command | Output |
+| --- |  ---- |  --- |  
+| Inner join | *\innerjoin* | ▷◁
+| Left outer join | *\leftouterjoin* | ▷◁
+| Right outer join | *\rightouterjoin* | ▷◁
+| Full outer join | *\fullouterjoin* | ▷◁
 
 #### 3.5.2 Algorithms
 
@@ -400,11 +416,12 @@ Full Outer Join *\fullouterjoin* ▷◁
 
 The insertalgorithm command inserts a box suited for a pseudocode algorithm to be inserted into the document. This is described in the below table, and can be seen in Example 3.5.2.1.
 
-No. Name Description Example Value
-1 Algorithm Name The name of the algorithm. Hello or goodbye
-2 Inputs The required inputs. n/a
-3 Outputs Any returned values. n/a
-4 Pseudocode The pseudocode of the algorithm. \Procedure{helloOrGoodbye}{}...
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | Algorithm name | The name of the algorithm. | Hello or goodbye
+| 2 | Inputs | The required inputs. | n/a
+| 3 | Outputs | Any returned values. | n/a
+| 4 | Pseudocode | The pseudocode of the algorithm. | \Procedure{helloOrGoodbye}{}...
 
 **Example 3.5.2.1**: *\insertalgorithm{Hello or goodbye}{n/a}{n/a}{\Procedure{helloOrGoodbye}{}...}* produces Algorithm 1.
 
