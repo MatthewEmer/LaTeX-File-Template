@@ -202,7 +202,7 @@ If you have downloaded the template and a new version is released, then you can 
     2 & Definition & The actual definition of the word (with the word underlined). & An \underline{example} is...
 }
 
-\noindent\example{cmd:definition}{\(\backslash definition \{\text{example}\}\{\text{An } \backslash underline\{\text{example}\} \text{ is what this is.}\}\) produces \preenvref{def:example}{Definition}{definitionnumber}}
+\noindent\example{cmd:definition}{\(\backslash definition \{\text{example}\}\{\text{An } \backslash underline\{\text{example}\} \text{ is what this is.}\}\) produces \preenvref{def:example}{Definition}{definitionnumber}.}
 
 \separate{7}\definition{example}{An \underline{example} is what this is.}}
 
@@ -217,7 +217,7 @@ If you have downloaded the template and a new version is released, then you can 
     2 & Conjecture & The content for the conjecture. & Someone's Conjecture states...
 }
 
-\noindent\example{cmd:conjecture}{\(\backslash conjecture \{\text{Someone's Conjecture}\}\{\text{Someone's Conjecture states something or other.}\}\) produces \preenvref{cnj:Someone's Conjecture}{Conjecture}{conjecturenumber}}
+\noindent\example{cmd:conjecture}{\(\backslash conjecture \{\text{Someone's Conjecture}\}\{\text{Someone's Conjecture states something or other.}\}\) produces \preenvref{cnj:Someone's Conjecture}{Conjecture}{conjecturenumber}.}
 
 \separate{7}\conjecture{Someone's Conjecture}{Someone's Conjecture states something or other.}}
 
@@ -235,7 +235,7 @@ If you have downloaded the template and a new version is released, then you can 
     3 & Proof & The proof of the theorem. & If \(2x=y\)...
 }
 
-\noindent\example{cmd:theorem}{\(\backslash theorem \{\text{Example Theorem}\}\{\text{If } 2x=y \text{ then...}\}\{\text{If } 2x=y \text{, we...}\}\) produces \preenvref{thm:Example Theorem}{Theorem}{theoremnumber}}
+\noindent\example{cmd:theorem}{\(\backslash theorem \{\text{Example Theorem}\}\{\text{If } 2x=y \text{ then...}\}\{\text{If } 2x=y \text{, we...}\}\) produces \preenvref{thm:Example Theorem}{Theorem}{theoremnumber}.}
 
 \separate{7}\theorem{Example Theorem}{If \(2x=y\) then \(8x=4y\) holds for all \((x,y) \in \N^2\).}
 {
@@ -254,7 +254,7 @@ If you have downloaded the template and a new version is released, then you can 
     3 & Proof & The proof of the lemma. & If \(2x=y\)...
 }
 
-\noindent\example{cmd:lemma}{\(\backslash lemma \{\text{Example Lemma}\}\{\text{If } 2x=y \text{ then...}\}\{\text{If } 2x=y \text{, we...}\}\) produces \preenvref{lem:Example Lemma}{Lemma}{lemmanumber}}
+\noindent\example{cmd:lemma}{\(\backslash lemma \{\text{Example Lemma}\}\{\text{If } 2x=y \text{ then...}\}\{\text{If } 2x=y \text{, we...}\}\) produces \preenvref{lem:Example Lemma}{Lemma}{lemmanumber}.}
 
 \newpage\noindent\lemma{Example Lemma}{If \(2x=y\) then \(8x=4y\) holds for all \((x,y) \in \N^2\).}
 {
@@ -273,7 +273,7 @@ If you have downloaded the template and a new version is released, then you can 
     3 & Proof & The proof of the proposition. & If \(2x=y\)...
 }
 
-\noindent\example{cmd:proposition}{\(\backslash proposition \{\text{Example Proposition}\}\{\text{If } 2x=y \text{ then...}\}\{\text{If } 2x=y \text{, we...}\}\) creates \preenvref{prop:Example Proposition}{Proposition}{propositionnumber}}
+\noindent\example{cmd:proposition}{\(\backslash proposition \{\text{Example Proposition}\}\{\text{If } 2x=y \text{ then...}\}\{\text{If } 2x=y \text{, we...}\}\) creates \preenvref{prop:Example Proposition}{Proposition}{propositionnumber}.}
 
 \separate{7}\proposition{Example Proposition}{If \(2x=y\) then \(8x=4y\) holds for all \((x,y) \in \N^2\).}
 {
@@ -336,11 +336,11 @@ If you have downloaded the template and a new version is released, then you can 
 {\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
 {
     1 & Label & The entry's name. & cmd:numberedentry \\
-    2 & Entry Type & The type of entry. & Command \\
+    2 & Entry type & The type of entry. & Command \\
     3 & Content & The content of the entry. & The numberedentry command...
 }
 
-\noindent\example{cmd:numberedentry}{\(\backslash numberedentry\) produces \preenvref{entry:cmd:numberedentry}{Command}{entrynumber}.}}
+\noindent\example{cmd:numberedentry}{\(\backslash numberedentry\{\text{cmd:numberedentry}\}\{\text{Command}\}\{...\}\) produces \preenvref{entry:cmd:numberedentry}{Command}{entrynumber}.}}
 
 \subsubsection{Referencing Environments}
 
@@ -439,10 +439,10 @@ If you have downloaded the template and a new version is released, then you can 
 \inserttable{c|c|c}{Supported joins.}
 {\textbf{Number Set} & \textbf{Command} & \textbf{Output}}
 {
-    Inner Join & \(\backslash innerjoin\) & \(\innerjoin\) \\
-    Left Outer Join & \(\backslash leftouterjoin\) & \(\leftouterjoin\) \\
-    Right Outer Join & \(\backslash rightouterjoin\) & \(\rightouterjoin\) \\
-    Full Outer Join & \(\backslash fullouterjoin\) & \(\fullouterjoin\)}
+    Inner join & \(\backslash innerjoin\) & \(\innerjoin\) \\
+    Left outer join & \(\backslash leftouterjoin\) & \(\leftouterjoin\) \\
+    Right outer join & \(\backslash rightouterjoin\) & \(\rightouterjoin\) \\
+    Full outer join & \(\backslash fullouterjoin\) & \(\fullouterjoin\)}
 
 \subsubsection{Algorithms}
 
@@ -453,7 +453,7 @@ If you have downloaded the template and a new version is released, then you can 
 \inserttable{c|c|c|c}{Parameters for insertalgorithm.}
 {\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
 { 
-    1 & Algorithm Name & The name of the algorithm. & Hello or goodbye \\
+    1 & Algorithm name & The name of the algorithm. & Hello or goodbye \\
     2 & Inputs & The required inputs. & n/a \\
     3 & Outputs & Any returned values. & n/a \\
     4 & Pseudocode & The pseudocode of the algorithm. & \(\backslash Procedure\{\text{helloOrGoodbye}\}\{\}...\)
