@@ -1,6 +1,6 @@
 # LaTeX File Template
 
-This document is also available as a pdf created using LaTex, and as such will better demonstrate the template's formatting and custom commands.
+This document is also available as a pdf created using LaTex, and as such will better demonstrate the template's formatting and custom commands (see *documentation.pdf*).
 
 ## 1 Introduction
 
