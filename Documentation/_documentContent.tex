@@ -358,14 +358,34 @@ If you are placing the document within a GitHub repository, you may want to copy
     Rational & \(\backslash Q\) & \(\Q\) \\
     Real & \(\backslash R\) & \(\R\) \\
     Imaginary & \(\backslash I\) & \(\I\) \\
-    Complex & \(\backslash C\) & \(\C\) 
-}
+    Complex & \(\backslash C\) & \(\C\)}
 
 \subsubsection{Vectors and Matrices}
 
 \numberedentry{cmd:dotproduct}{Command}{\(\backslash dotproduct\)}
 
-\separate{10}\comment{Add dot product, hessian, lagrange, and jacobian here.}
+\separate{3}The dotproduct command allows you to easily use the dot product vector operation within equations. The parameters for the function are described in \elemref{tab:Parameters for dotproduct.}{Table}, and an example can be seen \preenvref{ex:cmd:dotproduct}{Example}{examplenumber}.
+
+\inserttable{c|c|c|c}{Parameters for dotproduct.}
+{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
+{
+    1 & Vector A & The vector on the left of the operation. & u \\
+    2 & Vector B & The vector on the right of the operation & v}
+
+\noindent\example{cmd:dotproduct}{\(\backslash dotproduct \{u\}\{v\}\) produces \(\dotproduct{u}{v}\).}
+
+\newpage\noindent\numberedentry{cmd:hessian}{Command}{\(\backslash hessian\)}
+
+\separate{3}The Hessian command inserts the notation for the Hessian matrix of a given function. This is described in \elemref{tab:Parameters for hessian.}{Table}, and can be seen in \preenvref{ex:cmd:hessian}{Example}{examplenumber}.
+
+\inserttable{c|c|c|c}{Parameters for hessian.}
+{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
+{
+    1 & Function & The function the Hessian is generated from. & f}
+
+\noindent\example{cmd:hessian}{\(\backslash hessian \{f\}\) produces \(\hessian{f}\).}
+
+\separate{10}\comment{Add Hessian, lagrange, and jacobian here.}
 
 \subsection{Computer Science}
 
