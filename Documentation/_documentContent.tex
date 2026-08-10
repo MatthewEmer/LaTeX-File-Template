@@ -242,9 +242,9 @@ If you are placing the document within a GitHub repository, you may want to copy
     3 & Proof & The proof of the lemma. & If \(2x=y\)...
 }
 
-\newpage\noindent\example{cmd:lemma}{\(\backslash lemma \{\text{Example Lemma}\}\{\text{If } 2x=y \text{ then...}\}\{\text{If } 2x=y \text{, we...}\}\) produces \preenvref{lem:Example Lemma}{Lemma}{lemmanumber}}
+\noindent\example{cmd:lemma}{\(\backslash lemma \{\text{Example Lemma}\}\{\text{If } 2x=y \text{ then...}\}\{\text{If } 2x=y \text{, we...}\}\) produces \preenvref{lem:Example Lemma}{Lemma}{lemmanumber}}
 
-\separate{7}\lemma{Example Lemma}{If \(2x=y\) then \(8x=4y\) holds for all \((x,y) \in \N^2\).}
+\newpage\noindent\lemma{Example Lemma}{If \(2x=y\) then \(8x=4y\) holds for all \((x,y) \in \N^2\).}
 {
     If \(2x=y\), we can factor \(8x=4y\) by taking out a common multiplier of 4 to get \(4(2x=y)\). Therefore, the lemma must hold for all \((x,y) \in \N^2\).
 }}
@@ -284,11 +284,11 @@ If you are placing the document within a GitHub repository, you may want to copy
 
 \separate{7}\standardproblem{1}{If \(2x=4\), what is \(x\)?}{\(2x=4\), divide both sides by 2, \(x=2\).}}}
 
-\newpage\subsubsection{Sub-Environments}
+\subsubsection{Sub-Environments}
 
 \textbf{Important Note}: Both of the following commands can only be referenced using \(\backslash elemref\) as opposed to the environment references used by the rest of this section. 
 
-\separate{15}\numberedentry{cmd:proof}{Command}{\(\backslash proof\)
+\newpage\noindent\numberedentry{cmd:proof}{Command}{\(\backslash proof\)
 
 \separate{3}The proof command creates an environment for setting out a proof with inbuilt labels so that you can reference the proof later in the document. Its parameters can be seen in \elemref{tab:Parameters for proof.}{Table} and an example of its use can be seen in \preenvref{ex:cmd:proof}{Example}{examplenumber}.
 
@@ -330,7 +330,7 @@ If you are placing the document within a GitHub repository, you may want to copy
 
 \noindent\example{cmd:numberedentry}{\(\backslash numberedentry\) produces \preenvref{entry:cmd:numberedentry}{Command}{entrynumber}.}}
 
-\newpage\subsubsection{Referencing Environments}
+\subsubsection{Referencing Environments}
 
 \numberedentry{cmd:preenvref}{Command}{\(\backslash preenvref\)
 
@@ -384,7 +384,7 @@ If you are placing the document within a GitHub repository, you may want to copy
 
 \noindent\example{cmd:dotproduct}{\(\backslash dotproduct \{u\}\{v\}\) produces \(\dotproduct{u}{v}\).}
 
-\newpage\noindent\numberedentry{cmd:jacobian}{Command}{\(\backslash jacobian\)}
+\separate{15}\numberedentry{cmd:jacobian}{Command}{\(\backslash jacobian\)}
 
 \separate{3}The Jacobian command inserts the notation for the Jacobian matrix of a given function. This is described in \elemref{tab:Parameters for jacobian.}{Table}, and can be seen in \preenvref{ex:cmd:jacobian}{Example}{examplenumber}.
 
@@ -395,7 +395,7 @@ If you are placing the document within a GitHub repository, you may want to copy
 
 \noindent\example{cmd:jacobian}{\(\backslash jacobian \{f\}\) produces \(\jacobian{f}\).}
 
-\separate{15}\numberedentry{cmd:hessian}{Command}{\(\backslash hessian\)}
+\newpage\noindent\numberedentry{cmd:hessian}{Command}{\(\backslash hessian\)}
 
 \separate{3}The Hessian command inserts the notation for the Hessian matrix of a given function. This is described in \elemref{tab:Parameters for hessian.}{Table}, and can be seen in \preenvref{ex:cmd:hessian}{Example}{examplenumber}.
 
