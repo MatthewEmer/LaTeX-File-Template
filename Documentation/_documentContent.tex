@@ -418,10 +418,48 @@ If you are placing the document within a GitHub repository, you may want to copy
 
 \subsection{Computer Science}
 
-\subsubsection{Set Notation}
+\subsubsection{Relational Algebra}
 
-\comment{Add joins here.}
+\numberedentry{cmd:joins}{Command}{Insert row join symbols.}
+
+\separate{3}This set of commands allows you to quickly insert the symbols for all of the common join types used in relational algebra. The supported joins, and their associated commands, can be seen in \elemref{tab:Supported joins.}{Table} below. 
+
+\inserttable{c|c|c}{Supported joins.}
+{\textbf{Number Set} & \textbf{Command} & \textbf{Output}}
+{
+    Inner Join & \(\backslash innerjoin\) & \(\innerjoin\) \\
+    Left Outer Join & \(\backslash leftouterjoin\) & \(\leftouterjoin\) \\
+    Right Outer Join & \(\backslash rightouterjoin\) & \(\rightouterjoin\) \\
+    Full Outer Join & \(\backslash fullouterjoin\) & \(\fullouterjoin\)}
 
 \subsubsection{Algorithms}
 
-\comment{Add insertalgorithm here.}
+\noindent\numberedentry{cmd:insertalgorithm}{Command}{\(\backslash insertalgorithm\)}
+
+\separate{3}The insertalgorithm command inserts a box suited for a pseudocode algorithm to be inserted into the document. This is described in \elemref{tab:Parameters for insertalgorithm.}{Table}, and can be seen in \preenvref{ex:cmd:insertalgorithm}{Example}{examplenumber}.
+
+\inserttable{c|c|c|c}{Parameters for insertalgorithm.}
+{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
+{ 
+    1 & Algorithm Name & The name of the algorithm. & Hello or goodbye \\
+    2 & Inputs & The required inputs. & n/a \\
+    3 & Outputs & Any returned values. & n/a \\
+    4 & Pseudocode & The pseudocode of the algorithm. & \(\backslash Procedure\{\text{helloOrGoodbye}\}\{\}...\)
+}
+
+\newpage\noindent\example{cmd:insertalgorithm}{\(\backslash insertalgorithm \{\text{Hello or goodbye}\}\{\text{n/a}\}\{\text{n/a}\}\{\backslash Procedure\{\text{helloOrGoodbye}\}\{\}...\}\) produces \elemref{alg:Hello or goodbye}{Algorithm}}.
+
+\insertalgorithm{Hello or goodbye}
+{\(x \in \{1,2\}\)}
+{A string message.}
+{
+    \Procedure{HelloOrGoodbye}{x}
+        \If{(x == 1)}
+            \Return \say{Hello World}
+        \ElsIf{(x == 2)}
+            \Return \say{Goodbye}
+        \Else 
+            \;\Return \say{418 I am a teapot.}
+        \EndIf
+    \EndProcedure
+}
