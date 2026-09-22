@@ -1,18 +1,18 @@
 # LaTeX File Template
 
-This document is also available as a pdf created using LaTeX, and as such will better demonstrate the template's formatting and custom commands (see *documentation.pdf*).
+This document is also available as a pdf created using LaTeX, and as such will better demonstrate the template's formatting and custom commands (see [the PDF here](./documentation.pdf)).
 
 ## 1 Introduction
 
 ### Abstract
 
-Thank you for choosing to use LaTeX File Template. If you find any bugs or want some feature not currently included, then my contact information can be found on my GitHub: https://github.com/MatthewEmer.
+Thank you for choosing to use LaTeX File Template. If you find any bugs or want some feature not currently included, then my contact information can be found on [my GitHub page](https://github.com/MatthewEmer).
 
-This document is intended for academics (with special focus on those in the fields of computer science or mathematics) who want to write papers or other related documents in a consistent format which ties in with standard practises from other published papers. 
+This template is intended for academics (with special focus on those in the fields of computer science or mathematics) who want to write papers or other related documents in a consistent format which ties in with standard practises from other published papers. 
 
-This guide consists of setup instructions to download the files and create your first document, before moving onto the custom commands/environments designed to speed up academic writing. Before using this guide, I would suggest that you have some practise with some basic LaTeX commands using a guide such as https://www.overleaf.com/learn.
+This guide consists of setup instructions to download the files and create your first document, before moving onto the custom commands/environments designed to speed up academic writing. Before using this guide, I would suggest that you have some practise with some basic LaTeX commands using a guide such as [this one from Overleaf](https://www.overleaf.com/learn).
 
-This documentation is accurate as of Version 4.0.0.
+This documentation is accurate as of Version 4.1.2.
 
 ### Acknowledgements
 
@@ -22,7 +22,7 @@ Thanks also to Joseph Eddon for supporting the development of this template thro
 
 ## 2 Document Setup
 
-The actual LaTeX file template is contained in the folder *The-Template* and consists of four files: *template.tex*, *_documentContent.tex*, *_appendix.tex*, and *template.pdf*. To use the template, all four files must be downloaded and placed in the same folder.
+The actual LaTeX file template is contained in the folder [The-Template](./The-Template/) and consists of five files: *template.tex*, *_documentContent.tex*, *_appendix.tex*, *_templateFormatting.tex*, and *template.pdf*. To use the template, all five files must be downloaded and placed in the same folder.
 
 ### 2.1 Project Files
 
@@ -69,7 +69,7 @@ If you are placing the document within a GitHub repository, you may want to copy
 
 ### 2.3 Updating the Template
 
-If you have downloaded the template and a new version is released, then you can easily update your document to the new version by taking the templateformatting.tex file currently in your project and replacing it the one from the new release. This is generally not advised for large releases (where the first digit of the version number changes) as other files may have been changed.
+If you have downloaded the template and a new version is released, then you can easily update your document to the new version by taking the [_templateFormatting.tex](./The-Template/_templateFormatting.tex) file currently in your project and replacing it the one from the new release. This is generally not advised for large releases (where the first digit of the version number changes) as other files may have been changed.
 
 ## 3 Custom Commands
 ### 3.1 General Tools
