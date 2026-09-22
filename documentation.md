@@ -12,7 +12,7 @@ This document is intended for academics (with special focus on those in the fiel
 
 This guide consists of setup instructions to download the files and create your first document, before moving onto the custom commands/environments designed to speed up academic writing. Before using this guide, I would suggest that you have some practise with some basic LaTeX commands using a guide such as https://www.overleaf.com/learn.
 
-This documentation is accurate as of Version 4.0.0.
+This documentation is accurate as of Version 4.1.2.
 
 ### Acknowledgements
 
