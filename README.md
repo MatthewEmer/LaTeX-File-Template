@@ -29,7 +29,7 @@ When beginning this project, I set out to simplify the process of starting a new
 
 Development of the LaTeX File Template is centered around keeping the template simple, reusable, and easy to maintain. 
 
-With this in mind, all releases are accompanied by clear changelogs, outlining which files have changed, and what new features have been added/deprecated features removed. Similarly, most updates only target [_templateFormatting.tex](./The-Template/_templateFormatting.tex), as to not impact any content on existing documents.
+With this in mind, all releases are accompanied by clear changelogs that outline which files have changed, and what new features have been added/deprecated features removed. Similarly, most updates only target [_templateFormatting.tex](./The-Template/_templateFormatting.tex), as to not impact any content on existing documents.
 
 ### Contributions
 
