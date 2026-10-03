@@ -198,16 +198,29 @@ The definition command creates an environment for setting out a definition with 
 
 **Definition 3.3.1.1**: An example is what this is.
 
-**Command 3.3.1.2:** *\conjecture*
+**Command 3.3.1.2**: *\example*
 
-The conjecture command creates an environment for setting out a conjecture with automatic numbering with inbuilt labels so that you can reference the conjecture later in the document. Its parameters can be seen in the table below, and an example of its use can be seen in Example 3.3.1.2.
+The example command creates an environment for setting out an example with automatic numbering with inbuilt labels so that you can reference the definition later in the document. Its parameters can be seen in the table below, and an example of its use can be seen in Example 3.3.1.2.
+
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | Label | The title of the example. | example |
+| 2 | Example | The actual example being demonstrated. | This is an example. |
+
+**Example 3.3.1.2**: *\example{example}{This is an example.}* produces Example 3.3.1.2.
+
+**Example 3.3.1.3**: This is an example.
+
+**Command 3.3.1.3:** *\conjecture*
+
+The conjecture command creates an environment for setting out a conjecture with automatic numbering with inbuilt labels so that you can reference the conjecture later in the document. Its parameters can be seen in the table below, and an example of its use can be seen in Example 3.3.1.4.
 
 | No. | Name | Description | Example Value |
 |---|---|---|---|
 | 1 | Label | The conjecture’s name. | Someone’s Conjecture
 | 2 | Conjecture | The content for the conjecture. | Someone’s Conjecture states...
 
-**Example 3.3.1.2**: *\conjecture{Someone’s Conjecture}{Someone’s Conjecture states something or other}* produces Conjecture 3.3.1.1.
+**Example 3.3.1.4**: *\conjecture{Someone’s Conjecture}{Someone’s Conjecture states something or other}* produces Conjecture 3.3.1.1.
 
 **Conjecture 3.3.1.1**: Someone’s Conjecture states something or other.
 
