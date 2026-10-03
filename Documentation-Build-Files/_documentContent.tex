@@ -208,7 +208,7 @@ If you have downloaded the template and a new version is released, then you can 
 
 \newpage\noindent\numberedentry{cmd:example}{Command}{\(\backslash example\)
 
-\separate{3}The example command creates an environment for setting out an example with automatic numbering with inbuilt labels so that you can reference the definition later in the document. Its parameters can be seen in \elemref{tab:Parameters for example.}{Table} and an example of its use can be seen in \preenvref{ex:cmd:example}{Example}{examplenumber}.
+\separate{3}The example command creates an environment for setting out an example with automatic numbering with inbuilt labels so that you can reference the example later in the document. Its parameters can be seen in \elemref{tab:Parameters for example.}{Table} and an example of its use can be seen in \preenvref{ex:cmd:example}{Example}{examplenumber}.
 
 \inserttable{c|c|c|c}{Parameters for example.}
 {\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
@@ -234,6 +234,20 @@ If you have downloaded the template and a new version is released, then you can 
 \noindent\example{cmd:conjecture}{\(\backslash conjecture \{\text{Someone's Conjecture}\}\{\text{Someone's Conjecture states something or other.}\}\) produces \preenvref{cnj:Someone's Conjecture}{Conjecture}{conjecturenumber}.}
 
 \separate{7}\conjecture{Someone's Conjecture}{Someone's Conjecture states something or other.}}
+
+\separate{15}\numberedentry{cmd:bibliographyentry}{Command}{\(\backslash bibliographyentry\)
+
+\separate{3}The bibliography entry command creates an environment for entering something into the bibliography with inbuilt labels so that you can reference it later in the document. Its parameters can be seen in \elemref{tab:Parameters for bibliographyentry.}{Table} and an example of its use can be seen in \hyperref[cit:Book Title]{Book Title (Author, Year)}.
+
+\inserttable{c|c|c|c}{Parameters for bibliographyentry.}
+{\textbf{No.} & \textbf{Name} & \textbf{Description} & \textbf{Example Value}}
+{
+    1 & Label & The title of the entry. & Book Title \\
+    2 & Citation & The citation related to the title. & Author (Year)... }
+
+\noindent\example{cmd:bibliographyentry}{\(\backslash bibliographyentry \{\text{Book Title}\}\{\)Author (Year)...\(\}\) produces the below citation, with the label 'cit:Book Title'.}
+
+\separate{7}\bibliographyentry{Book Title}{Author (Year)...}}
 
 \subsubsection{Environments with Proofs or Solutions}
 
@@ -458,7 +472,7 @@ If you have downloaded the template and a new version is released, then you can 
     Right outer join & \(\backslash rightouterjoin\) & \(\rightouterjoin\) \\
     Full outer join & \(\backslash fullouterjoin\) & \(\fullouterjoin\)}
 
-\newpage\subsubsection{Algorithms}
+\subsubsection{Algorithms}
 
 \noindent\numberedentry{cmd:insertalgorithm}{Command}{\(\backslash insertalgorithm\)}
 

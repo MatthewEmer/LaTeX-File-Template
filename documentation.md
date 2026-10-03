@@ -200,7 +200,7 @@ The definition command creates an environment for setting out a definition with 
 
 **Command 3.3.1.2**: *\example*
 
-The example command creates an environment for setting out an example with automatic numbering with inbuilt labels so that you can reference the definition later in the document. Its parameters can be seen in the table below, and an example of its use can be seen in Example 3.3.1.2.
+The example command creates an environment for setting out an example with automatic numbering with inbuilt labels so that you can reference the example later in the document. Its parameters can be seen in the table below, and an example of its use can be seen in Example 3.3.1.2.
 
 | No. | Name | Description | Example Value |
 |---|---|---|---|
@@ -223,6 +223,19 @@ The conjecture command creates an environment for setting out a conjecture with 
 **Example 3.3.1.4**: *\conjecture{Someone’s Conjecture}{Someone’s Conjecture states something or other}* produces Conjecture 3.3.1.1.
 
 **Conjecture 3.3.1.1**: Someone’s Conjecture states something or other.
+
+**Command 3.3.1.4**: *\bibliographyentry*
+
+The bibliography entry command creates an environment for entering something into the bibliography with inbuilt labels so that you can reference it later in the document. Its parameters can be seen in the table below, and an example of its use can be seen below.
+
+| No. | Name | Description | Example Value |
+|---|---|---|---|
+| 1 | Label | The title of the entry. | Book Title |
+| 2 | Citation | The citation related to the title. | Author (Year)... |
+
+**Example 3.3.1.5**: *\bibliographyentry{Book Title}{Author (Year)...}* produces the below citation, with the label ’cit:Book Title’.
+
+Author (Year)..
 
 #### 3.3.2 Environments with Proofs or Solutions
 
