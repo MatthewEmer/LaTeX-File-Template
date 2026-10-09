@@ -6,3 +6,6 @@
 *.gx
 *.toc
 *.gz
+*.bbl
+*.blg
+_minted

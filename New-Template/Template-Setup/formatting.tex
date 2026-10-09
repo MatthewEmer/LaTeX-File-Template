@@ -1,6 +1,6 @@
 %%% Document Setup
 
-\documentclass{report}
+\documentclass[11pt]{report}
 \newcommand{\templateVersion}{Version 3.0.0}
 
 \usepackage[a4paper, top=25mm, bottom=25mm, left=12.5mm, right=12.5mm, headheight=15pt, headsep=8mm, footskip=10mm]{geometry} % Sets up the page margins.
@@ -55,7 +55,7 @@
 %%% Colour Formatting
 
 \usepackage{xcolor} % Introduces tools for colouring text.
-\usepackage{hyperref}
+\usepackage{hyperref} % Allows for greater link customisation.
 
 \hypersetup{
     colorlinks=true,
@@ -67,9 +67,104 @@
 %%%
 
 
+
 %%% Citation Formatting
 
 \usepackage[authoryear]{natbib}
 \setcitestyle{aysep={,}}
 
 %%%
+
+
+
+%%% Additional Packages
+
+\usepackage{float} % Gives additional controls for placing elements in the document.
+\usepackage{graphicx} % Additional support for images.
+\usepackage{makecell} % Introduces multi-line cells for tables.
+
+\usepackage{dirtytalk} % Fixes speech and quotation marks.
+\usepackage{enumitem} % Introduces additional formatting for lists.
+
+\usepackage{amsmath} % Adds in more mathematics functions.
+\usepackage{amssymb} % Introduces a wider range of mathematics symbols.
+
+\usepackage{algpseudocode} % Introduces pseudocode snippets.
+\usepackage{algorithm} % Allows for algorithms to be inserted.
+\usepackage{minted} % Introduces tools for inserting code snippets into the document.
+
+%%%
+
+
+
+%%% Text Formatting
+
+\newcommand{\separate}[1]{\vspace{#1 px}\noindent} % #1 Vertical separation in pixels.
+
+\newcommand{\colouredText}[2]{\color{#1}#2\color{black}} % #1 Text colour, #2 Text to be coloured. 
+\newcommand{\comment}[1]{\colouredText{red}{#1}} % #1 Message. 
+
+%%%
+
+
+
+%%% Mathematics 
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\C}{\mathbb{C}}
+
+\newcommand{\dotproduct}[2]{\langle\mathbf{#1},\mathbf{#2}\rangle} % #1 Left vector, #2 Right vector.
+\newcommand{\jacobian}[1]{\mathbf{J}_{#1}} % #1 The function used to create the Jacobian.
+\newcommand{\hessian}[1]{\mathbf{H}_{#1}} % #1 The function used to create the Hessian.
+\newcommand{\lagrangian}{\mathcal{L}}
+
+%%%
+
+
+
+%%% Custom Elements
+
+\newcommand{\newchapter}[1]{\chapter{#1}\label{chapter:#1}} % #1 Chapter name.
+
+\newcommand{\insertimage}[3]{ % #1 Caption, #2 Image source, #3 Image width.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=#3\linewidth]{#2}
+        \caption{#1}
+        \label{figure:#1}
+    \end{figure}
+}
+
+\newcommand{\insertpseudocode}[4]{ % #1 Caption, #2 Inputs, #3 Outputs, #4 Pseudocode.
+    \begin{algorithm}[H]
+        \caption{#1}
+        \begin{algorithmic}
+            \State \textbf{Inputs}: #2
+            \State \textbf{Outputs}: #3
+
+            \separate{5}#4
+        \end{algorithmic}
+        \label{pseudocode:#1}
+    \end{algorithm}
+}
+
+\newenvironment{snippet}[1]{ % #1 Caption.
+    \stepcounter{algorithm} \label{snippet:#1}
+    \hrule\hrule
+
+    \separate{2}\textbf{Algorithm \thealgorithm} #1 
+
+    \separate{2}\hrule
+}{
+    \hrule
+}
+
+%%%
+
+
+
+%%% Custom Environments
