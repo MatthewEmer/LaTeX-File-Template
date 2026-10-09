@@ -134,26 +134,35 @@
     \begin{figure}[H]
         \centering
         \includegraphics[width=#3\linewidth]{#2}
-        \caption{#1}
-        \label{figure:#1}
+        \caption{#1}\label{figure:#1}
     \end{figure}
+}
+
+\counterwithout{table}{chapter}
+\newcommand{\inserttable}[3]{ % #1 Caption, #2 Column Layout, #3 Content.
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{#2}
+            #3
+        \end{tabular}
+        \caption{#1}\label{table:#1}    
+    \end{table}
 }
 
 \newcommand{\insertpseudocode}[4]{ % #1 Caption, #2 Inputs, #3 Outputs, #4 Pseudocode.
     \begin{algorithm}[H]
-        \caption{#1}
+        \caption{#1}\label{pseudocode:#1}
         \begin{algorithmic}
             \State \textbf{Inputs}: #2
             \State \textbf{Outputs}: #3
 
             \separate{5}#4
         \end{algorithmic}
-        \label{pseudocode:#1}
     \end{algorithm}
 }
 
 \newenvironment{snippet}[1]{ % #1 Caption.
-    \stepcounter{algorithm} \label{snippet:#1}
+    \stepcounter{algorithm}\label{snippet:#1}
     \hrule
 
     \separate{2}\textbf{Algorithm \thealgorithm} #1 
