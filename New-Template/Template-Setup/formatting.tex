@@ -1,0 +1,75 @@
+%%% Document Setup
+
+\documentclass{report}
+\newcommand{\templateVersion}{Version 3.0.0}
+
+\usepackage[a4paper, top=25mm, bottom=25mm, left=12.5mm, right=12.5mm, headheight=15pt, headsep=8mm, footskip=10mm]{geometry} % Sets up the page margins.
+\usepackage{fancyhdr} % Creates more customisable headers and footers.
+
+\fancypagestyle{plain}{
+    \fancyhf{}
+
+    \fancyhead[L]{\titlePageTitle}
+    \fancyhead[R]{\leftmark}
+
+    \fancyfoot[L]{Written by \titlePageAuthor \\ 
+    \href{https://github.com/MatthewEmer/LaTeX-File-Template}{\LaTeX\ File Template \templateVersion. \copyright\ \the\year\ Matthew Emerson}} % Do not edit.
+    \fancyfoot[R]{Page \thepage \, of\, \pageref{mainDocumentEnd}\relax}
+
+    \renewcommand{\headrulewidth}{0.4pt}
+    \renewcommand{\footrulewidth}{0.4pt}
+}
+
+%%%
+
+
+
+%%% Title Formatting
+
+\usepackage{titlesec} % Introduces tools for formatting the inbuilt LaTeX section titles.
+
+\titleformat{\chapter}[display]{\normalfont\bfseries}{\large\chaptertitlename\ \thechapter}{6pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{-10pt}{20pt}
+
+%%%
+
+
+
+%%% Date Formatting
+
+\usepackage{datetime} % Allows greater control over the format of dates.
+
+\newdateformat{monthyeardate} % The date format for the title page.
+{%
+    \monthname[\THEMONTH] \THEYEAR
+}
+\newdateformat{yeardate} % The date format for the copyright statement.
+{%
+    \THEYEAR
+}
+
+%%%
+
+
+
+%%% Colour Formatting
+
+\usepackage{xcolor} % Introduces tools for colouring text.
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=InternalLinkColour,
+    citecolor=CitationLinkColour,
+    urlcolor=ExternalLinkColour
+}
+
+%%%
+
+
+%%% Citation Formatting
+
+\usepackage[authoryear]{natbib}
+\setcitestyle{aysep={,}}
+
+%%%

@@ -1,0 +1,28 @@
+%%% Document Setup - Do not touch.
+
+\input{Template-Setup/formatting}
+\input{Template-Setup/variables.tex}
+
+\begin{document}
+
+\input{Template-Setup/title-page}
+
+{\hypersetup{hidelinks}\tableofcontents}\thispagestyle{empty}
+\pagestyle{plain}\setcounter{page}{0}
+
+%%%
+
+
+
+%%% Chapters: To add more chapters, create them in the Chapters folder, and link to them here as demonstrated below.
+
+\input{Chapters/chapter-one}
+\input{Chapters/chapter-two}
+
+\input{Chapters/appendix}
+
+\label{mainDocumentEnd}\pagestyle{empty} % Move this before the appendix if you don't want it to be included in the page count, then remove the percentage sign from the chapter title in Chapters/appendix.tex.
+
+%%%
+
+\end{document}
