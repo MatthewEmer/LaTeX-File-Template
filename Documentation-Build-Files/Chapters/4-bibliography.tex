@@ -25,12 +25,12 @@ Bib\LaTeX\ provides a variety of entry types, for simplicity's sake, I have list
     \hline
     \textbf{Source Type} & \textbf{Entry Type} & \textbf{Required Fields} & \textbf{Optional Fields} \\
     \hline
-    AI Chat & \@@online & \makecell{none} & \makecell{none} \\\hline
-    Blog Post & \@@online & \makecell{none} & \makecell{none} \\\hline
-    Podcast/Audio Recording & \@@audio & \makecell{none} & \makecell{none} \\\hline
-    Social Media Post & \@@online & \makecell{none} & \makecell{none} \\\hline
-    Software & \@@software & \makecell{none} & \makecell{none} \\\hline
-    Website & \@@online & \makecell{none} & \makecell{none} \\
+    AI Chat & \@@online & \makecell{author, title, date, note \\(with model), url, urldate, \\organization.} & \makecell{n/a.} \\\hline
+    Blog Post & \@@online & \makecell{author, title, date, url, urldate.} & \makecell{organization.} \\\hline
+    Podcast/Audio Recording & \@@audio & \makecell{author, title, date, url, urldate.} & \makecell{publisher, series, number.} \\\hline
+    Social Media Post & \@@online & \makecell{author, date, organization, url, \\urldate.} & \makecell{n/a.} \\\hline
+    Software & \@@software & \makecell{author, title, version, date.} & \makecell{organization, url, urldate.} \\\hline
+    Website & \@@online & \makecell{author, title, date, url, urldate.} & \makecell{n/a.} \\
     \hline 
 \end{newtable}
 
@@ -38,9 +38,9 @@ Bib\LaTeX\ provides a variety of entry types, for simplicity's sake, I have list
     \hline
     \textbf{Source Type} & \textbf{Entry Type} & \textbf{Required Fields} & \textbf{Optional Fields} \\
     \hline
-    Legal Case & \@@jurisdiction & \makecell{none} & \makecell{none} \\\hline
-    Legislation & \@@legislation & \makecell{none} & \makecell{none} \\\hline
-    Patent & \@@patent & \makecell{none} & \makecell{none} \\
+    Legal Case & \@@jurisdiction & \makecell{author, title, date, institution.} & \makecell{url, urldate.} \\\hline
+    Legislation & \@@legislation & \makecell{title, date.} & \makecell{section, institution, url, urldate.} \\\hline
+    Patent & \@@patent & \makecell{author, title, date, number.} & \makecell{location, organization, url, urldate.} \\
     \hline 
 \end{newtable}
 
@@ -48,13 +48,13 @@ Bib\LaTeX\ provides a variety of entry types, for simplicity's sake, I have list
     \hline
     \textbf{Source Type} & \textbf{Entry Type} & \textbf{Required Fields} & \textbf{Optional Fields} \\
     \hline
-    Article (Journal) & \@@article & \makecell{none} & \makecell{none} \\\hline
-    Conference Paper & \@@inproceedings & \makecell{none} & \makecell{none} \\\hline
-    Dataset & \@@dataset & \makecell{none} & \makecell{none} \\\hline
-    Document (General) & \@@misc & \makecell{none} & \makecell{none} \\\hline
-    Presentation/Conference Talk & \@@unpublished & \makecell{none} & \makecell{none} \\\hline
-    Report & \@@report & \makecell{none} & \makecell{none} \\\hline
-    Thesis/Dissertation & \@@thesis & \makecell{none} & \makecell{none} \\
+    Article (Journal) & \@@article & \makecell{author, title, date.} & \makecell{journaltitle, volume, number, \\pages, doi, url, urldate.} \\\hline
+    Conference Paper & \@@inproceedings & \makecell{author, title, date, eventtitle.} & \makecell{venue, pages, publisher, \\pages, doi, url, urldate.} \\\hline
+    Dataset & \@@dataset & \makecell{author, title, date.} & \makecell{publisher, version, doi, url, \\urldate.} \\\hline
+    Document (General) & \@@misc & \makecell{author, title, date.} & \makecell{howpublished, publisher, \\location, number, url, urldate.} \\\hline
+    \makecell{Presentation/Conference \\Talk} & \@@unpublished & \makecell{author, title, date, eventtitle.} & \makecell{venue, organization, url, \\urldate.} \\\hline
+    Report & \@@report & \makecell{author, title, date.} & \makecell{organization, number, type, \\publisher, location, url, \\urldate.} \\\hline
+    Thesis/Dissertation & \@@thesis & \makecell{author, title, institution, \\date.} & \makecell{doi, url, urldate.} \\
     \hline 
 \end{newtable}
 
