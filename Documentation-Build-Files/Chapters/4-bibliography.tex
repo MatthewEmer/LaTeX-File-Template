@@ -6,7 +6,7 @@
 
 Bib\LaTeX\ provides a variety of entry types, for simplicity's sake, I have listed them below, alongside a description of their use, and their required fields for Harvard references as seen in the tables below. This was produced in combination between \newcitation{biblatex_entries_chat} and \newcitation{biblatex_manual}.
 
-\begin{newtable}{BibLaTeX .bib file entry formats (traditional media).}{|c|c|c|c|}
+\begin{newtable}{biblatex .bib file entry formats (traditional media).}{|c|c|c|c|}
     \hline
     \textbf{Source Type} & \textbf{Entry Type} & \textbf{Required Fields} & \textbf{Optional Fields} \\
     \hline
@@ -21,7 +21,7 @@ Bib\LaTeX\ provides a variety of entry types, for simplicity's sake, I have list
     \hline 
 \end{newtable}
 
-\begin{newtable}{BibLaTeX .bib file entry formats (online).}{|c|c|c|c|}
+\begin{newtable}{biblatex .bib file entry formats (online).}{|c|c|c|c|}
     \hline
     \textbf{Source Type} & \textbf{Entry Type} & \textbf{Required Fields} & \textbf{Optional Fields} \\
     \hline
@@ -34,7 +34,7 @@ Bib\LaTeX\ provides a variety of entry types, for simplicity's sake, I have list
     \hline 
 \end{newtable}
 
-\begin{newtable}{BibLaTeX .bib file entry formats (legal/political).}{|c|c|c|c|}
+\begin{newtable}{biblatex .bib file entry formats (legal/political).}{|c|c|c|c|}
     \hline
     \textbf{Source Type} & \textbf{Entry Type} & \textbf{Required Fields} & \textbf{Optional Fields} \\
     \hline
@@ -44,7 +44,7 @@ Bib\LaTeX\ provides a variety of entry types, for simplicity's sake, I have list
     \hline 
 \end{newtable}
 
-\begin{newtable}{BibLaTeX .bib file entry formats (academic).}{|c|c|c|c|}
+\begin{newtable}{biblatex .bib file entry formats (academic).}{|c|c|c|c|}
     \hline
     \textbf{Source Type} & \textbf{Entry Type} & \textbf{Required Fields} & \textbf{Optional Fields} \\
     \hline
@@ -60,7 +60,8 @@ Bib\LaTeX\ provides a variety of entry types, for simplicity's sake, I have list
 
 \subsection{Field Formats}
 
-\newcitation{biblatex_entries_chat} and \newcitation{biblatex_manual} also defines the data types and formats of each of the fields. Below, I have listed a summary of the formats and their rules.
+\newcitation{biblatex_entries_chat} and \newcitation{biblatex_manual} also defines the data types and formats of each of the fields. Below, I have listed a summary of the formats and their rules. An example of a complete entry can be seen in \Cref{snippet:Example biblatex .bib entry.}.
+
 \begin{itemize}
     \item Citations should be identified with unique keys -- ideally title\_description.
     \item All fields are surrounded in curly brackets.
@@ -68,6 +69,20 @@ Bib\LaTeX\ provides a variety of entry types, for simplicity's sake, I have list
     \item Multiple authors should be separated with 'and's.
     \item Dates are formatted as YYYY-MM-DD.
 \end{itemize} 
+
+\newpage\begin{newsnippet}{Example biblatex .bib entry.}
+    \begin{minted}{bib}
+@manual{biblatex_manual,
+    author = {Kime, Philip and Wemheuer, Moritz and Lehman, Philipp},
+    title = {The biblatex Package},
+    date = {2026},
+    version = {3.22a},
+    url = {https://tex.org.uk/macros/latex/contrib/biblatex/doc/biblatex.pdf},
+    urldate = {2026-10-10}
+}
+    \end{minted}
+\end{newsnippet}
+
 \section{Formatting in your Document}
 
 \subsection{Citation Format}
