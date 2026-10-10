@@ -1,10 +1,55 @@
 \newchapter{The Bibliography}
 
-\section{The Bibliography File}
+The template is set up with an automatically populating bibliography using Bib\LaTeX. This allows you to maintain and organise your citations all in one place with consistent formatting being created by the library and my 
+formatting settings. At the moment, the template does not contain any citations, and to prevent errors, I have had to comment out some lines. These are line 10 on \filename{file-name.tex} (shown below as 
+\Cref{snippet:Commented bibliography lines (file-name.tex).})
 
-\subsection{Entry Formatting}
+\begin{newsnippet}{Commented bibliography lines (file-name.tex).}
+    \begin{minted}{latex}
+\addbibresource{references.bib} % Uncomment to add a bibliography.
+    \end{minted}
+\end{newsnippet}
 
-Bib\LaTeX\ provides a variety of entry types, for simplicity's sake, I have listed them below, alongside a description of their use, and their required fields for Harvard references as seen in the tables below. This was produced in combination between \newcitation{biblatex_entries_chat} and \newcitation{biblatex_manual}.
+\noindent and lines 5-9 on \filename{Chapters/appendix.tex} (shown below as \Cref{snippet:Commented bibliography lines (Chapters/appendix.tex).}).
+
+\begin{newsnippet}{Commented bibliography lines (Chapters/appendix.tex).}
+    \begin{minted}{latex}
+\begingroup
+\section{Bibliography}
+\defbibheading{bibliography}[]{}
+\printbibliography
+\endgroup
+    \end{minted}
+\end{newsnippet}
+
+\noindent However, as soon as you want to add a citation, simply uncomment the lines, and then insert it into the bibliography as described in \Cref{section:The Bibliography File}.
+
+\newsection{Formatting in your Document}
+
+\newsubsection{Citation Format}
+
+To ensure that the citations are standardised throughout the document, I have chosen to default to Harvard style citations for the project (or as close as is possible). As such, when citing one of the bibliography entries
+there are two in-text options, depending on how you are referring to it. 
+\begin{itemize}
+    \item If you are referencing something directly, you should use the format \textit{author, author (year published)} (e.g., according to \colouredtext{CitationLinkColour}{author (year published)}). This is implemented... \comment{documentation for the function (maybe in the custom commands area).}
+    \item Conversely, if you are referencing something indirectly, you should use the format \textit{(author, year published)} (e.g., according to research \colouredtext{CitationLinkColour}{(author, year published)}). This is implemented... \comment{documentation for the function (maybe in the custom commands area).}
+\end{itemize}
+
+\newsubsection{Bibliography Format}
+
+When designing this version of the template, I chose to make the bibliography as customisable as I could, whilst maintaining the simplicity of the system. As such, the bibliography has been set up to be completely unsorted. 
+This allows the user to choose how to sort it, rather than forcing them into a set version. The drawback of this system is that the user does then have to sort the entries themselves but, on balance, I believe that this is 
+a good tradeoff.
+
+\newsection{The Bibliography File}
+
+Entries into the bibliography are stored in \filename{references.bib} and are then automatically pulled through into the bibliography (in the appendix). To add a new entry, follow the guide below about the entry formats 
+and the general rules around entries. Please note that this is not a definitive list and can be adapted using the more comprehensive guide at \plaincitation{biblatex_manual}.
+
+\newsubsection{Entry Formatting}
+
+Bib\LaTeX\ provides a variety of entry types, for simplicity's sake, I have listed them below, alongside a description of their use, and their required fields for Harvard references as seen in the tables below. This was 
+produced in combination between \plaincitation{biblatex_entries_chat} and \plaincitation{biblatex_manual}.
 
 \begin{newtable}{biblatex .bib file entry formats (traditional media).}{|c|c|c|c|}
     \hline
@@ -58,9 +103,10 @@ Bib\LaTeX\ provides a variety of entry types, for simplicity's sake, I have list
     \hline 
 \end{newtable}
 
-\subsection{Field Formats}
+\newsubsection{Field Formats}
 
-\newcitation{biblatex_entries_chat} and \newcitation{biblatex_manual} also defines the data types and formats of each of the fields. Below, I have listed a summary of the formats and their rules. An example of a complete entry can be seen in \Cref{snippet:Example biblatex .bib entry.}.
+\plaincitation{biblatex_entries_chat} and \plaincitation{biblatex_manual} also defines the data types and formats of each of the fields. Below, I have listed a summary of the formats and their rules. An example of a complete 
+entry can be seen in \Cref{snippet:Example biblatex .bib entry.}.
 
 \begin{itemize}
     \item Citations should be identified with unique keys -- ideally title\_description.
@@ -70,7 +116,7 @@ Bib\LaTeX\ provides a variety of entry types, for simplicity's sake, I have list
     \item Dates are formatted as YYYY-MM-DD.
 \end{itemize} 
 
-\newpage\begin{newsnippet}{Example biblatex .bib entry.}
+\begin{newsnippet}{Example biblatex .bib entry.}
     \begin{minted}{bib}
 @manual{biblatex_manual,
     author = {Kime, Philip and Wemheuer, Moritz and Lehman, Philipp},
@@ -82,9 +128,3 @@ Bib\LaTeX\ provides a variety of entry types, for simplicity's sake, I have list
 }
     \end{minted}
 \end{newsnippet}
-
-\section{Formatting in your Document}
-
-\subsection{Citation Format}
-
-\subsection{Bibliography Format}

@@ -139,8 +139,8 @@
 
 \newcommand{\separate}[1]{\vspace{#1 px}\noindent} % #1 Vertical separation in pixels.
 
-\newcommand{\colouredText}[2]{\color{#1}#2\color{black}} % #1 Text colour, #2 Text to be coloured. 
-\newcommand{\comment}[1]{\colouredText{red}{#1}} % #1 Message. 
+\newcommand{\colouredtext}[2]{\color{#1}#2\color{black}} % #1 Text colour, #2 Text to be coloured. 
+\newcommand{\comment}[1]{\colouredtext{red}{#1}} % #1 Message. 
 
 %%%
 
@@ -167,6 +167,9 @@
 %%% Custom Elements
 
 \newcommand{\newchapter}[1]{\chapter{#1}\label{chapter:#1}} % #1 Chapter name.
+\newcommand{\newsection}[1]{\section{#1}\label{section:#1}} % #1 Section name.
+\newcommand{\newsubsection}[1]{\subsection{#1}\label{subsection:#1}} % #1 Subsection name.
+\newcommand{\newsubsubsection}[1]{\subsubsection{#1}\label{subsubsection:#1}} % #1 Subsubsection name.
 
 \newcommand{\insertfigure}[3]{ % #1 Caption, #2 Image source, #3 Image width.
     \begin{figure}[H]
@@ -203,13 +206,14 @@
 
 \newenvironment{newsnippet}[1]{ % #1 Caption.
     \refstepcounter{algorithm}\label{snippet:#1}
+    \par\addvspace{0.8\baselineskip}
     \hrule
 
     \separate{2}\textbf{Algorithm \thealgorithm} #1 
 
     \separate{2}\hrule
 }{
-    \hrule
+    \hrule\par\addvspace{0.8\baselineskip}
 }
 
 %%%
