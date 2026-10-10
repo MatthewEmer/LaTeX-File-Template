@@ -69,8 +69,26 @@
 
 %%% Citation Formatting
 
-\usepackage[authoryear]{natbib}
-\setcitestyle{aysep={,}}
+\usepackage[
+    backend=biber,
+    style=authoryear,
+    sorting=none,
+    natbib=true
+]{biblatex}
+
+\setlength{\bibitemsep}{0.8\baselineskip}
+
+\DeclareCiteCommand{\newcitation}
+    {\usebibmacro{prenote}}
+    {%
+        \printtext[bibhyperref]{%
+            \printnames{labelname}%
+            \setunit{\addcomma\space}%
+            \printfield{labelyear}%
+        }%
+    }
+    {\multicitedelim}
+    {\usebibmacro{postnote}}
 
 %%%
 

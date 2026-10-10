@@ -8,4 +8,6 @@
 *.gz
 *.bbl
 *.blg
+*.bcf
+*.run.xml
 _minted
