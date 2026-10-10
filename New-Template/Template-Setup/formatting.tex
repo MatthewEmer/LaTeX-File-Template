@@ -138,31 +138,33 @@
     \end{figure}
 }
 
+\newcommand{\currenttablecaption}{}
 \counterwithout{table}{chapter}
-\newcommand{\inserttable}[3]{ % #1 Caption, #2 Column Layout, #3 Content.
+\newenvironment{newtable}[2]{ % #1 Caption, #2 Column layout.
+    \renewcommand{\currenttablecaption}{#1}
     \begin{table}[H]
         \centering
         \begin{tabular}{#2}
-            #3
+}{%
         \end{tabular}
-        \caption{#1}\label{table:#1}    
+        \caption{\currenttablecaption}\label{table:\currenttablecaption}
     \end{table}
 }
 
-\newcommand{\insertpseudocode}[4]{ % #1 Caption, #2 Inputs, #3 Outputs, #4 Pseudocode.
+\newenvironment{newpseudocode}[4]{ % #1 Caption, #2 Inputs, #3 Outputs.
     \begin{algorithm}[H]
         \caption{#1}\label{pseudocode:#1}
         \begin{algorithmic}
             \State \textbf{Inputs}: #2
             \State \textbf{Outputs}: #3
-
-            \separate{5}#4
+            \separate{5}
+}{%
         \end{algorithmic}
     \end{algorithm}
 }
 
-\newenvironment{snippet}[1]{ % #1 Caption.
-    \stepcounter{algorithm}\label{snippet:#1}
+\newenvironment{newsnippet}[1]{ % #1 Caption.
+    \refstepcounter{algorithm}\label{snippet:#1}
     \hrule
 
     \separate{2}\textbf{Algorithm \thealgorithm} #1 
@@ -176,4 +178,38 @@
 
 
 
-%%% Custom Environments
+%%% Custom Academic Environments
+
+\usepackage{amsthm}
+\usepackage[nameinlink, noabbrev]{cleveref}
+
+\newtheoremstyle{academic}
+  {6pt}       % Space above
+  {6pt}       % Space below
+  {\normalfont\upshape} % Body font
+  {}          % Indentation
+  {\bfseries} % Heading font
+  {:}         % Punctuation after heading
+  {0.5em}     % Space after heading
+  {}          % Heading specification
+\theoremstyle{academic}
+
+\newtheorem{definitioninner}{Definition}[subsection]
+\newenvironment{definition}[1]{\begin{definitioninner}\label{example:#1}}{\end{definitioninner}}
+
+\newtheorem{exampleinner}{Example}[subsection]
+\newenvironment{example}[1]{\begin{exampleinner}\label{example:#1}}{\end{exampleinner}}
+
+\newtheorem{conjectureinner}{Conjecture}[subsection]
+\newenvironment{conjecture}[1]{\begin{conjectureinner}\label{conjecture:#1}}{\end{conjectureinner}}
+
+\newtheorem{theoreminner}{Theorem}[subsection]
+\newenvironment{theorem}[1]{\begin{theoreminner}\label{theorem:#1}}{\end{theoreminner}}
+
+\newtheorem{lemmainner}{Lemma}[subsection]
+\newenvironment{lemma}[1]{\begin{lemmainner}\label{lemma:#1}}{\end{lemmainner}}
+
+\newtheorem{propositioninner}{Proposition}[subsection]
+\newenvironment{proposition}[1]{\begin{propositioninner}\label{proposition:#1}}{\end{propositioninner}}
+
+\newcommand{\elemref}[1]{\cref{#1}}
