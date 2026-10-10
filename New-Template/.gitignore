@@ -10,4 +10,8 @@
 *.blg
 *.bcf
 *.run.xml
+*.bbl-SAVE-ERROR
+*.bcf-SAVE-ERROR
+*.lot
+*.lof
 _minted
