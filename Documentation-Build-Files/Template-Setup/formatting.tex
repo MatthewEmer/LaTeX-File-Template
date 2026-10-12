@@ -79,7 +79,7 @@
 \setlength{\bibitemsep}{0.8\baselineskip}
 \setlength{\bibhang}{0pt}
 
-\DeclareCiteCommand{\plaincitation}{\usebibmacro{prenote}}
+\DeclareCiteCommand{\directcitation}{\usebibmacro{prenote}}
 {%
     \printtext[bibhyperref]{%
         \printnames{labelname}%
@@ -88,7 +88,7 @@
     }%
 }{\multicitedelim}{\usebibmacro{postnote}}
 
-\DeclareCiteCommand{\bracketcitation}{\usebibmacro{prenote}}
+\DeclareCiteCommand{\indirectcitation}{\usebibmacro{prenote}}
 {%
     \printtext[bibhyperref]{%
         (\printnames{labelname}%

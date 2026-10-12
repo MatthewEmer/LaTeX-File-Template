@@ -1,21 +1,76 @@
 \newchapter{Custom Commands}
 
-\section{Text Formatting}
+\newsection{Text Formatting}
 
-\subsection{My Custom Date Formats}
+\newsubsection{Custom Date Formats}
 
-\subsection{Using the Custom Text Formats}
+\newsubsection{The Colour Scheme}
 
-\section{General Commands}
+\newsection{General Commands}
 
-\subsection{Figures and Tables}
+\newsubsection{Figures and Tables}
 
-\subsection{Academic Environments}
+\newsubsection{Academic Environments}
 
-\subsection{Citations and Environment References}
+\newsubsection{Environment References}
 
-\section{Mathematics and Computer Science}
+\newsubsection{Citations}
 
-\subsection{Additional Mathematics Commands}
+For this template, I have chosen to setup my citation commands inline with Harvard-style citation guidelines. As such, I have provided are two different formats for 
+inserting a citation, direct and indirect. Their use-cases and implementations are described below.
 
-\subsection{Computer Science Environments}
+\begin{command}{Direct Citation}
+    A \underline{direct citation} is used when referring to a bibliography entry directly, for example when saying \say{according to \textit{bibliography\_entry}...}.
+    Given the Harvard-style guidelines, this follows the general format:
+    \begin{quote}
+        \centering\commandformat{author, author, ..., and author (year\_published)}
+    \end{quote}
+
+    \noindent To call this function, we use the syntax given by \Cref{snippet:Direct citation format.}.
+
+    \begin{newsnippet}{Direct citation format.}
+        \begin{minted}{latex}
+\directcitation{bibliography_entry_key}
+        \end{minted}
+    \end{newsnippet}
+
+    \noindent The parameters for this function are shown below in \Cref{table:Direct citation parameters.}.
+
+    \begin{newtable}{Direct citation parameters.}{|c|c|c|}
+        \hline
+        \textbf{Parameter} & \textbf{Description} & \textbf{Example} \\\hline
+        bibliography\_entry\_key & \makecell{The key given to the entry when it was placed in \\\filename{references.bib}.} & biblatex\_manual \\
+        \hline
+    \end{newtable}
+\end{command}
+
+\begin{command}{Indirect Citation}
+    An \underline{indirect citation} is used when referring to a bibliography entry as support for a statement, for example when saying \say{according to 
+    the paper (\textit{bibliography\_entry})...}. Given the Harvard-style guidelines, this follows the general format:
+    \begin{quote}
+        \commandformat{(author, author, ..., and author, year\_published)}
+    \end{quote}
+    
+    \noindent To call this function, we use the syntax given by \Cref{snippet:Indirect citation format.}.
+
+    \begin{newsnippet}{Indirect citation format.}
+        \begin{minted}{latex}
+\indirectcitation{bibliography_entry_key}
+        \end{minted}
+    \end{newsnippet}
+
+    \noindent The parameters for this function are shown below in \Cref{table:Indirect citation parameters.}.
+
+    \begin{newtable}{Indirect citation parameters.}{|c|c|c|}
+        \hline
+        \textbf{Parameter} & \textbf{Description} & \textbf{Example} \\\hline
+        bibliography\_entry\_key & \makecell{The key given to the entry when it was placed in \\\filename{references.bib}.} & biblatex\_manual \\
+        \hline
+    \end{newtable}
+\end{command}
+
+\newsection{Mathematics and Computer Science}
+
+\newsubsection{Additional Mathematics Commands}
+
+\newsubsection{Computer Science Environments}

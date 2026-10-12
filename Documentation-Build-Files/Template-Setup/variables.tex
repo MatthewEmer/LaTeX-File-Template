@@ -49,5 +49,15 @@
 %%% Custom Colouring Commands
 
 \newcommand{\filename}[1]{\colouredtext{DurhamBlueLight}{#1}\( \)}
+\newcommand{\commandformat}[1]{\textit{\colouredtext{DurhamTeal}{#1}\( \)}}
+
+%%%
+
+
+
+%%% Bibliography-Only Commands
+
+\newtheorem{commandinner}{Command}[subsection]
+\newenvironment{command}[1]{\begin{commandinner}\label{command:#1}}{\end{commandinner}}
 
 %%%
