@@ -67,40 +67,6 @@
 
 
 
-%%% Citation Formatting
-
-\usepackage[
-    backend=biber,
-    style=authoryear,
-    sorting=none,
-    natbib=true
-]{biblatex}
-
-\setlength{\bibitemsep}{0.8\baselineskip}
-\setlength{\bibhang}{0pt}
-
-\DeclareCiteCommand{\directcitation}{\usebibmacro{prenote}}
-{%
-    \printtext[bibhyperref]{%
-        \printnames{labelname}%
-        \setunit{\space(}%
-        \printfield{labelyear})%
-    }%
-}{\multicitedelim}{\usebibmacro{postnote}}
-
-\DeclareCiteCommand{\indirectcitation}{\usebibmacro{prenote}}
-{%
-    \printtext[bibhyperref]{%
-        (\printnames{labelname}%
-        \setunit{\addcomma\space}%
-        \printfield{labelyear})%
-    }%
-}{\multicitedelim}{\usebibmacro{postnote}}
-
-%%%
-
-
-
 %%% List of Tables/Figures Formatting
 
 \makeatletter
@@ -261,3 +227,44 @@
 \newenvironment{proposition}[1]{\begin{propositioninner}\label{proposition:#1}}{\end{propositioninner}}
 
 \newcommand{\elemref}[1]{\cref{#1}}
+
+%%%
+
+
+
+%%% Citation Formatting
+
+\usepackage[british]{babel}
+\usepackage{csquotes}
+
+\usepackage[
+    backend=biber,
+    style=authoryear,
+    sorting=none,
+    natbib=true
+]{biblatex}
+
+\DeclareLanguageMapping{british}{british}
+
+\setlength{\bibitemsep}{0.8\baselineskip}
+\setlength{\bibhang}{0pt}
+
+\DeclareCiteCommand{\directcitation}{\usebibmacro{prenote}}
+{%
+    \printtext[bibhyperref]{%
+        \printnames{labelname}%
+        \setunit{\space(}%
+        \printfield{labelyear})%
+    }%
+}{\multicitedelim}{\usebibmacro{postnote}}
+
+\DeclareCiteCommand{\indirectcitation}{\usebibmacro{prenote}}
+{%
+    \printtext[bibhyperref]{%
+        (\printnames{labelname}%
+        \setunit{\addcomma\space}%
+        \printfield{labelyear})%
+    }%
+}{\multicitedelim}{\usebibmacro{postnote}}
+
+%%%
