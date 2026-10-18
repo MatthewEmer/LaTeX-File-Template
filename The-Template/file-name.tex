@@ -1,12 +1,12 @@
-% !TeX root = file-name.tex
+% !TeX root = ./file-name.tex
 
 %%% Document Setup: Do not edit.
 
 \documentclass[11pt]{report}
 
-\input{./Template-Setup/formatting}
+\input{./Template-Setup/formatting.tex}
 
-\input{./Template-Setup/variables}
+\input{./Template-Setup/variables.tex}
 \graphicspath{{./Figures}}
 
 %%%
@@ -15,13 +15,13 @@
 
 %%%  Default Document Introduction: Editing instructions given in the listed sections of the template's documentation.
 
-\input{./Template-Setup/Colour-Schemes/durham} % 1.2.4 Additional Files and 2.1.4 The Colour Scheme. --- NOT IMPLEMENTED YET
+\input{./Template-Setup/Colour-Schemes/durham.tex} % 1.2.4 Additional Files and 2.1.4 The Colour Scheme. --- NOT IMPLEMENTED YET
 %\addbibresource{./Template-Setup/references.bib} % 1.2.4 Additional Files and Chapter 4: The Bibliography. --- NOT IMPLEMENTED YET
 
 \begin{document} % Do not edit.
 
-\input{./Template-Setup/title-page} % 2.1.1 The Title Page. --- NOT IMPLEMENTED YET
-\input{./Chapters/0-prelude} % 2.2.1 The Prelude. --- NOT IMPLEMENTED YET
+\input{./Template-Setup/title-page.tex} % 2.1.1 The Title Page. --- NOT IMPLEMENTED YET
+\input{./Chapters/0-prelude.tex} % 2.2.1 The Prelude. --- NOT IMPLEMENTED YET
 {\hypersetup{hidelinks}\tableofcontents}\thispagestyle{empty} % 2.1.2 Table of Contents. --- NOT IMPLEMENTED YET
 
 \pagestyle{plain}\setcounter{page}{0} % Do not edit.
@@ -32,8 +32,8 @@
 
 %%% Chapters: Adding more chapters is explained in 2.1.3 Adding Chapters of the template documentation.
 
-\input{./Chapters/1-chapter-one}
-\input{./Chapters/2-chapter-two}
+\input{./Chapters/1-chapter-one.tex}
+\input{./Chapters/2-chapter-two.tex}
 
 %%%
 
@@ -41,7 +41,7 @@
 
 %%% Appendix & Document End: Editing instructions given in the listed sections of the template's documentation.
 
-\input{./Chapters/appendix} % 2.2.2 The Appendix --- NOT IMPLEMENTED YET
+\input{./Chapters/appendix.tex} % 2.2.2 The Appendix --- NOT IMPLEMENTED YET
 \label{mainDocumentEnd}\pagestyle{empty} % 2.2.2 The Appendix --- NOT IMPLEMENTED YET
 
 \end{document} % Do not edit.

@@ -1,12 +1,11 @@
-% !TeX root = documentation.tex
+% !TeX root = ./documentation.tex
 
 %%% Document Setup: Do not edit.
 
 \documentclass[11pt]{report}
 
-\input{./Template-Setup/formatting}
-
-\input{./Template-Setup/variables}
+\input{./Template-Setup/formatting.tex}
+\input{./Template-Setup/variables.tex}
 \graphicspath{{./Figures}}
 
 %%%
@@ -15,13 +14,13 @@
 
 %%%  Default Document Introduction: Editing instructions given in the listed sections below.
 
-\input{./Template-Setup/Colour-Schemes/durham} % 1.2.4 Additional Files and 2.1.4 The Colour Scheme. --- NOT IMPLEMENTED YET
+\input{./Template-Setup/Colour-Schemes/durham.tex} % 1.2.4 Additional Files and 2.1.4 The Colour Scheme. --- NOT IMPLEMENTED YET
 \addbibresource{./Template-Setup/references.bib} % 1.2.4 Additional Files and Chapter 4: The Bibliography. --- NOT IMPLEMENTED YET
 
 \begin{document} % Do not edit.
 
-\input{./Template-Setup/title-page} % 2.1.1 The Title Page. --- NOT IMPLEMENTED YET
-\input{./Chapters/0-prelude} % 2.2.1 The Prelude. --- NOT IMPLEMENTED YET
+\input{./Template-Setup/title-page.tex} % 2.1.1 The Title Page. --- NOT IMPLEMENTED YET
+\input{./Chapters/0-prelude.tex} % 2.2.1 The Prelude. --- NOT IMPLEMENTED YET
 {\hypersetup{hidelinks}\tableofcontents}\thispagestyle{empty} % 2.1.2 Table of Contents. --- NOT IMPLEMENTED YET
 
 \pagestyle{plain}\setcounter{page}{0} % Do not edit.
@@ -32,10 +31,10 @@
 
 %%% Chapters: Adding more chapters is explained in 2.1.3 Adding Chapters.
 
-\input{./Chapters/1-template-setup}
-\input{./Chapters/2-document-formatting}
-\input{./Chapters/3-custom-commands}
-\input{./Chapters/4-bibliography}
+\input{./Chapters/1-template-setup.tex}
+\input{./Chapters/2-document-formatting.tex}
+\input{./Chapters/3-custom-commands.tex}
+\input{./Chapters/4-bibliography.tex}
 
 %%%
 
@@ -43,7 +42,7 @@
 
 %%% Appendix & Document End: Editing instructions given in the listed sections below.
 
-\input{./Chapters/appendix} % 2.2.2 The Appendix --- NOT IMPLEMENTED YET
+\input{./Chapters/appendix.tex} % 2.2.2 The Appendix --- NOT IMPLEMENTED YET
 \label{mainDocumentEnd}\pagestyle{empty} % 2.2.2 The Appendix --- NOT IMPLEMENTED YET
 
 \end{document} % Do not edit.

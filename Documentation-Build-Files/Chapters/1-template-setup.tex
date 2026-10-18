@@ -31,10 +31,13 @@ This class gives a good balance between the simplicity of some of the other more
 
 This choice is best illustrated by the \textit{Chapter} divider, which lends itself to the file structure of the template, allowing for long documents to be created with clear separation between parts beyond the default sections and their sub-types.
 
+\separate{5}The rest of the file loads the formatting files from \filename{Template-Setup/}, the document content from \filename{Chapters/}, and sets the graphics path for the template. 
+As a result, these lines should not be edited unless either labelled as such in the file, or when explicitly mentioned in a release's changelog.
+
 \newsubsubsection{Template Output: file-name.pdf}
 
 This is the output file of the template. 
-All of the content added to the various \filename{Chapter} files will be compiled and placed in here. 
+All of the content added to the various \filename{Chapter/} files will be compiled and placed in here. 
 To change the appearance or content of this file, you will need to edit one of the other files making up the template as detailed in the rest of this guide.
 
 \newsubsection{The Template Setup Folder}
