@@ -1,20 +1,23 @@
+% !TeX root = main.tex
 %%% Document Setup - Do not touch.
 
 \documentclass[11pt]{report}
 
 \input{./Template-Setup/formatting}
-\input{./Template-Setup/variables.tex}
 
-\graphicspath{Figures}
+\input{./Template-Setup/variables}
+\input{./Template-Setup/Colour-Schemes/durham} % Change this to pick a different colour scheme.
+
+\graphicspath{{Figures}}
 %\addbibresource{references.bib} % Uncomment to add a bibliography.
 
 \begin{document}
 
-\input{./Template-Setup/title-page}
+\input{./Template-Setup/title-page} % Comment this out to remove the title page.
 
-\input{./Chapters/0-prelude}
+\input{./Chapters/0-prelude} % Remove this line to remove the prelude section.
 
-{\hypersetup{hidelinks}\tableofcontents}\thispagestyle{empty}
+{\hypersetup{hidelinks}\tableofcontents}\thispagestyle{empty} % Comment this out to remove the table of contents.
 \pagestyle{plain}\setcounter{page}{0}
 
 %%%
