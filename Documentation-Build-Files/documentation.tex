@@ -1,46 +1,51 @@
 % !TeX root = documentation.tex
-%%% Document Setup - Do not touch.
+
+%%% Document Setup: Do not edit.
 
 \documentclass[11pt]{report}
 
 \input{./Template-Setup/formatting}
 
 \input{./Template-Setup/variables}
-\input{./Template-Setup/Colour-Schemes/durham} % Change this to pick a different colour scheme.
-
 \graphicspath{{./Figures}}
-\addbibresource{./Template-Setup/references.bib} % Uncomment to add a bibliography.
-
-\begin{document}
 
 %%%
 
 
 
-%%% Default Document Introduction.
+%%%  Default Document Introduction: Editing instructions given in the listed sections below.
 
-\input{./Template-Setup/title-page} % Comment this out to remove the title page.
+\input{./Template-Setup/Colour-Schemes/durham} % 1.2.4 Additional Files and 2.1.4 The Colour Scheme. --- NOT IMPLEMENTED YET
+\addbibresource{./Template-Setup/references.bib} % 1.2.4 Additional Files and Chapter 4: The Bibliography. --- NOT IMPLEMENTED YET
 
-\input{./Chapters/0-prelude} % Remove this line to remove the prelude section.
+\begin{document} % Do not edit.
 
-{\hypersetup{hidelinks}\tableofcontents}\thispagestyle{empty} % Comment this out to remove the table of contents.
-\pagestyle{plain}\setcounter{page}{0}
+\input{./Template-Setup/title-page} % 2.1.1 The Title Page. --- NOT IMPLEMENTED YET
+\input{./Chapters/0-prelude} % 2.2.1 The Prelude. --- NOT IMPLEMENTED YET
+{\hypersetup{hidelinks}\tableofcontents}\thispagestyle{empty} % 2.1.2 Table of Contents. --- NOT IMPLEMENTED YET
+
+\pagestyle{plain}\setcounter{page}{0} % Do not edit.
 
 %%%
 
 
 
-%%% Chapters: To add more chapters, create them in the Chapters folder, and link to them here as demonstrated below.
+%%% Chapters: Adding more chapters is explained in 2.1.3 Adding Chapters.
 
 \input{./Chapters/1-template-setup}
 \input{./Chapters/2-document-formatting}
 \input{./Chapters/3-custom-commands}
 \input{./Chapters/4-bibliography}
 
-\input{./Chapters/appendix}
-
-\label{mainDocumentEnd}\pagestyle{empty} % Move this before the appendix if you don't want it to be included in the page count, then remove the percentage sign from the chapter title in Chapters/appendix.tex.
-
 %%%
 
-\end{document}
+
+
+%%% Appendix & Document End: Editing instructions given in the listed sections below.
+
+\input{./Chapters/appendix} % 2.2.2 The Appendix --- NOT IMPLEMENTED YET
+\label{mainDocumentEnd}\pagestyle{empty} % 2.2.2 The Appendix --- NOT IMPLEMENTED YET
+
+\end{document} % Do not edit.
+
+%%%
